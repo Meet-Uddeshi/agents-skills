@@ -1,0 +1,1032 @@
+{
+  "agents": [
+    {
+      "name": "a11y-architect",
+      "description": "Accessibility Architect specializing in WCAG 2.2 compliance for Web and Native platforms. Use PROACTIVELY when designing UI components, establishing design systems, or auditing code for inclusive user experiences.",
+      "skills": [],
+      "file": ".agent/agents\\a11y-architect.md"
+    },
+    {
+      "name": "agent-evaluator",
+      "description": "Evaluates agent output against 5-axis quality rubric (accuracy, completeness, clarity, actionability, conciseness). Use after any non-trivial task when the user wants a quality assessment, or when the agent-self-evaluation skill is active. Produces structured scorecard with evidence and improvement suggestions.",
+      "skills": [],
+      "file": ".agent/agents\\agent-evaluator.md"
+    },
+    {
+      "name": "architect",
+      "description": "Software architecture specialist for system design, scalability, and technical decision-making. Use PROACTIVELY when planning new features, refactoring large systems, or making architectural decisions.",
+      "skills": [],
+      "file": ".agent/agents\\architect.md"
+    },
+    {
+      "name": "backend-specialist",
+      "description": "Expert backend architect for Node.js, Python, and modern serverless/edge systems. Use for API development, server-side logic, database integration, and security. Triggers on backend, server, api, endpoint, database, auth.",
+      "skills": [
+        "clean-code",
+        "nodejs-best-practices",
+        "python-patterns",
+        "api-patterns",
+        "database-design",
+        "mcp-builder",
+        "lint-and-validate",
+        "powershell-windows",
+        "bash-linux",
+        "rust-pro"
+      ],
+      "file": ".agent/agents\\backend-specialist.md"
+    },
+    {
+      "name": "bengali-reviewer",
+      "description": "Reviews code handling Bengali (Bangla) text for Unicode correctness, proper normalization, script-aware processing, and internationalization best practices. Use when code processes, displays, or stores Bengali text.",
+      "skills": [],
+      "file": ".agent/agents\\bengali-reviewer.md"
+    },
+    {
+      "name": "build-error-resolver",
+      "description": "Build and TypeScript error resolution specialist. Use PROACTIVELY when build fails or type errors occur. Fixes build/type errors only with minimal diffs, no architectural edits. Focuses on getting the build green quickly.",
+      "skills": [],
+      "file": ".agent/agents\\build-error-resolver.md"
+    },
+    {
+      "name": "chief-of-staff",
+      "description": "Personal communication chief of staff that triages email, Slack, LINE, and Messenger. Classifies messages into 4 tiers (skip/info_only/meeting_info/action_required), generates draft replies, and enforces post-send follow-through via hooks. Use when managing multi-channel communication workflows.",
+      "skills": [],
+      "file": ".agent/agents\\chief-of-staff.md"
+    },
+    {
+      "name": "code-archaeologist",
+      "description": "Expert in legacy code, refactoring, and understanding undocumented systems. Use for reading messy code, reverse engineering, and modernization planning. Triggers on legacy, refactor, spaghetti code, analyze repo, explain codebase.",
+      "skills": [
+        "clean-code",
+        "refactoring-patterns",
+        "code-review-checklist"
+      ],
+      "file": ".agent/agents\\code-archaeologist.md"
+    },
+    {
+      "name": "code-architect",
+      "description": "Designs feature architectures by analyzing existing codebase patterns and conventions, then providing implementation blueprints with concrete files, interfaces, data flow, and build order.",
+      "skills": [],
+      "file": ".agent/agents\\code-architect.md"
+    },
+    {
+      "name": "code-explorer",
+      "description": "Deeply analyzes existing codebase features by tracing execution paths, mapping architecture layers, and documenting dependencies to inform new development.",
+      "skills": [],
+      "file": ".agent/agents\\code-explorer.md"
+    },
+    {
+      "name": "code-reviewer",
+      "description": "Expert code review specialist. Proactively reviews code for quality, security, and maintainability. Use immediately after writing or modifying code. MUST BE USED for all code changes.",
+      "skills": [],
+      "file": ".agent/agents\\code-reviewer.md"
+    },
+    {
+      "name": "code-simplifier",
+      "description": "Simplifies and refines code for clarity, consistency, and maintainability while preserving behavior. Focus on recently modified code unless instructed otherwise.",
+      "skills": [],
+      "file": ".agent/agents\\code-simplifier.md"
+    },
+    {
+      "name": "comment-analyzer",
+      "description": "Analyze code comments for accuracy, completeness, maintainability, and comment rot risk.",
+      "skills": [],
+      "file": ".agent/agents\\comment-analyzer.md"
+    },
+    {
+      "name": "commit-reviewer",
+      "description": "Reviews a staged diff and drafts a Conventional Commits-compliant message matching the repository's actual history norms. Use before committing, or when asked to write or check a commit message.",
+      "skills": [],
+      "file": ".agent/agents\\commit-reviewer.md"
+    },
+    {
+      "name": "conversation-analyzer",
+      "description": "Use this agent when analyzing conversation transcripts to find behaviors worth preventing with hooks. Triggered by /hookify without arguments.",
+      "skills": [],
+      "file": ".agent/agents\\conversation-analyzer.md"
+    },
+    {
+      "name": "coordinator",
+      "description": "",
+      "skills": [],
+      "file": ".agent/agents\\coordinator.md"
+    },
+    {
+      "name": "cpp-build-resolver",
+      "description": "C++ build, CMake, and compilation error resolution specialist. Fixes build errors, linker issues, and template errors with minimal changes. Use when C++ builds fail.",
+      "skills": [],
+      "file": ".agent/agents\\cpp-build-resolver.md"
+    },
+    {
+      "name": "cpp-reviewer",
+      "description": "Expert C++ code reviewer specializing in memory safety, modern C++ idioms, concurrency, and performance. Use for all C++ code changes. MUST BE USED for C++ projects.",
+      "skills": [],
+      "file": ".agent/agents\\cpp-reviewer.md"
+    },
+    {
+      "name": "csharp-reviewer",
+      "description": "Expert C# code reviewer specializing in .NET conventions, async patterns, security, nullable reference types, and performance. Use for all C# code changes. MUST BE USED for C# projects.",
+      "skills": [],
+      "file": ".agent/agents\\csharp-reviewer.md"
+    },
+    {
+      "name": "dart-build-resolver",
+      "description": "Dart/Flutter build, analysis, and dependency error resolution specialist. Fixes `dart analyze` errors, Flutter compilation failures, pub dependency conflicts, and build_runner issues with minimal, surgical changes. Use when Dart/Flutter builds fail.",
+      "skills": [],
+      "file": ".agent/agents\\dart-build-resolver.md"
+    },
+    {
+      "name": "database-architect",
+      "description": "Expert database architect for schema design, query optimization, migrations, and modern serverless databases. Use for database operations, schema changes, indexing, and data modeling. Triggers on database, sql, schema, migration, query, postgres, index, table.",
+      "skills": [
+        "clean-code",
+        "database-design"
+      ],
+      "file": ".agent/agents\\database-architect.md"
+    },
+    {
+      "name": "database-reviewer",
+      "description": "PostgreSQL database specialist for query optimization, schema design, security, and performance. Use PROACTIVELY when writing SQL, creating migrations, designing schemas, or troubleshooting database performance. Incorporates Supabase best practices.",
+      "skills": [
+        "`postgres-patterns` and `database-migrations`."
+      ],
+      "file": ".agent/agents\\database-reviewer.md"
+    },
+    {
+      "name": "debugger",
+      "description": "Expert in systematic debugging, root cause analysis, and crash investigation. Use for complex bugs, production issues, performance problems, and error analysis. Triggers on bug, error, crash, not working, broken, investigate, fix.",
+      "skills": [
+        "clean-code",
+        "systematic-debugging"
+      ],
+      "file": ".agent/agents\\debugger.md"
+    },
+    {
+      "name": "devops-engineer",
+      "description": "Expert in deployment, server management, CI/CD, and production operations. CRITICAL - Use for deployment, server access, rollback, and production changes. HIGH RISK operations. Triggers on deploy, production, server, pm2, ssh, release, rollback, ci/cd.",
+      "skills": [
+        "clean-code",
+        "deployment-procedures",
+        "server-management",
+        "powershell-windows",
+        "bash-linux"
+      ],
+      "file": ".agent/agents\\devops-engineer.md"
+    },
+    {
+      "name": "django-build-resolver",
+      "description": "Django/Python build, migration, and dependency error resolution specialist. Fixes pip/Poetry errors, migration conflicts, import errors, Django configuration issues, and collectstatic failures with minimal changes. Use when Django setup or startup fails.",
+      "skills": [],
+      "file": ".agent/agents\\django-build-resolver.md"
+    },
+    {
+      "name": "django-reviewer",
+      "description": "Expert Django code reviewer specializing in ORM correctness, DRF patterns, migration safety, security misconfigurations, and production-grade Django practices. Use for all Django code changes. MUST BE USED for Django projects.",
+      "skills": [],
+      "file": ".agent/agents\\django-reviewer.md"
+    },
+    {
+      "name": "doc-updater",
+      "description": "Documentation and codemap specialist. Use PROACTIVELY for updating codemaps and documentation. Generates docs/CODEMAPS/*, updates READMEs and guides. Backs the /update-codemaps and /update-docs commands.",
+      "skills": [],
+      "file": ".agent/agents\\doc-updater.md"
+    },
+    {
+      "name": "docs-lookup",
+      "description": "When the user asks how to use a library, framework, or API or needs up-to-date code examples, use Context7 MCP to fetch current documentation and return answers with examples. Invoke for docs/API/setup questions.",
+      "skills": [],
+      "file": ".agent/agents\\docs-lookup.md"
+    },
+    {
+      "name": "documentation-writer",
+      "description": "Expert in technical documentation. Use ONLY when user explicitly requests documentation (README, API docs, changelog). DO NOT auto-invoke during normal development.",
+      "skills": [
+        "clean-code",
+        "documentation-templates"
+      ],
+      "file": ".agent/agents\\documentation-writer.md"
+    },
+    {
+      "name": "e2e-runner",
+      "description": "End-to-end testing specialist using Vercel Agent Browser (preferred) with Playwright fallback. Use PROACTIVELY for generating, maintaining, and running E2E tests. Manages test journeys, quarantines flaky tests, uploads artifacts (screenshots, videos, traces), and ensures critical user flows work.",
+      "skills": [],
+      "file": ".agent/agents\\e2e-runner.md"
+    },
+    {
+      "name": "explore",
+      "description": "",
+      "skills": [],
+      "file": ".agent/agents\\explore.md"
+    },
+    {
+      "name": "explorer-agent",
+      "description": "Advanced codebase discovery, deep architectural analysis, and proactive research agent. The eyes and ears of the framework. Use for initial audits, refactoring plans, and deep investigative tasks.",
+      "skills": [
+        "clean-code",
+        "architecture",
+        "plan-writing",
+        "brainstorming",
+        "systematic-debugging"
+      ],
+      "file": ".agent/agents\\explorer-agent.md"
+    },
+    {
+      "name": "fastapi-reviewer",
+      "description": "Reviews FastAPI applications for async correctness, dependency injection, Pydantic schemas, security, OpenAPI quality, testing, and production readiness.",
+      "skills": [],
+      "file": ".agent/agents\\fastapi-reviewer.md"
+    },
+    {
+      "name": "flutter-reviewer",
+      "description": "Flutter and Dart code reviewer. Reviews Flutter code for widget best practices, state management patterns, Dart idioms, performance pitfalls, accessibility, and clean architecture violations. Library-agnostic \u2014 works with any state management solution and tooling.",
+      "skills": [],
+      "file": ".agent/agents\\flutter-reviewer.md"
+    },
+    {
+      "name": "frontend-specialist",
+      "description": "Senior Frontend Architect who builds maintainable React/Next.js systems with performance-first mindset. Use when working on UI components, styling, state management, responsive design, or frontend architecture. Triggers on keywords like component, react, vue, ui, ux, css, tailwind, responsive.",
+      "skills": [
+        "clean-code",
+        "react-best-practices",
+        "web-design-guidelines",
+        "tailwind-patterns",
+        "frontend-design",
+        "lint-and-validate"
+      ],
+      "file": ".agent/agents\\frontend-specialist.md"
+    },
+    {
+      "name": "fsharp-reviewer",
+      "description": "Expert F# code reviewer specializing in functional idioms, type safety, pattern matching, computation expressions, and performance. Use for all F# code changes. MUST BE USED for F# projects.",
+      "skills": [],
+      "file": ".agent/agents\\fsharp-reviewer.md"
+    },
+    {
+      "name": "game-developer",
+      "description": "Game development across all platforms (PC, Web, Mobile, VR/AR). Use when building games with Unity, Godot, Unreal, Phaser, Three.js, or any game engine. Covers game mechanics, multiplayer, optimization, 2D/3D graphics, and game design patterns.",
+      "skills": [
+        "clean-code",
+        "game-development",
+        "game-development/pc-games",
+        "game-development/web-games",
+        "game-development/mobile-games",
+        "game-development/game-design",
+        "game-development/multiplayer",
+        "game-development/vr-ar",
+        "game-development/2d-games",
+        "game-development/3d-games",
+        "game-development/game-art",
+        "game-development/game-audio"
+      ],
+      "file": ".agent/agents\\game-developer.md"
+    },
+    {
+      "name": "gan-evaluator",
+      "description": "\"GAN Harness \u2014 Evaluator agent. Tests the live running application via Playwright, scores against rubric, and provides actionable feedback to the Generator.\"",
+      "skills": [],
+      "file": ".agent/agents\\gan-evaluator.md"
+    },
+    {
+      "name": "gan-generator",
+      "description": "\"GAN Harness \u2014 Generator agent. Implements features according to the spec, reads evaluator feedback, and iterates until quality threshold is met.\"",
+      "skills": [],
+      "file": ".agent/agents\\gan-generator.md"
+    },
+    {
+      "name": "gan-planner",
+      "description": "\"GAN Harness \u2014 Planner agent. Expands a one-line prompt into a full product specification with features, sprints, evaluation criteria, and design direction.\"",
+      "skills": [],
+      "file": ".agent/agents\\gan-planner.md"
+    },
+    {
+      "name": "general",
+      "description": "SESSION_TIMEOUT lives in src/auth/session.ts:23, tested at line 47",
+      "skills": [],
+      "file": ".agent/agents\\general.md"
+    },
+    {
+      "name": "go-build-resolver",
+      "description": "Go build, vet, and compilation error resolution specialist. Fixes build errors, go vet issues, and linter warnings with minimal changes. Use when Go builds fail.",
+      "skills": [],
+      "file": ".agent/agents\\go-build-resolver.md"
+    },
+    {
+      "name": "go-reviewer",
+      "description": "Expert Go code reviewer specializing in idiomatic Go, concurrency patterns, error handling, and performance. Use for all Go code changes. MUST BE USED for Go projects.",
+      "skills": [],
+      "file": ".agent/agents\\go-reviewer.md"
+    },
+    {
+      "name": "harmonyos-app-resolver",
+      "description": "HarmonyOS application development expert specializing in ArkTS and ArkUI. Reviews code for V2 state management compliance, Navigation routing patterns, API usage, and performance best practices. Use for HarmonyOS/OpenHarmony projects.",
+      "skills": [],
+      "file": ".agent/agents\\harmonyos-app-resolver.md"
+    },
+    {
+      "name": "harness-optimizer",
+      "description": "Improve local agent-harness configuration reliability and cost using eval-driven grading (pass@k/pass^k) derived from the eval-harness skill.",
+      "skills": [],
+      "file": ".agent/agents\\harness-optimizer.md"
+    },
+    {
+      "name": "healthcare-reviewer",
+      "description": "Reviews healthcare application code for clinical safety, CDSS accuracy, PHI compliance, and medical data integrity. Specialized for EMR/EHR, clinical decision support, and health information systems.",
+      "skills": [],
+      "file": ".agent/agents\\healthcare-reviewer.md"
+    },
+    {
+      "name": "homelab-architect",
+      "description": "Designs home and small-lab network plans from hardware inventory, goals, and operator experience level, with safe staged changes and rollback guidance.",
+      "skills": [],
+      "file": ".agent/agents\\homelab-architect.md"
+    },
+    {
+      "name": "java-build-resolver",
+      "description": "Java/Maven/Gradle build, compilation, and dependency error resolution specialist. Automatically detects Spring Boot or Quarkus and applies framework-specific fixes. Fixes build errors, Java compiler errors, and Maven/Gradle issues with minimal changes. Use when Java builds fail.",
+      "skills": [],
+      "file": ".agent/agents\\java-build-resolver.md"
+    },
+    {
+      "name": "java-reviewer",
+      "description": "Expert Java code reviewer for Spring Boot and Quarkus projects. Automatically detects the framework and applies the appropriate review rules. Covers layered architecture, JPA/Panache, MongoDB, security, and concurrency. MUST BE USED for all Java code changes.",
+      "skills": [],
+      "file": ".agent/agents\\java-reviewer.md"
+    },
+    {
+      "name": "kotlin-build-resolver",
+      "description": "Kotlin/Gradle build, compilation, and dependency error resolution specialist. Fixes build errors, Kotlin compiler errors, and Gradle issues with minimal changes. Use when Kotlin builds fail.",
+      "skills": [],
+      "file": ".agent/agents\\kotlin-build-resolver.md"
+    },
+    {
+      "name": "kotlin-reviewer",
+      "description": "Kotlin and Android/KMP code reviewer. Reviews Kotlin code for idiomatic patterns, coroutine safety, Compose best practices, clean architecture violations, and common Android pitfalls.",
+      "skills": [],
+      "file": ".agent/agents\\kotlin-reviewer.md"
+    },
+    {
+      "name": "loop-operator",
+      "description": "Operate autonomous agent loops, monitor progress, and intervene safely when loops stall.",
+      "skills": [],
+      "file": ".agent/agents\\loop-operator.md"
+    },
+    {
+      "name": "marketing-agent",
+      "description": "Marketing strategist and copywriter for campaign planning, audience research, positioning, copy creation, and content review. Covers landing pages, email sequences, social posts, ad copy, short-form video scripts, and content calendars. Use when the user wants to plan or execute a product launch or marketing campaign.",
+      "skills": [],
+      "file": ".agent/agents\\marketing-agent.md"
+    },
+    {
+      "name": "mle-reviewer",
+      "description": "Production machine-learning engineering reviewer for data contracts, feature pipelines, training reproducibility, offline/online evaluation, model serving, monitoring, and rollback. Use when ML, MLOps, model training, inference, feature store, or evaluation code changes.",
+      "skills": [],
+      "file": ".agent/agents\\mle-reviewer.md"
+    },
+    {
+      "name": "mobile-developer",
+      "description": "Expert in React Native and Flutter mobile development. Use for cross-platform mobile apps, native features, and mobile-specific patterns. Triggers on mobile, react native, flutter, ios, android, app store, expo.",
+      "skills": [
+        "clean-code",
+        "mobile-design"
+      ],
+      "file": ".agent/agents\\mobile-developer.md"
+    },
+    {
+      "name": "network-architect",
+      "description": "Designs enterprise or multi-site network architecture from requirements, using existing network skills for focused routing, validation, automation, and troubleshooting detail.",
+      "skills": [],
+      "file": ".agent/agents\\network-architect.md"
+    },
+    {
+      "name": "network-config-reviewer",
+      "description": "Reviews router and switch configurations for security, correctness, stale references, risky change-window commands, and missing operational guardrails.",
+      "skills": [],
+      "file": ".agent/agents\\network-config-reviewer.md"
+    },
+    {
+      "name": "network-troubleshooter",
+      "description": "Diagnoses network connectivity, routing, DNS, interface, and policy symptoms with a read-only OSI-layer workflow and evidence-backed root cause summary.",
+      "skills": [],
+      "file": ".agent/agents\\network-troubleshooter.md"
+    },
+    {
+      "name": "opensource-forker",
+      "description": "Fork any project for open-sourcing. Copies files, strips secrets and credentials (20+ patterns), replaces internal references with placeholders, generates .env.example, and cleans git history. First stage of the opensource-pipeline skill.",
+      "skills": [],
+      "file": ".agent/agents\\opensource-forker.md"
+    },
+    {
+      "name": "opensource-packager",
+      "description": "Generate complete open-source packaging for a sanitized project. Produces CLAUDE.md, setup.sh, README.md, LICENSE, CONTRIBUTING.md, and GitHub issue templates. Makes any repo immediately usable with Claude Code. Third stage of the opensource-pipeline skill.",
+      "skills": [],
+      "file": ".agent/agents\\opensource-packager.md"
+    },
+    {
+      "name": "opensource-sanitizer",
+      "description": "Verify an open-source fork is fully sanitized before release. Scans for leaked secrets, PII, internal references, and dangerous files using 20+ regex patterns. Generates a PASS/FAIL/PASS-WITH-WARNINGS report. Second stage of the opensource-pipeline skill. Use PROACTIVELY before any public release.",
+      "skills": [],
+      "file": ".agent/agents\\opensource-sanitizer.md"
+    },
+    {
+      "name": "orchestrator",
+      "description": "Multi-agent coordination and task orchestration. Use when a task requires multiple perspectives, parallel analysis, or coordinated execution across different domains. Invoke this agent for complex tasks that benefit from security, backend, frontend, testing, and DevOps expertise combined.",
+      "skills": [
+        "clean-code",
+        "parallel-agents",
+        "behavioral-modes",
+        "plan-writing",
+        "brainstorming",
+        "architecture",
+        "lint-and-validate",
+        "powershell-windows",
+        "bash-linux"
+      ],
+      "file": ".agent/agents\\orchestrator.md"
+    },
+    {
+      "name": "penetration-tester",
+      "description": "Expert in offensive security, penetration testing, red team operations, and vulnerability exploitation. Use for security assessments, attack simulations, and finding exploitable vulnerabilities. Triggers on pentest, exploit, attack, hack, breach, pwn, redteam, offensive.",
+      "skills": [
+        "clean-code",
+        "vulnerability-scanner",
+        "red-team-tactics",
+        "api-patterns"
+      ],
+      "file": ".agent/agents\\penetration-tester.md"
+    },
+    {
+      "name": "performance-optimizer",
+      "description": "Performance analysis and optimization specialist. Use PROACTIVELY for identifying bottlenecks, optimizing slow code, reducing bundle sizes, and improving runtime performance. Profiling, memory leaks, render optimization, and algorithmic improvements.",
+      "skills": [],
+      "file": ".agent/agents\\performance-optimizer.md"
+    },
+    {
+      "name": "php-reviewer",
+      "description": "Expert PHP code reviewer specializing in PSR-12 compliance, PHP type system, Eloquent ORM patterns, security, and performance. Use for all PHP code changes. MUST BE USED for PHP projects.",
+      "skills": [
+        "`laravel-patterns`",
+        "`laravel-security`",
+        "`laravel-tdd`."
+      ],
+      "file": ".agent/agents\\php-reviewer.md"
+    },
+    {
+      "name": "plan",
+      "description": "",
+      "skills": [],
+      "file": ".agent/agents\\plan.md"
+    },
+    {
+      "name": "planner",
+      "description": "Expert planning specialist for complex features and refactoring. Use PROACTIVELY when users request feature implementation, architectural changes, or complex refactoring. Automatically activated for planning tasks.",
+      "skills": [],
+      "file": ".agent/agents\\planner.md"
+    },
+    {
+      "name": "pr-test-analyzer",
+      "description": "Review pull request test coverage quality and completeness, with emphasis on behavioral coverage and real bug prevention.",
+      "skills": [],
+      "file": ".agent/agents\\pr-test-analyzer.md"
+    },
+    {
+      "name": "product-manager",
+      "description": "Expert in product requirements, user stories, and acceptance criteria. Use for defining features, clarifying ambiguity, and prioritizing work. Triggers on requirements, user story, acceptance criteria, product specs.",
+      "skills": [
+        "plan-writing",
+        "brainstorming",
+        "clean-code"
+      ],
+      "file": ".agent/agents\\product-manager.md"
+    },
+    {
+      "name": "product-owner",
+      "description": "Strategic facilitator bridging business needs and technical execution. Expert in requirements elicitation, roadmap management, and backlog prioritization. Triggers on requirements, user story, backlog, MVP, PRD, stakeholder.",
+      "skills": [
+        "plan-writing",
+        "brainstorming",
+        "clean-code"
+      ],
+      "file": ".agent/agents\\product-owner.md"
+    },
+    {
+      "name": "project-planner",
+      "description": "Smart project planning agent. Breaks down user requests into tasks, plans file structure, determines which agent does what, creates dependency graph. Use when starting new projects or planning major features.",
+      "skills": [
+        "clean-code",
+        "app-builder",
+        "plan-writing",
+        "brainstorming"
+      ],
+      "file": ".agent/agents\\project-planner.md"
+    },
+    {
+      "name": "python-reviewer",
+      "description": "Expert Python code reviewer specializing in PEP 8 compliance, Pythonic idioms, type hints, security, and performance. Use for all Python code changes. MUST BE USED for Python projects.",
+      "skills": [],
+      "file": ".agent/agents\\python-reviewer.md"
+    },
+    {
+      "name": "pytorch-build-resolver",
+      "description": "PyTorch runtime, CUDA, and training error resolution specialist. Fixes tensor shape mismatches, device errors, gradient issues, DataLoader problems, and mixed precision failures with minimal changes. Use when PyTorch training or inference crashes.",
+      "skills": [],
+      "file": ".agent/agents\\pytorch-build-resolver.md"
+    },
+    {
+      "name": "qa-automation-engineer",
+      "description": "Specialist in test automation infrastructure and E2E testing. Focuses on Playwright, Cypress, CI pipelines, and breaking the system. Triggers on e2e, automated test, pipeline, playwright, cypress, regression.",
+      "skills": [
+        "webapp-testing",
+        "testing-patterns",
+        "web-design-guidelines",
+        "clean-code",
+        "lint-and-validate"
+      ],
+      "file": ".agent/agents\\qa-automation-engineer.md"
+    },
+    {
+      "name": "rag-pipeline-reviewer",
+      "description": "Reviews RAG (Retrieval-Augmented Generation) pipelines for retrieval quality, chunking strategy, embedding choices, and evaluation coverage. Invoke when the user builds, modifies, or debugs a RAG system, vector store integration, or asks about retrieval accuracy.",
+      "skills": [],
+      "file": ".agent/agents\\rag-pipeline-reviewer.md"
+    },
+    {
+      "name": "react-build-resolver",
+      "description": "Diagnose and fix React build failures across Vite, webpack, Next.js, CRA, Parcel, esbuild, and Bun. Handles JSX/TSX compile errors, hydration mismatches, server/client component boundary failures, missing types, and bundler-specific configuration issues with minimal, surgical changes. MUST BE USED when a React build fails.",
+      "skills": [],
+      "file": ".agent/agents\\react-build-resolver.md"
+    },
+    {
+      "name": "react-reviewer",
+      "description": "Expert React/JSX code reviewer specializing in hook correctness, render performance, server/client component boundaries, accessibility, and React-specific security. Use for any change touching .tsx/.jsx files or React component logic. MUST BE USED for React projects.",
+      "skills": [],
+      "file": ".agent/agents\\react-reviewer.md"
+    },
+    {
+      "name": "refactor-cleaner",
+      "description": "Dead code cleanup and consolidation specialist. Use PROACTIVELY for removing unused code, duplicates, and refactoring. Runs analysis tools (knip, depcheck, ts-prune) to identify dead code and safely removes it.",
+      "skills": [],
+      "file": ".agent/agents\\refactor-cleaner.md"
+    },
+    {
+      "name": "ruby-reviewer",
+      "description": "Expert Ruby and Rails code reviewer specializing in idiomatic Ruby, Active Record query safety, Rails security defaults, and RSpec/Minitest quality. Use for all Ruby code changes. MUST BE USED for Ruby and Rails projects.",
+      "skills": [],
+      "file": ".agent/agents\\ruby-reviewer.md"
+    },
+    {
+      "name": "rust-build-resolver",
+      "description": "Rust build, compilation, and dependency error resolution specialist. Fixes cargo build errors, borrow checker issues, and Cargo.toml problems with minimal changes. Use when Rust builds fail.",
+      "skills": [],
+      "file": ".agent/agents\\rust-build-resolver.md"
+    },
+    {
+      "name": "rust-reviewer",
+      "description": "Expert Rust code reviewer specializing in ownership, lifetimes, error handling, unsafe usage, and idiomatic patterns. Use for all Rust code changes. MUST BE USED for Rust projects.",
+      "skills": [],
+      "file": ".agent/agents\\rust-reviewer.md"
+    },
+    {
+      "name": "security-auditor",
+      "description": "Elite cybersecurity expert. Think like an attacker, defend like an expert. OWASP 2025, supply chain security, zero trust architecture. Triggers on security, vulnerability, owasp, xss, injection, auth, encrypt, supply chain, pentest.",
+      "skills": [
+        "clean-code",
+        "vulnerability-scanner",
+        "red-team-tactics",
+        "api-patterns"
+      ],
+      "file": ".agent/agents\\security-auditor.md"
+    },
+    {
+      "name": "security-reviewer",
+      "description": "Security vulnerability detection and remediation specialist. Use PROACTIVELY after writing code that handles user input, authentication, API endpoints, or sensitive data. Flags secrets, SSRF, injection, unsafe crypto, and OWASP Top 10 vulnerabilities.",
+      "skills": [],
+      "file": ".agent/agents\\security-reviewer.md"
+    },
+    {
+      "name": "seo-specialist",
+      "description": "SEO specialist for technical SEO audits, on-page optimization, structured data, Core Web Vitals, and content/keyword mapping. Use for site audits, meta tag reviews, schema markup, sitemap and robots issues, and SEO remediation plans.",
+      "skills": [],
+      "file": ".agent/agents\\seo-specialist.md"
+    },
+    {
+      "name": "silent-failure-hunter",
+      "description": "Review code for silent failures, swallowed errors, bad fallbacks, and missing error propagation.",
+      "skills": [],
+      "file": ".agent/agents\\silent-failure-hunter.md"
+    },
+    {
+      "name": "spec-miner",
+      "description": "Extracts behavioral specs from existing codebases for OpenSpec. Produces flat Requirement and Invariant blocks with structured metadata (entities, enforced, id, test anchors). Outputs openspec/specs/<capability>/spec.md. Fully self-bootstrapping \u2014 no dependency on codebase-onboarding. Use when onboarding a brownfield project to spec-driven development.",
+      "skills": [],
+      "file": ".agent/agents\\spec-miner.md"
+    },
+    {
+      "name": "swift-build-resolver",
+      "description": "Swift/Xcode build, compilation, and dependency error resolution specialist. Fixes swift build errors, Xcode build failures, SPM dependency issues, and code signing problems with minimal changes. Use when Swift builds fail.",
+      "skills": [],
+      "file": ".agent/agents\\swift-build-resolver.md"
+    },
+    {
+      "name": "swift-reviewer",
+      "description": "Expert Swift code reviewer specializing in protocol-oriented design, value semantics, ARC memory management, Swift Concurrency, and idiomatic patterns. Use for all Swift code changes. MUST BE USED for Swift projects.",
+      "skills": [],
+      "file": ".agent/agents\\swift-reviewer.md"
+    },
+    {
+      "name": "tdd-guide",
+      "description": "Test-Driven Development specialist enforcing write-tests-first methodology. Use PROACTIVELY when writing new features, fixing bugs, or refactoring code. Ensures 80%+ test coverage.",
+      "skills": [],
+      "file": ".agent/agents\\tdd-guide.md"
+    },
+    {
+      "name": "test-engineer",
+      "description": "Expert in testing, TDD, and test automation. Use for writing tests, improving coverage, debugging test failures. Triggers on test, spec, coverage, jest, pytest, playwright, e2e, unit test.",
+      "skills": [
+        "clean-code",
+        "testing-patterns",
+        "tdd-workflow",
+        "webapp-testing",
+        "code-review-checklist",
+        "lint-and-validate"
+      ],
+      "file": ".agent/agents\\test-engineer.md"
+    },
+    {
+      "name": "type-design-analyzer",
+      "description": "Analyze type design for encapsulation, invariant expression, usefulness, and enforcement.",
+      "skills": [],
+      "file": ".agent/agents\\type-design-analyzer.md"
+    },
+    {
+      "name": "typescript-reviewer",
+      "description": "Expert TypeScript/JavaScript code reviewer specializing in type safety, async correctness, Node/web security, and idiomatic patterns. Use for all TypeScript and JavaScript code changes. MUST BE USED for TypeScript/JavaScript projects.",
+      "skills": [],
+      "file": ".agent/agents\\typescript-reviewer.md"
+    },
+    {
+      "name": "verify",
+      "description": "",
+      "skills": [],
+      "file": ".agent/agents\\verify.md"
+    },
+    {
+      "name": "vue-reviewer",
+      "description": "Expert Vue.js code reviewer specializing in Composition API correctness, reactivity pitfalls, component architecture, template security, and Vue-specific performance. Use for any change touching .vue, .ts/.js files with Vue imports, or Vue ecosystem code (Pinia, Vue Router, Nuxt). MUST BE USED for Vue projects.",
+      "skills": [],
+      "file": ".agent/agents\\vue-reviewer.md"
+    }
+  ],
+  "skills_count": 350,
+  "skills": [
+    "accessibility",
+    "agent-architecture-audit",
+    "agent-eval",
+    "agent-harness-construction",
+    "agent-introspection-debugging",
+    "agent-payment-x402",
+    "agent-runtime-gateway-smoke-test",
+    "agent-security-hardening",
+    "agent-self-evaluation",
+    "agent-sort",
+    "agentic-engineering",
+    "agentic-os",
+    "ai-first-engineering",
+    "ai-regression-testing",
+    "android-clean-architecture",
+    "angular-developer",
+    "api-connector-builder",
+    "api-design",
+    "api-patterns",
+    "app-builder",
+    "architecture",
+    "architecture-decision-records",
+    "article-writing",
+    "automation-audit-ops",
+    "autonomous-agent-harness",
+    "autonomous-loops",
+    "backend-patterns",
+    "bash-linux",
+    "behavioral-modes",
+    "benchmark",
+    "benchmark-methodology",
+    "benchmark-optimization-loop",
+    "bengali-nlp",
+    "blender-motion-state-inspection",
+    "blueprint",
+    "brainstorming",
+    "brand-discovery",
+    "brand-voice",
+    "brownfield-retrospective",
+    "browser-qa",
+    "bun-runtime",
+    "canary-watch",
+    "carrier-relationship-management",
+    "change-impact",
+    "cisco-ios-patterns",
+    "ck",
+    "claude-devfleet",
+    "clean-code",
+    "click-path-audit",
+    "clickhouse-io",
+    "code-review-checklist",
+    "code-tour",
+    "codebase-onboarding",
+    "codehealth-mcp",
+    "coding-standards",
+    "competitive-platform-analysis",
+    "competitive-report-structure",
+    "compose-multiplatform-patterns",
+    "config-gc",
+    "configure-ecc",
+    "connections-optimizer",
+    "content-engine",
+    "content-hash-cache-pattern",
+    "context-and-decisions",
+    "context-budget",
+    "continuous-agent-loop",
+    "continuous-learning",
+    "continuous-learning-v2",
+    "contract-first",
+    "conventional-commit-review",
+    "cost-aware-llm-pipeline",
+    "cost-tracking",
+    "council",
+    "council-multi-model",
+    "counterparty-channel-discipline",
+    "cpp-coding-standards",
+    "cpp-testing",
+    "crosspost",
+    "csharp-testing",
+    "customer-billing-ops",
+    "customs-trade-compliance",
+    "dart-flutter-patterns",
+    "dashboard-builder",
+    "data-scraper-agent",
+    "data-throughput-accelerator",
+    "database-design",
+    "database-migrations",
+    "deep-research",
+    "deepseek-harness-setup",
+    "defi-amm-security",
+    "delivery-gate",
+    "deployment-patterns",
+    "deployment-procedures",
+    "design-system",
+    "dev-team",
+    "django-celery",
+    "django-patterns",
+    "django-security",
+    "django-tdd",
+    "django-verification",
+    "dmux-workflows",
+    "docker-patterns",
+    "docs-governance",
+    "documentation-lookup",
+    "documentation-templates",
+    "dotnet-patterns",
+    "dynamic-workflow-mode",
+    "e2e-testing",
+    "ecc-conventions",
+    "ecc-guide",
+    "ecc-recipes",
+    "ecc-tools-cost-audit",
+    "email-ops",
+    "energy-procurement",
+    "enterprise-agent-ops",
+    "error-handling",
+    "esign-field-placement",
+    "eval-harness",
+    "evm-token-decimals",
+    "exa-search",
+    "fal-ai-media",
+    "fastapi-patterns",
+    "finance-billing-ops",
+    "flox-environments",
+    "flutter-dart-code-review",
+    "foundation-models-on-device",
+    "frontend-a11y",
+    "frontend-design",
+    "frontend-design-direction",
+    "frontend-patterns",
+    "frontend-slides",
+    "fsharp-testing",
+    "game-development",
+    "gan-style-harness",
+    "gateguard",
+    "generating-python-installer",
+    "geo-fundamentals",
+    "git-workflow",
+    "github-ops",
+    "golang-patterns",
+    "golang-testing",
+    "google-workspace-ops",
+    "growth-log",
+    "healthcare-cdss-patterns",
+    "healthcare-emr-patterns",
+    "healthcare-eval-harness",
+    "healthcare-phi-compliance",
+    "hermes-imports",
+    "hexagonal-architecture",
+    "hipaa-compliance",
+    "homelab-network-readiness",
+    "homelab-network-setup",
+    "homelab-pihole-dns",
+    "homelab-vlan-segmentation",
+    "homelab-wireguard-vpn",
+    "hookify-rules",
+    "i18n-localization",
+    "i18n-sync",
+    "inherit-legacy-style",
+    "intelligent-routing",
+    "intent-driven-development",
+    "inventory-demand-planning",
+    "investor-materials",
+    "investor-outreach",
+    "ios-icon-gen",
+    "issue-review",
+    "iterative-retrieval",
+    "ito-baskets",
+    "ito-compute",
+    "ito-inference",
+    "ito-training",
+    "java-coding-standards",
+    "jira-integration",
+    "jpa-patterns",
+    "knowledge-ops",
+    "kotlin-coroutines-flows",
+    "kotlin-exposed-patterns",
+    "kotlin-ktor-patterns",
+    "kotlin-patterns",
+    "kotlin-testing",
+    "kubernetes-patterns",
+    "laravel-patterns",
+    "laravel-plugin-discovery",
+    "laravel-security",
+    "laravel-tdd",
+    "laravel-verification",
+    "latency-critical-systems",
+    "lead-intelligence",
+    "lint-and-validate",
+    "liquid-glass-design",
+    "living-docs-governance",
+    "llm-trading-agent-security",
+    "logistics-exception-management",
+    "loop-design-check",
+    "mailtrap-email-integration",
+    "make-interfaces-feel-better",
+    "manim-video",
+    "market-research",
+    "marketing-campaign",
+    "master-agreement-generator",
+    "mcp-builder",
+    "mcp-dependency-review",
+    "mcp-server-patterns",
+    "messages-ops",
+    "ml-adoption-playbook",
+    "mle-workflow",
+    "mobile-design",
+    "module-governance",
+    "module-regression",
+    "motion-advanced",
+    "motion-foundations",
+    "motion-patterns",
+    "mybatis-patterns",
+    "mysql-patterns",
+    "nanoclaw-repl",
+    "nasiko-control-plane",
+    "nestjs-patterns",
+    "netmiko-ssh-automation",
+    "network-bgp-diagnostics",
+    "network-config-validation",
+    "network-interface-health",
+    "nextjs-react-expert",
+    "nextjs-turbopack",
+    "nodejs-best-practices",
+    "nodejs-keccak256",
+    "nutrient-document-processing",
+    "nuxt4-patterns",
+    "openclaw-persona-forge",
+    "opensource-pipeline",
+    "operator-approval-loop",
+    "orch-add-feature",
+    "orch-build-mvp",
+    "orch-change-feature",
+    "orch-fix-defect",
+    "orch-pipeline",
+    "orch-refine-code",
+    "osint-investigation",
+    "parallel-agents",
+    "parallel-execution-optimizer",
+    "performance-profiling",
+    "perl-patterns",
+    "perl-security",
+    "perl-testing",
+    "plan-canvas",
+    "plan-orchestrate",
+    "plan-writing",
+    "plankton-code-quality",
+    "postgres-patterns",
+    "powershell-windows",
+    "prediction-market-oracle-research",
+    "prediction-market-risk-review",
+    "prisma-patterns",
+    "product-capability",
+    "product-lens",
+    "production-audit",
+    "production-scheduling",
+    "project-flow-ops",
+    "prompt-caching-strategy",
+    "prompt-optimizer",
+    "python-patterns",
+    "python-testing",
+    "pytorch-patterns",
+    "quality-nonconformance",
+    "quarkus-patterns",
+    "quarkus-security",
+    "quarkus-tdd",
+    "quarkus-verification",
+    "rails-patterns",
+    "ralphinho-rfc-pipeline",
+    "react-native-patterns",
+    "react-patterns",
+    "react-performance",
+    "react-testing",
+    "recsys-pipeline-architect",
+    "recursive-decision-ledger",
+    "red-team-tactics",
+    "redis-patterns",
+    "regex-vs-llm-structured-text",
+    "remotion-video-creation",
+    "repo-scan",
+    "research-ops",
+    "returns-reverse-logistics",
+    "rules-distill",
+    "rust-patterns",
+    "rust-pro",
+    "rust-testing",
+    "safety-guard",
+    "santa-method",
+    "scientific-db-pubmed-database",
+    "scientific-db-uspto-database",
+    "scientific-pkg-gget",
+    "scientific-thinking-literature-review",
+    "scientific-thinking-scholar-evaluation",
+    "search-first",
+    "security-bounty-hunter",
+    "security-review",
+    "security-scan",
+    "seo",
+    "seo-fundamentals",
+    "server-management",
+    "skill-comply",
+    "skill-host-compat",
+    "skill-scout",
+    "skill-stocktake",
+    "social-graph-ranker",
+    "social-publisher",
+    "springboot-patterns",
+    "springboot-security",
+    "springboot-tdd",
+    "springboot-verification",
+    "story-lifecycle",
+    "strategic-compact",
+    "swift-actor-persistence",
+    "swift-concurrency-6-2",
+    "swift-protocol-di-testing",
+    "swiftui-patterns",
+    "systematic-debugging",
+    "tailwind-patterns",
+    "taste",
+    "taste-application",
+    "taste-distillation",
+    "tasteforge-video",
+    "tdd-workflow",
+    "team-agent-orchestration",
+    "team-builder",
+    "terminal-opener",
+    "terminal-ops",
+    "test-collaboration",
+    "testing-patterns",
+    "tinystruct-patterns",
+    "token-budget-advisor",
+    "token-card",
+    "typescript-patterns",
+    "ui-demo",
+    "ui-to-vue",
+    "uncloud",
+    "unified-memory",
+    "unified-notifications-ops",
+    "verification-loop",
+    "video-editing",
+    "videodb",
+    "visa-doc-translate",
+    "vite-patterns",
+    "vue-patterns",
+    "vulnerability-scanner",
+    "web-design-guidelines",
+    "webapp-testing",
+    "windows-desktop-e2e",
+    "workspace-surface-audit",
+    "x-api"
+  ]
+}

@@ -1,3 +1,11 @@
+---
+name: verify
+description: Adversarial verification agent. Validates test suites, claims, and produces deterministic VERDICT PASS or FAIL.
+tools: Read, Grep, Glob, Bash
+model: inherit
+skills: clean-code, verification-before-completion
+---
+
 # Agent: Verify
 
 **Role:** Adversarial verification. Produce VERDICT: PASS or VERDICT: FAIL.

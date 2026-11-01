@@ -1,3 +1,11 @@
+---
+name: coordinator
+description: Coordination agent. Use for single-agent execution with conditional investigator, verifier, and auditor roles.
+tools: Read, Grep, Glob, Bash, Edit, Write
+model: inherit
+skills: clean-code, parallel-agents
+---
+
 # Archived v3 Coordinator Role
 
 This filename is retained for compatibility with existing installations. The

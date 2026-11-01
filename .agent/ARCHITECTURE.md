@@ -6,11 +6,12 @@
 
 ## 📋 Overview
 
-Antigravity Kit is a modular system consisting of:
+Antigravity Kit is a comprehensive AI engineering system consisting of:
 
-- **20 Specialist Agents** - Role-based AI personas
-- **36 Skills** - Domain-specific knowledge modules
-- **11 Workflows** - Slash command procedures
+- **94 Specialist Agents** - Role-based AI specialist personas across 10 engineering domains
+- **350+ Skills** - Domain-specific patterns, testing frameworks, and knowledge modules
+- **11 Workflows** - Slash command guided procedures
+- **Intelligent Prompt Trigger Engine** - Automated agent and skill selection based on prompt intent
 
 ---
 
@@ -18,44 +19,54 @@ Antigravity Kit is a modular system consisting of:
 
 ```plaintext
 .agent/
-├── ARCHITECTURE.md          # This file
-├── agents/                  # 20 Specialist Agents
-├── skills/                  # 36 Skills
-├── workflows/               # 11 Slash Commands
-├── rules/                   # Global Rules
-└── scripts/                 # Master Validation Scripts
+├── ARCHITECTURE.md          # Architecture overview & catalog
+├── PROMPT-TEMPLATE.md       # Prompt practices and trigger guide
+├── SKILL.md                 # Gravitas runtime invariants
+├── agents/                  # 94 Specialist Agent Personas
+├── skills/                  # 350+ Domain Skills
+├── workflows/               # 11 Slash Command Workflows
+├── rules/                   # Workspace Rules & Trigger Matrix
+└── scripts/                 # Validation & Testing Suites
 ```
 
 ---
 
-## 🤖 Agents (20)
+## 🤖 Specialist Agents (94 Across 10 Domains)
 
-Specialist AI personas for different domains.
+Specialist AI personas equipped with specialized rule sets, frontmatter skills, and prompt triggers:
 
-| Agent                    | Focus                      | Skills Used                                              |
-| ------------------------ | -------------------------- | -------------------------------------------------------- |
-| `orchestrator`           | Multi-agent coordination   | parallel-agents, behavioral-modes                        |
-| `project-planner`        | Discovery, task planning   | brainstorming, plan-writing, architecture                |
-| `frontend-specialist`    | Web UI/UX                  | frontend-design, react-best-practices, tailwind-patterns |
-| `backend-specialist`     | API, business logic        | api-patterns, nodejs-best-practices, database-design     |
-| `database-architect`     | Schema, SQL                | database-design, prisma-expert                           |
-| `mobile-developer`       | iOS, Android, RN           | mobile-design                                            |
-| `game-developer`         | Game logic, mechanics      | game-development                                         |
-| `devops-engineer`        | CI/CD, Docker              | deployment-procedures, docker-expert                     |
-| `security-auditor`       | Security compliance        | vulnerability-scanner, red-team-tactics                  |
-| `penetration-tester`     | Offensive security         | red-team-tactics                                         |
-| `test-engineer`          | Testing strategies         | testing-patterns, tdd-workflow, webapp-testing           |
-| `debugger`               | Root cause analysis        | systematic-debugging                                     |
-| `performance-optimizer`  | Speed, Web Vitals          | performance-profiling                                    |
-| `seo-specialist`         | Ranking, visibility        | seo-fundamentals, geo-fundamentals                       |
-| `documentation-writer`   | Manuals, docs              | documentation-templates                                  |
-| `product-manager`        | Requirements, user stories | plan-writing, brainstorming                              |
-| `product-owner`          | Strategy, backlog, MVP     | plan-writing, brainstorming                              |
-| `qa-automation-engineer` | E2E testing, CI pipelines  | webapp-testing, testing-patterns                         |
-| `code-archaeologist`     | Legacy code, refactoring   | clean-code, code-review-checklist                        |
-| `explorer-agent`         | Codebase analysis          | -                                                        |
+### 1. Frontend & UI (11 Agents)
+`frontend-specialist`, `react-reviewer`, `react-build-resolver`, `vue-reviewer`, `a11y-architect`
+
+### 2. Mobile & Cross-Platform (6 Agents)
+`mobile-developer`, `flutter-reviewer`, `dart-build-resolver`, `swift-reviewer`, `swift-build-resolver`, `harmonyos-app-resolver`
+
+### 3. Backend & Languages (20 Agents)
+`backend-specialist`, `python-reviewer`, `fastapi-reviewer`, `django-reviewer`, `django-build-resolver`, `go-reviewer`, `go-build-resolver`, `rust-reviewer`, `rust-build-resolver`, `java-reviewer`, `java-build-resolver`, `kotlin-reviewer`, `kotlin-build-resolver`, `typescript-reviewer`, `csharp-reviewer`, `fsharp-reviewer`, `cpp-reviewer`, `cpp-build-resolver`, `php-reviewer`, `ruby-reviewer`
+
+### 4. Database & Storage (2 Agents)
+`database-architect`, `database-reviewer`
+
+### 5. DevOps, Cloud & Network (5 Agents)
+`devops-engineer`, `network-architect`, `network-config-reviewer`, `network-troubleshooter`, `homelab-architect`
+
+### 6. Cybersecurity & Penetration Testing (3 Agents)
+`security-auditor`, `security-reviewer`, `penetration-tester`
+
+### 7. Testing, QA, Debugging & Verification (9 Agents)
+`test-engineer`, `debugger`, `tdd-guide`, `qa-automation-engineer`, `e2e-runner`, `build-error-resolver`, `silent-failure-hunter`, `pr-test-analyzer`, `verify`
+
+### 8. Architecture, Quality & Refactoring (10 Agents)
+`architect`, `code-architect`, `code-reviewer`, `code-simplifier`, `refactor-cleaner`, `code-archaeologist`, `type-design-analyzer`, `commit-reviewer`, `comment-analyzer`, `spec-miner`
+
+### 9. Exploration, Documentation & Planning (9 Agents)
+`explore`, `explorer-agent`, `code-explorer`, `doc-updater`, `docs-lookup`, `documentation-writer`, `conversation-analyzer`, `project-planner`, `product-manager`, `product-owner`
+
+### 10. Specialized Domains & Data Intelligence (19 Agents)
+`game-developer`, `seo-specialist`, `performance-optimizer`, `mle-reviewer`, `pytorch-build-resolver`, `rag-pipeline-reviewer`, `marketing-agent`, `healthcare-reviewer`, `bengali-reviewer`, `orchestrator`, `coordinator`, `plan`, `planner`, `chief-of-staff`, `loop-operator`, `agent-evaluator`, `harness-optimizer`, `general`
 
 ---
+
 
 ## 🧩 Skills (36)
 
@@ -120,12 +131,13 @@ Modular knowledge domains that agents can load on-demand. based on task context.
 
 ### Architecture & Planning
 
-| Skill           | Description                |
-| --------------- | -------------------------- |
-| `app-builder`   | Full-stack app scaffolding |
-| `architecture`  | System design patterns     |
-| `plan-writing`  | Task planning, breakdown   |
-| `brainstorming` | Socratic questioning       |
+| Skill           | Description                                                |
+| --------------- | ---------------------------------------------------------- |
+| `archify`       | Interactive architecture, workflow, ERD, and process flow diagrams |
+| `app-builder`   | Full-stack app scaffolding                                 |
+| `architecture`  | System design patterns                                     |
+| `plan-writing`  | Task planning, breakdown                                   |
+| `brainstorming` | Socratic questioning                                       |
 
 ### Mobile
 
@@ -266,11 +278,11 @@ For details, see [scripts/README.md](scripts/README.md)
 
 | Metric              | Value                         |
 | ------------------- | ----------------------------- |
-| **Total Agents**    | 20                            |
-| **Total Skills**    | 36                            |
+| **Total Agents**    | 94                            |
+| **Total Skills**    | 350+                          |
 | **Total Workflows** | 11                            |
-| **Total Scripts**   | 2 (master) + 18 (skill-level) |
-| **Coverage**        | ~90% web/mobile development   |
+| **Total Scripts**   | 2 (master) + 20+ (test & validation) |
+| **Coverage**        | 100% full-stack, mobile, cloud, security & AI |
 
 ---
 

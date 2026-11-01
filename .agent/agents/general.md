@@ -1,3 +1,11 @@
+---
+name: general
+description: Full implementation agent. Executes plans with scoped reconnaissance, clean code, and evidence-backed verification.
+tools: Read, Grep, Glob, Bash, Edit, Write
+model: inherit
+skills: clean-code, using-superpowers
+---
+
 # Agent: General
 
 **Role:** Full implementation. Execute the plan. Report what happened.

@@ -257,3 +257,184 @@ Constraint: Don't introduce new endpoints. Don't change auth logic except the fi
 Output: Threat model + Fix + Security tests + VERDICT
 Tier: 2 always
 ```
+
+---
+
+# 🚀 Intelligent Prompt Practices & Trigger Playbook
+
+Use these prompt patterns to get 100% precision from Antigravity's auto-routing engine without having to memorize agent names.
+
+## 1. Core Prompt Principles for Auto-Routing
+
+1. **State the Tech Stack & Domain Specifically**:
+   - Generic: "Build an API" -> Antigravity asks Socratic clarifying questions.
+   - Specific: "Create a FastAPI router with Pydantic v2 schemas and async Postgres query" -> Instantly auto-triggers `fastapi-reviewer` + `database-architect`, auto-loads `fastapi-patterns` and `database-design`.
+2. **State Intent (Build, Debug, Review, Test, Audit, Simplify)**:
+   - "Audit auth controller for SQL injection, IDOR, and OWASP vulnerabilities" -> Instantly auto-triggers `security-auditor` + `security-reviewer`, auto-loads `vulnerability-scanner`.
+   - "Refactor this 300-line messy function to be clean, simple, and under 50 lines" -> Instantly auto-triggers `code-simplifier`, auto-loads `clean-code` and `karpathy-guidelines`.
+3. **Multi-Domain Requests**:
+   - "Build a SaaS billing dashboard with React Tailwind frontend, Stripe webhook API, and Postgres schema" -> Instantly triggers `orchestrator`, which coordinates `frontend-specialist`, `backend-specialist`, and `database-architect`.
+
+---
+
+## 2. Real-World Prompt Examples & What Gets Auto-Triggered
+
+### Example 1: Modern Frontend UI/UX
+```markdown
+Prompt:
+"Create a responsive analytics card component in React with Tailwind CSS v4, supporting dark mode and keyboard accessibility."
+
+Auto-Triggered Agents:
+🤖 Applying knowledge of @frontend-specialist + @a11y-architect...
+Auto-Loaded Skills:
+- frontend-design
+- react-best-practices
+- tailwind-patterns
+- accessibility
+- clean-code
+```
+
+### Example 2: High-Performance Backend API
+```markdown
+Prompt:
+"Implement an async FastAPI endpoint for user profile updates with Pydantic validation, JWT auth, and rate limiting."
+
+Auto-Triggered Agents:
+🤖 Applying knowledge of @fastapi-reviewer + @security-auditor...
+Auto-Loaded Skills:
+- fastapi-patterns
+- api-patterns
+- security-review
+- clean-code
+```
+
+### Example 3: Deep Database Query Tuning & Migration
+```markdown
+Prompt:
+"Analyze why this PostgreSQL query is doing a sequential scan on 1M rows, design the index strategy, and write a safe Prisma migration."
+
+Auto-Triggered Agents:
+🤖 Applying knowledge of @database-reviewer + @database-architect...
+Auto-Loaded Skills:
+- database-design
+- postgres-patterns
+- prisma-patterns
+```
+
+### Example 4: Mobile App with Offline Storage
+```markdown
+Prompt:
+"Build a cross-platform Flutter screen for note taking with Riverpod state management and offline SQLite caching."
+
+Auto-Triggered Agents:
+🤖 Applying knowledge of @mobile-developer + @flutter-reviewer...
+Auto-Loaded Skills:
+- mobile-design
+- dart-flutter-patterns
+- flutter-dart-code-review
+```
+
+### Example 5: Strict TDD Feature Implementation
+```markdown
+Prompt:
+"Add coupon code discount validation to the checkout service using strict TDD. Write the failing unit tests first."
+
+Auto-Triggered Agents:
+🤖 Applying knowledge of @tdd-guide + @test-engineer...
+Auto-Loaded Skills:
+- test-driven-development
+- testing-patterns
+- tdd-workflow
+```
+
+### Example 6: Compiler or Build Error Resolution
+```markdown
+Prompt:
+"My Next.js 15 build is failing with Turbopack module resolution error on dynamic server imports. Fix the build."
+
+Auto-Triggered Agents:
+🤖 Applying knowledge of @react-build-resolver + @debugger...
+Auto-Loaded Skills:
+- nextjs-turbopack
+- systematic-debugging
+```
+
+### Example 7: Anti-Overengineering & Clean Code Refactoring
+```markdown
+Prompt:
+"This 400-line service class is bloated and overengineered. Simplify it following Karpathy guidelines and clean code, remove dead code, and ensure tests pass."
+
+Auto-Triggered Agents:
+🤖 Applying knowledge of @code-simplifier + @refactor-cleaner...
+Auto-Loaded Skills:
+- clean-code
+- karpathy-guidelines
+- refactor-cleaner
+```
+
+### Example 8: Security & Penetration Testing Audit
+```markdown
+Prompt:
+"Perform a comprehensive security audit of our authentication and session handling code for OWASP Top 10 vulnerabilities, session fixation, and token leakage."
+
+Auto-Triggered Agents:
+🤖 Applying knowledge of @security-auditor + @penetration-tester...
+Auto-Loaded Skills:
+- vulnerability-scanner
+- red-team-tactics
+- security-review
+- defense-in-depth
+```
+
+### Example 9: Full DevOps & Docker Setup
+```markdown
+Prompt:
+"Create a production-ready Dockerfile, docker-compose setup, and GitHub Actions CI/CD pipeline with security scanning for our Node.js app."
+
+Auto-Triggered Agents:
+🤖 Applying knowledge of @devops-engineer...
+Auto-Loaded Skills:
+- deployment-procedures
+- docker-patterns
+- server-management
+```
+
+### Example 10: Multi-Domain Full-Stack Orchestration
+```markdown
+Prompt:
+"I want to build a real-time collaborative whiteboarding web application with WebSockets, Canvas, and user presence."
+
+Auto-Triggered Agents:
+🤖 Applying knowledge of @orchestrator + @project-planner...
+Behavior:
+- Halts at Socratic Gate (asks 3 clarifying architecture questions)
+- Generates 4-phase architecture and bite-sized plan
+- Coordinates @frontend-specialist and @backend-specialist sequentially
+```
+
+### Example 11: System Architecture, Process Flow & ER Diagrams (Archify)
+```markdown
+Prompt:
+"Draw high level architecture of our distributed microservices platform, including an ER diagram for billing and a process flow diagram for order fulfillment."
+
+Auto-Triggered Agents:
+🤖 Applying knowledge of @architect + @database-architect...
+Auto-Loaded Skills:
+- archify
+- architecture
+- database-design
+Behavior:
+- Selects diagram types: architecture, workflow (process flow), and erd
+- Uses archify to generate standalone interactive HTML diagrams with inline SVG and dark/light themes
+- Runs archify verification and delivery gates
+```
+
+---
+
+## 3. Explicit Mentions & Overrides
+
+When you want to guarantee a specific specialist without relying on keyword detection:
+- Use `@agent-name`: e.g., `@rust-reviewer check this async Mutex implementation for deadlocks`
+- Use slash commands: e.g., `/brainstorm`, `/create`, `/plan`, `/test`, `/debug`, `/ui-ux-pro-max`
+- Override auto-routing: An explicit `@agent-name` in the prompt immediately takes top priority over automatic pattern matching.
+
