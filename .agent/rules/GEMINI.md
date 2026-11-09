@@ -90,94 +90,34 @@ When auto-applying an agent, inform the user:
 
 ### 🎯 COMPREHENSIVE PROMPT-TRIGGER AGENT MATRIX (95 AGENTS)
 
-Match the user's prompt triggers automatically to activate the best agent and skills:
+The full 95-Agent Prompt Trigger Matrix across all 10 engineering domains is modularized in [gent-matrix.md](./agent-matrix.md) (automatically active on all requests via 	rigger: always_on):
 
-| Domain | Prompt Trigger Keywords | Primary Agent | Core Auto-Loaded Skills |
-| :--- | :--- | :--- | :--- |
-| **Frontend UI/UX** | react, next.js, component, tailwind, styling, ui, ux, responsive | `frontend-specialist` | `frontend-design`, `react-best-practices`, `tailwind-patterns` |
-| **React Review** | hooks, useEffect, memo, re-render, jsx, zustand, redux | `react-reviewer` | `react-patterns`, `react-performance`, `react-testing` |
-| **React Build Fail** | vite build, next build, turbopack, bundle error, webpack | `react-build-resolver` | `nextjs-turbopack`, `vite-patterns`, `systematic-debugging` |
-| **Vue / Nuxt** | vue, vue3, nuxt, nuxt4, pinia, composition api, ref | `vue-reviewer` | `vue-patterns`, `nuxt4-patterns`, `ui-to-vue` |
-| **Accessibility** | a11y, accessibility, wcag, screen reader, aria, contrast | `a11y-architect` | `accessibility`, `frontend-a11y`, `web-design-guidelines` |
-| **Mobile Cross-Platform** | mobile app, react native, expo, ios, android, mobile screen | `mobile-developer` | `mobile-design`, `react-native-patterns`, `clean-code` |
-| **Mobile Automation** | mobile automation, appium, webdriverio mobile, mobile test, screen object, uiautomator2, xcuitest, mobile locator, mobile gestures | `mobile-automation-engineer` | `clean-code`, `testing-patterns`, `mobile-automation`, `appium-skill`, `tdd-workflow` |
-| **Flutter / Dart** | flutter, dart, flutter widget, bloc, riverpod, buildcontext | `flutter-reviewer` | `dart-flutter-patterns`, `flutter-dart-code-review` |
-| **Flutter Build Fix** | flutter build, pubspec, gradle flutter, cocoapods pod install | `dart-build-resolver` | `dart-flutter-patterns`, `systematic-debugging` |
-| **Swift / iOS** | swift, swiftui, uikit, combine, swift concurrency, actor | `swift-reviewer` | `swiftui-patterns`, `swift-actor-persistence`, `swift-concurrency-6-2` |
-| **Swift Build Fix** | xcode build, swift compiler error, spm dependency | `swift-build-resolver` | `swift-protocol-di-testing`, `systematic-debugging` |
-| **HarmonyOS** | harmonyos, arkts, arkui, huawei dev | `harmonyos-app-resolver` | `mobile-design` |
-| **General Backend** | backend, api, rest, graphql, trpc, server, middleware | `backend-specialist` | `api-patterns`, `nodejs-best-practices`, `database-design` |
-| **Python Standards** | python, pythonic, pep8, type hints, pydantic, asyncio | `python-reviewer` | `python-patterns`, `python-testing`, `clean-code` |
-| **FastAPI** | fastapi, pydantic v2, fastapi router, dependency injection | `fastapi-reviewer` | `fastapi-patterns`, `api-patterns`, `python-patterns` |
-| **Django / DRF** | django, drf, django orm, django serializer, django celery | `django-reviewer` | `django-patterns`, `django-celery`, `django-tdd` |
-| **Django Build Fix** | django migration error, pip conflict, makemigrations fail | `django-build-resolver` | `django-verification`, `django-security`, `systematic-debugging` |
-| **Go / Golang** | golang, go routine, go channel, go interface, go struct | `go-reviewer` | `golang-patterns`, `golang-testing` |
-| **Go Build Fix** | go build error, go vet failure, go mod tidy | `go-build-resolver` | `golang-patterns`, `systematic-debugging` |
-| **Rust** | rust, borrow checker, lifetime, trait, tokio, cargo | `rust-reviewer` | `rust-patterns`, `rust-pro`, `rust-testing` |
-| **Rust Build Fix** | rustc error, cargo build failed, cannot borrow as mutable | `rust-build-resolver` | `rust-patterns`, `systematic-debugging` |
-| **Java / Spring** | java, spring boot, quarkus, jpa, hibernate, maven, gradle | `java-reviewer` | `java-coding-standards`, `springboot-patterns`, `springboot-tdd` |
-| **Java Build Fix** | maven build error, gradle build failed, javac classpath | `java-build-resolver` | `springboot-verification`, `quarkus-verification`, `systematic-debugging` |
-| **Kotlin** | kotlin, coroutines, flow, kmp, ktor, kotlin android | `kotlin-reviewer` | `kotlin-patterns`, `kotlin-coroutines-flows`, `kotlin-ktor-patterns` |
-| **Kotlin Build Fix** | kotlin compiler error, gradle kts error, kapt/ksp | `kotlin-build-resolver` | `kotlin-testing`, `systematic-debugging` |
-| **TypeScript Deep** | typescript, generics, conditional types, strict null, ts error | `typescript-reviewer` | `typescript-patterns`, `clean-code` |
-| **C# / .NET** | c#, .net, dotnet, asp.net core, entity framework, linq | `csharp-reviewer` | `dotnet-patterns`, `csharp-testing` |
-| **F# Functional** | f#, fsharp, discriminated unions, fsunit | `fsharp-reviewer` | `fsharp-testing` |
-| **C++ Modern** | c++, cpp, raii, smart pointers, templates, memory safety | `cpp-reviewer` | `cpp-coding-standards`, `cpp-testing` |
-| **C++ Build Fix** | cmake error, gcc error, clang linker error, vtable | `cpp-build-resolver` | `cpp-testing`, `systematic-debugging` |
-| **PHP / Laravel** | php, laravel, artisan, eloquent, blade, psr-12 | `php-reviewer` | `laravel-patterns`, `laravel-tdd`, `laravel-security` |
-| **Ruby / Rails** | ruby, rails, activerecord, rspec, gemfile, rubocop | `ruby-reviewer` | `rails-patterns` |
-| **Database Architect**| schema design, migration strategy, sql vs nosql, indexing, er diagram, erd | `database-architect` | `database-design`, `prisma-patterns`, `clean-code`, `archify` |
-| **Database Tuning** | slow query, explain analyze, n+1, postgres optimization | `database-reviewer` | `postgres-patterns`, `mysql-patterns`, `database-migrations` |
-| **DevOps / CI/CD** | docker, kubernetes, ci/cd, github actions, nginx, pm2 | `devops-engineer` | `deployment-procedures`, `docker-patterns`, `kubernetes-patterns` |
-| **Network Arch** | network architecture, subnetting, vpn, bgp routing | `network-architect` | `network-config-validation`, `network-bgp-diagnostics` |
-| **Network Config** | cisco config, router acl, switch vlan, netmiko | `network-config-reviewer`| `cisco-ios-patterns`, `netmiko-ssh-automation` |
-| **Network Troubleshoot**| packet loss, dns fail, ping latency, interface down | `network-troubleshooter` | `network-interface-health`, `systematic-debugging` |
-| **Homelab** | homelab, pi-hole, wireguard, proxmox, home server | `homelab-architect` | `homelab-network-readiness`, `homelab-pihole-dns` |
-| **Security Audit** | security audit, owasp, vulnerability scan, secrets, rate limit | `security-auditor` | `vulnerability-scanner`, `red-team-tactics`, `security-review` |
-| **Security Review** | sqli, xss, csrf, idor, auth bypass, sanitize input | `security-reviewer` | `security-scan`, `security-bounty-hunter`, `clean-code` |
-| **Penetration Test**| penetration test, exploit, red team, payload | `penetration-tester` | `red-team-tactics`, `defi-amm-security` |
-| **Testing / Unit** | write test, unit test, integration test, mock, vitest, pytest | `test-engineer` | `testing-patterns`, `tdd-workflow`, `test-driven-development` |
-| **Debugger** | debug, crash, exception, traceback, reproduce bug, root cause | `debugger` | `systematic-debugging`, `root-cause-tracing` |
-| **TDD Guide** | tdd, red green refactor, test first, failing test | `tdd-guide` | `test-driven-development`, `tdd-workflow` |
-| **E2E Automation** | e2e test, playwright, cypress, browser automation | `qa-automation-engineer` | `webapp-testing`, `e2e-testing`, `windows-desktop-e2e` |
-| **Mobile Test Automation** | mobile test, appium test, mobile e2e, mobile flakiness | `mobile-automation-engineer` | `clean-code`, `testing-patterns`, `mobile-automation`, `appium-skill` |
-| **Browser QA** | run e2e, visual regression, browser run | `e2e-runner` | `browser-qa`, `webapp-testing` |
-| **Build Error** | compilation failed, build error, syntax error, bundle error | `build-error-resolver` | `systematic-debugging` |
-| **Silent Failures** | silent failure, swallowed error, empty catch, unhandled | `silent-failure-hunter` | `error-handling`, `condition-based-waiting` |
-| **PR Test Quality** | pr tests, test gap, flaky test, missing assertions | `pr-test-analyzer` | `testing-anti-patterns`, `conventional-commit-review` |
-| **Final Verify** | verify all, validation check, prove it works, son kontrolleri | `verify` | `verification-before-completion` |
-| **System Arch** | system architecture, adr, microservices, hexagonal, draw architecture, high level architecture, archify, process flow diagram, flow chart diagram, sequence diagram | `architect` | `archify`, `architecture`, `architecture-decision-records`, `hexagonal-architecture` |
-| **OOP & Cohesion** | oop design, solid principles, dependency inversion, class diagram | `code-architect` | `clean-code`, `architecture`, `archify` |
-| **Code Review** | code review, review PR, peer review, code quality | `code-reviewer` | `code-review-checklist`, `requesting-code-review` |
-| **Code Simplifier** | simplify code, too complex, overcomplicated, reduce lines | `code-simplifier` | `clean-code`, `karpathy-guidelines` |
-| **Dead Code Clean** | clean dead code, remove unused imports, remove orphans | `refactor-cleaner` | `clean-code`, `refactor-cleaner` |
-| **Legacy Code** | legacy code, understand old codebase, reverse engineer | `code-archaeologist` | `brownfield-retrospective`, `codebase-onboarding` |
-| **Type Design** | type modeling, domain invariants, strong typing | `type-design-analyzer` | `clean-code`, `typescript-patterns` |
-| **Git Commits** | git commit review, conventional commits, commit history | `commit-reviewer` | `conventional-commit-review`, `git-workflow` |
-| **Code Comments** | comment review, meaningful comments, remove emojis | `comment-analyzer` | `clean-code` |
-| **Spec Mining** | extract behavioral specs, contract mining, openspec | `spec-miner` | `contract-first` |
-| **Codebase Explore**| explore codebase, map architecture, find where X is | `explorer-agent` | `repo-scan`, `code-tour`, `codebase-onboarding` |
-| **Call Tracing** | trace caller, call hierarchy, find usages | `code-explorer` | `codebase-onboarding` |
-| **Doc Sync** | update docs, sync readme, update api docs | `doc-updater` | `docs-governance`, `living-docs-governance` |
-| **Doc Lookup** | lookup official docs, api syntax, library docs | `docs-lookup` | `documentation-lookup` |
-| **Doc Writing** | technical guide, system manual, architecture docs | `documentation-writer` | `documentation-templates` |
-| **Session Analysis**| summarize session, extract learnings, knowledge synthesis | `conversation-analyzer` | `knowledge-ops` |
-| **Multi-Domain** | full stack app, complex project, build SaaS, orchestrate | `orchestrator` | `parallel-agents`, `behavioral-modes`, `brainstorming` |
-| **Project Planning**| plan project, task breakdown, socratic planning, roadmap | `project-planner` | `brainstorming`, `plan-writing`, `writing-plans` |
-| **Product Mgmt** | user stories, acceptance criteria, mvp scope, backlog | `product-manager` | `plan-writing`, `brainstorming`, `product-lens` |
-| **Game Dev** | game, phaser, godot, unity, game loop, mechanics | `game-developer` | `game-development` |
-| **SEO & Ranking** | seo, core web vitals, meta tags, schema.org, json-ld | `seo-specialist` | `seo-fundamentals`, `geo-fundamentals` |
-| **Performance** | profile performance, memory leak, slow execution, cpu spike| `performance-optimizer` | `performance-profiling`, `memory-leak-debugging` |
-| **ML Engineering** | ml pipeline, training loop, dataset contract, model eval | `mle-reviewer` | `mle-workflow`, `eval-harness` |
-| **PyTorch / CUDA** | pytorch error, cuda oom, tensor mismatch, torchscript | `pytorch-build-resolver`| `pytorch-patterns`, `systematic-debugging` |
-| **RAG / Vectors** | rag, vector search, embeddings, chunking, hallucination | `rag-pipeline-reviewer` | `ai-first-engineering`, `cost-aware-llm-pipeline` |
-| **Marketing Copy** | marketing copy, landing page conversion, brand messaging | `marketing-agent` | `marketing-campaign`, `brand-voice` |
-| **Healthcare / PHI**| hipaa, phi compliance, clinical safety, cdss, emr | `healthcare-reviewer` | `hipaa-compliance`, `healthcare-phi-compliance` |
-| **Bengali NLP** | bengali, bangla text, conjuncts, unicode normalization | `bengali-reviewer` | `bengali-nlp` |
-| **General** | non-specialized general questions | `general` | `using-superpowers`, `clean-code` |
+| Domain Cluster | Key Specializations & Focus | Primary Agents |
+| :--- | :--- | :--- |
+| **Domain 1: Frontend, UI & A11y** | React, Next.js, Vue, Tailwind, Accessibility (WCAG), CSS architecture | rontend-specialist, 
+eact-reviewer, 
+eact-build-resolver, ue-reviewer, 11y-architect |
+| **Domain 2: Mobile & Cross-Platform** | React Native, Flutter, Swift/iOS, HarmonyOS, Mobile Test Automation (Appium/WDIO) | mobile-developer, mobile-automation-engineer, lutter-reviewer, dart-build-resolver, swift-reviewer, swift-build-resolver, harmonyos-app-resolver |
+| **Domain 3: Backend & Languages** | Node.js, Python, FastAPI, Django, Go, Rust, Java, Kotlin, C#, F#, C++, PHP, Ruby | ackend-specialist, python-reviewer, astapi-reviewer, django-reviewer, django-build-resolver, go-reviewer, go-build-resolver, 
+ust-reviewer, 
+ust-build-resolver, java-reviewer, java-build-resolver, kotlin-reviewer, kotlin-build-resolver, 	ypescript-reviewer, csharp-reviewer, sharp-reviewer, cpp-reviewer, cpp-build-resolver, php-reviewer, 
+uby-reviewer |
+| **Domain 4: Database & Storage** | Schema design, PostgreSQL, MySQL, Prisma, indexing, query optimization | database-architect, database-reviewer |
+| **Domain 5: DevOps, Cloud & Network** | Docker, K8s, CI/CD, Nginx, Cisco/Juniper networking, Homelab, Proxmox | devops-engineer, 
+etwork-architect, 
+etwork-config-reviewer, 
+etwork-troubleshooter, homelab-architect |
+| **Domain 6: Cybersecurity & PenTest** | OWASP Top 10, penetration testing, threat modeling, IDOR, SQLi, XSS | security-auditor, security-reviewer, penetration-tester |
+| **Domain 7: Testing, QA & Verify** | Unit testing, TDD, Playwright E2E, Appium mobile automation, debugging | 	est-engineer, debugger, 	dd-guide, qa-automation-engineer, mobile-automation-engineer, e2e-runner, uild-error-resolver, silent-failure-hunter, pr-test-analyzer, erify |
+| **Domain 8: Architecture & Refactoring**| SOLID OOP, design patterns, architecture diagrams (archify), code review, simplification, dead code removal | rchitect, code-architect, code-reviewer, code-simplifier, 
+efactor-cleaner, code-archaeologist, 	ype-design-analyzer, commit-reviewer, comment-analyzer, spec-miner |
+| **Domain 9: Exploration & Docs** | Codebase mapping, call hierarchy, living documentation, session synthesis | explore, explorer-agent, code-explorer, doc-updater, docs-lookup, documentation-writer, conversation-analyzer, orchestrator, project-planner, product-manager, product-owner, chief-of-staff, loop-operator |
+| **Domain 10: Specialized Domains** | Game development, SEO, performance profiling, MLE, PyTorch, RAG | game-developer, seo-specialist, performance-optimizer, mle-reviewer, pytorch-build-resolver, 
+ag-pipeline-reviewer, marketing-agent, healthcare-reviewer, engali-reviewer, general |
+
+*Refer to [gent-matrix.md](./agent-matrix.md) for individual regex trigger keywords for each agent.*
 
 ---
-
 
 ## TIER 0: UNIVERSAL RULES (Always Active)
 
