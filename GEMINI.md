@@ -147,20 +147,20 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 description: Superpowers agentic framework. Mandatory disciplined software development methodology (brainstorming, TDD, systematic plan & execution, code review, verification).
 ---
 
-# Superpowers Agentic Framework
+# Superpowers Agentic Framework (Adaptive Protocol)
 
-## Mandatory Execution Rules
+## Execution Protocol: Fast-Path vs Complex Tasks
 
-1. **Invoke relevant skills BEFORE any response or action** — check the skills registry before answering clarifying questions, exploring codebases, or writing any code.
-2. **First Response Protocol**: If any skill might apply to what you are doing, read the skill (`view_file` on its `SKILL.md`) and follow it exactly.
-3. **Brainstorming first (`brainstorming`)**: For new features ("Let's build X"), brainstorm and refine requirements before writing code or planning.
-4. **Systematic Debugging first (`systematic-debugging`, `root-cause-tracing`)**: For bug reports or test failures, investigate root cause systematically across the 4 phases before editing code.
-5. **Test-Driven Development (`test-driven-development`)**: Always write failing tests first (RED), implement minimal code to pass (GREEN), then refactor (REFACTOR). Watch tests fail before writing implementation.
-6. **Bite-Sized Planning & Execution (`writing-plans`, `executing-plans`, `subagent-driven-development`)**: Break designs into 2-5 minute tasks with explicit verification steps.
-7. **Code Review & Quality Gates (`requesting-code-review`, `receiving-code-review`)**: Review against plan and quality standards before merging.
-8. **Verification Before Completion (`verification-before-completion`)**: Provide concrete test/execution evidence before claiming any task is complete.
-9. **Testing Reliability (`condition-based-waiting`, `testing-anti-patterns`, `defense-in-depth`)**: Avoid flaky timeouts, mock abuse, and brittle assertions.
-10. **Branch Lifecycle (`using-git-worktrees`, `finishing-a-development-branch`)**: Isolate work and verify clean baselines.
+1. **Fast-Path (MANDATORY for Simple Tasks & User-Provided Solutions)**:
+   - **User-Provided Solutions:** If the user already provided the code, fix, solution, or diff in the prompt -> **APPLY IMMEDIATELY.** Do NOT invoke skills, do NOT enter TDD/debugging cycles, do NOT delay.
+   - **Simple Tasks & Questions:** Single-file edits, typos, renames, config tweaks, or conceptual questions -> Answer or edit directly with **ZERO skill invocation** and **ZERO announcement overhead**.
+2. **Specialist Path (Complex Engineering Work Only)**:
+   - When building complex multi-file features, architecture, or deep debugging where no solution is provided:
+     - New features / greenfield architecture: `brainstorming`, `writing-plans`.
+     - Complex bug reports without known cause: `systematic-debugging`.
+     - Non-trivial production logic: `test-driven-development`.
+     - Multi-agent coordination: `subagent-driven-development`.
+     - Pre-completion verification: `verification-before-completion`.
 
 ---
 
@@ -172,16 +172,16 @@ description: Superpowers agentic framework. Mandatory disciplined software devel
 
 Whenever a user prompt is received:
 1. **Analyze (Silent)**: Scan the prompt for keywords, technical stack, problem domain, and complexity.
-2. **Select Specialist Agent(s)**: Match against the 94-Agent Selection Matrix.
-3. **Select Associated Skill(s)**: Match against the 350+ Skill Taxonomy and load the agent's declared skills.
-4. **Mandatory Announcement Header**: Output the exact specialist declaration at the top of your response:
-   ```markdown
-   🤖 **Applying knowledge of `@[agent-name]`...**
+2. **Fast-Path vs Specialist Activation**:
+   - **Fast-Path (User-Provided Solutions, Questions, Trivial Edits)**: If the prompt contains the fix/solution, is a simple question, or is a small edit, respond directly, immediately, and concisely with ZERO skill loading, ZERO agent headers, and ZERO thinking loops.
+   - **Specialist Path (Complex Code, Architecture, Debugging, Multi-file without Solution)**: Select specialist agent(s) and skill(s), output the announcement header, and apply specialist rigor.
+3. **Mandatory Announcement Header (Specialist Path Only)**: Output the specialist declaration:
+   `markdown
+   🤖 **Applying knowledge of @[agent-name]...**
    I am using the [Skill Name] skill to [specific action].
-   ```
-5. **Load Knowledge & Enforce Constraints**: Read the agent instructions from `.agent/agents/{agent}.md` (or global `~/.gemini/config/agents/{agent}.md`) and skill instructions from `.agent/skills/{skill}/SKILL.md` (or global `~/.gemini/config/skills/{skill}/SKILL.md` or `global-rules/{skill}/SKILL.md`).
-6. **Apply Strict Persona & Workflow**: Embody the specialist's depth, adherence to standards, and verification rigor.
-
+   `
+4. **Load Knowledge & Enforce Constraints**: For specialist path tasks, read the agent instructions from .agent/agents/{agent}.md (or global ~/.gemini/config/agents/{agent}.md) and skill instructions from .agent/skills/{skill}/SKILL.md (or global ~/.gemini/config/skills/{skill}/SKILL.md or global-rules/{skill}/SKILL.md).
+5. **Apply Strict Persona & Workflow**: Embody the specialist's depth, adherence to standards, and verification rigor.
 ---
 
 ## 2. Universal Request Classifier

@@ -10,20 +10,17 @@ trigger: always_on
 
 ## CRITICAL: AGENT & SKILL PROTOCOL (START HERE)
 
-> **MANDATORY:** You MUST read the appropriate agent file and its skills BEFORE performing any implementation. This is the highest priority rule.
+> **ADAPTIVE ENFORCEMENT:** Match workflow to task complexity. High-discipline skill reading is strictly reserved for complex, non-trivial engineering tasks without solutions. Simple tasks, direct instructions, and user-provided solutions use the **Fast-Path** with zero skill overhead.
 
-### 1. Modular Skill Loading Protocol
+### 1. Fast-Path (MANDATORY for Simple Tasks & User-Provided Solutions)
+- **User-Provided Solutions:** If the user already provided the code, fix, solution, or diff in the prompt -> **APPLY IMMEDIATELY.** Do NOT read skill files, do NOT invoke agents, do NOT stall or delay.
+- **Simple Tasks / Explanations:** For 1-10 line edits, typos, renames, config tweaks, or conceptual questions -> Answer or edit directly with **ZERO skill invocation** and **ZERO announcement overhead**.
 
-Agent activated → Check frontmatter "skills:" → Read SKILL.md (INDEX) → Read specific sections.
-
-- **Selective Reading:** DO NOT read ALL files in a skill folder. Read `SKILL.md` first, then only read sections matching the user's request.
-- **Rule Priority:** P0 (GEMINI.md) > P1 (Agent .md) > P2 (SKILL.md). All rules are binding.
-
-### 2. Enforcement Protocol
-
-1. **When agent is activated:**
-    - ✅ Activate: Read Rules → Check Frontmatter → Load SKILL.md → Apply All.
-2. **Forbidden:** Never skip reading agent rules or skill instructions. "Read → Understand → Apply" is mandatory.
+### 2. Specialist Modular Skill Loading (Complex Work Only)
+For non-trivial features, deep debugging, or architectural changes where no solution was provided:
+- Agent activated → Check frontmatter "skills:" → Read `SKILL.md` (INDEX) → Read specific sections.
+- Selective Reading: DO NOT read ALL files in a skill folder. Read `SKILL.md` first, then only read sections matching the user's request.
+- Rule Priority: P0 (GEMINI.md) > P1 (Agent .md) > P2 (SKILL.md). All rules are binding.
 
 ---
 
@@ -244,28 +241,23 @@ When user's prompt is NOT in English:
 
 > 🔴 **Mobile + frontend-specialist = WRONG.** Mobile = mobile-developer ONLY.
 
-### 🛑 Socratic Gate
+### 🛑 Socratic Gate (Complex & Greenfield Tasks Only)
 
-**For complex requests, STOP and ASK first:**
-
-### 🛑 GLOBAL SOCRATIC GATE (TIER 0)
-
-**MANDATORY: Every user request must pass through the Socratic Gate before ANY tool use or implementation.**
+**Adaptive Gate:** Trigger the Socratic Gate ONLY for complex, ambiguous, or multi-domain architectural requests. Simple questions, explanations, and trivial single-file edits completely **BYPASS** the Socratic Gate for instant execution.
 
 | Request Type            | Strategy       | Required Action                                                   |
 | ----------------------- | -------------- | ----------------------------------------------------------------- |
-| **New Feature / Build** | Deep Discovery | ASK minimum 3 strategic questions                                 |
-| **Code Edit / Bug Fix** | Context Check  | Confirm understanding + ask impact questions                      |
-| **Vague / Simple**      | Clarification  | Ask Purpose, Users, and Scope                                     |
-| **Full Orchestration**  | Gatekeeper     | **STOP** subagents until user confirms plan details               |
-| **Direct "Proceed"**    | Validation     | **STOP** → Even if answers are given, ask 2 "Edge Case" questions |
+| **Simple Question**     | Fast-Path      | **BYPASS GATE:** Answer directly and immediately                   |
+| **Simple Code Edit**    | Fast-Path      | **BYPASS GATE:** Execute surgical edit directly                    |
+| **New Feature / Build** | Deep Discovery | ASK 2-3 strategic questions to clarify scope/stack                 |
+| **Full Orchestration**  | Gatekeeper     | **STOP** subagents until user confirms architecture plan           |
+| **Ambiguous Spec**      | Clarification  | Ask targeted questions on trade-offs or constraints                |
 
 **Protocol:**
 
-1. **Never Assume:** If even 1% is unclear, ASK.
-2. **Handle Spec-heavy Requests:** When user gives a list (Answers 1, 2, 3...), do NOT skip the gate. Instead, ask about **Trade-offs** or **Edge Cases** (e.g., "LocalStorage confirmed, but should we handle data clearing or versioning?") before starting.
-3. **Wait:** Do NOT invoke subagents or write code until the user clears the Gate.
-4. **Reference:** Full protocol in `@[skills/brainstorming]`.
+1. **Bypass on Simple:** If the task is clear, informational, or surgical, DO NOT stall with questions. Execute directly.
+2. **Engage on Complex:** For greenfield builds or large systems, align on architecture before writing code.
+3. **Reference:** `@[skills/brainstorming]` for deep discovery on complex features.
 
 ### 🏁 Final Checklist Protocol
 
