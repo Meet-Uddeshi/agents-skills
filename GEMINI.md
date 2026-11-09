@@ -199,34 +199,35 @@ Whenever a user prompt is received:
 
 ---
 
-## 3. Comprehensive 95-Agent Prompt Trigger Matrix
+## 3. Comprehensive 108-Agent Prompt Trigger Matrix
 
-The full, granular keyword mappings across all 10 engineering domains and 95 agents are modularized in [`.agent/rules/agent-matrix.md`](.agent/rules/agent-matrix.md) (automatically active on all requests via `trigger: always_on`):
+The full, granular keyword mappings across all 10 engineering domains and 108 agents are modularized in [`.agent/rules/agent-matrix.md`](.agent/rules/agent-matrix.md) (automatically active on all requests via `trigger: always_on`):
 
 | Domain Cluster | Key Specializations & Focus | Primary Agents |
 | :--- | :--- | :--- |
-| **Domain 1: Frontend, UI & A11y** | React, Next.js, Vue, Tailwind, Accessibility (WCAG), CSS architecture | `frontend-specialist`, `react-reviewer`, `react-build-resolver`, `vue-reviewer`, `a11y-architect` |
+| **Domain 1: Frontend, UI & A11y** | React, Next.js, Vue, Tailwind, Accessibility (WCAG), CSS architecture | `frontend-specialist`, `react-reviewer`, `react-build-resolver`, `vue-reviewer`, `a11y-architect`, `unslop` |
 | **Domain 2: Mobile & Cross-Platform** | React Native, Flutter, Swift/iOS, HarmonyOS, Mobile Test Automation (Appium/WDIO) | `mobile-developer`, `mobile-automation-engineer`, `flutter-reviewer`, `dart-build-resolver`, `swift-reviewer`, `swift-build-resolver`, `harmonyos-app-resolver` |
 | **Domain 3: Backend & Languages** | Node.js, Python, FastAPI, Django, Go, Rust, Java, Kotlin, C#, F#, C++, PHP, Ruby | `backend-specialist`, `python-reviewer`, `fastapi-reviewer`, `django-reviewer`, `django-build-resolver`, `go-reviewer`, `go-build-resolver`, `rust-reviewer`, `rust-build-resolver`, `java-reviewer`, `java-build-resolver`, `kotlin-reviewer`, `kotlin-build-resolver`, `typescript-reviewer`, `csharp-reviewer`, `fsharp-reviewer`, `cpp-reviewer`, `cpp-build-resolver`, `php-reviewer`, `ruby-reviewer` |
 | **Domain 4: Database & Storage** | Schema design, PostgreSQL, MySQL, Prisma, indexing, query optimization | `database-architect`, `database-reviewer` |
 | **Domain 5: DevOps, Cloud & Network** | Docker, K8s, CI/CD, Nginx, Cisco/Juniper networking, Homelab, Proxmox | `devops-engineer`, `network-architect`, `network-config-reviewer`, `network-troubleshooter`, `homelab-architect` |
 | **Domain 6: Cybersecurity & PenTest** | OWASP Top 10, penetration testing, threat modeling, IDOR, SQLi, XSS | `security-auditor`, `security-reviewer`, `penetration-tester` |
 | **Domain 7: Testing, QA & Verify** | Unit testing, TDD, Playwright E2E, Appium mobile automation, debugging | `test-engineer`, `debugger`, `tdd-guide`, `qa-automation-engineer`, `mobile-automation-engineer`, `e2e-runner`, `build-error-resolver`, `silent-failure-hunter`, `pr-test-analyzer`, `verify` |
-| **Domain 8: Architecture & Refactoring**| SOLID OOP, design patterns, architecture diagrams (archify), code review, simplification, dead code removal | `architect`, `code-architect`, `code-reviewer`, `code-simplifier`, `refactor-cleaner`, `code-archaeologist`, `type-design-analyzer`, `commit-reviewer`, `comment-analyzer`, `spec-miner` |
-| **Domain 9: Exploration & Docs** | Codebase mapping, call hierarchy, living documentation, session synthesis | `explore`, `explorer-agent`, `code-explorer`, `doc-updater`, `docs-lookup`, `documentation-writer`, `conversation-analyzer`, `orchestrator`, `project-planner`, `product-manager`, `product-owner`, `chief-of-staff`, `loop-operator` |
+| **Domain 8: Architecture & Refactoring**| SOLID OOP, design patterns, architecture diagrams (archify), code review, simplification, dead code removal | `architect`, `code-architect`, `reverse-engineering-anything`, `code-reviewer`, `code-simplifier`, `refactor-cleaner`, `code-archaeologist`, `type-design-analyzer`, `commit-reviewer`, `comment-analyzer`, `spec-miner` |
+| **Domain 9: Exploration & Docs** | Codebase mapping, call hierarchy, living documentation, session synthesis | `understand-anything`, `explore`, `explorer-agent`, `code-explorer`, `doc-updater`, `docs-lookup`, `documentation-writer`, `conversation-analyzer`, `orchestrator`, `project-planner`, `product-manager`, `product-owner`, `chief-of-staff`, `loop-operator` |
 | **Domain 10: Specialized Domains** | Game development, SEO, performance profiling, MLE, PyTorch, RAG | `game-developer`, `seo-specialist`, `performance-optimizer`, `mle-reviewer`, `pytorch-build-resolver`, `rag-pipeline-reviewer`, `marketing-agent`, `healthcare-reviewer`, `bengali-reviewer`, `general` |
 
 *Refer to [`.agent/rules/agent-matrix.md`](.agent/rules/agent-matrix.md) for individual regex trigger keywords for each agent.*
 
 ---
 
-## 4. Multi-Domain Auto-Orchestration Rules
+## 4. Multi-Domain & Multi-Agent Auto-Orchestration Rules
 
-When a prompt contains triggers from **two or more distinct domains** (e.g., "Build a secure REST API with React frontend and PostgreSQL database"):
-1. **Auto-Invoke Master Agent**: `orchestrator` + domain specialists (`frontend-specialist`, `backend-specialist`, `database-architect`, `security-auditor`).
-2. **Execute Socratic Gate**: Present 2-3 strategic architectural trade-offs to the user before generating code.
-3. **Execute Task Decomposition**: Decompose the implementation into bite-sized tasks using `writing-plans`.
-4. **Enforce Verification Gate**: Before declaring done, run verification via `verify_all.py` or `checklist.py`.
+When a prompt contains triggers from **two or more distinct domains** or requires **multi-agent collaboration**:
+1. **Auto-Invoke Master Agent**: `orchestrator` + domain specialists (`multi-agent-orchestration`, `parallel-agents`, `context-management`, `memory-protocol`).
+2. **Blackboard Context Sharing**: Active agents coordinate through `.agent/context/BLACKBOARD.md` to share facts, invariants, and handoff artifacts without token dumps.
+3. **Dynamic Runtime Complexity Escalation**: When ANY agent detects ambiguity, multi-file impact, or test failures, it MUST immediately self-escalate to Superpowers (`brainstorming`, `systematic-debugging`, `test-driven-development`).
+4. **Context & Memory Engineering**: Subagents execute in isolated contexts returning concise summaries (< 300 words). Ephemeral errors are recorded in `SESSION_FAILURES.md`; permanent patterns in `.agent/memory/ARCHITECTURE_MEMORY.md`.
+5. **Enforce Verification Gate**: Before declaring done, run verification via `test_intelligent_routing.py` or `checklist.py`.
 
 ---
 

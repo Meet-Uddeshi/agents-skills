@@ -88,7 +88,7 @@ When auto-applying an agent, inform the user:
 > 🔴 **Self-Check Trigger:** Every time you are about to write code or create UI, ask yourself:
 > "Have I completed the Agent Routing Checklist?" If NO → Complete it first.
 
-### 🎯 COMPREHENSIVE PROMPT-TRIGGER AGENT MATRIX (95 AGENTS)
+### 🎯 COMPREHENSIVE PROMPT-TRIGGER AGENT MATRIX (108 AGENTS)
 
 The full 95-Agent Prompt Trigger Matrix across all 10 engineering domains is modularized in [gent-matrix.md](./agent-matrix.md) (automatically active on all requests via 	rigger: always_on):
 
@@ -277,18 +277,18 @@ When user's prompt is NOT in English:
 
 ---
 
-## 📁 QUICK REFERENCE (95 AGENTS & 350+ SKILLS)
+## 📁 QUICK REFERENCE (108 AGENTS & 365+ SKILLS)
 
 ### 10 Core Agent Clusters
 
-- **Frontend & UI**: `frontend-specialist`, `react-reviewer`, `react-build-resolver`, `vue-reviewer`, `a11y-architect`
+- **Frontend & UI**: `frontend-specialist`, `react-reviewer`, `react-build-resolver`, `vue-reviewer`, `a11y-architect`, `unslop`
 - **Mobile & Cross-Platform**: `mobile-developer`, `mobile-automation-engineer`, `flutter-reviewer`, `dart-build-resolver`, `swift-reviewer`, `swift-build-resolver`, `harmonyos-app-resolver`
 - **Backend & Languages**: `backend-specialist`, `python-reviewer`, `fastapi-reviewer`, `django-reviewer`, `django-build-resolver`, `go-reviewer`, `go-build-resolver`, `rust-reviewer`, `rust-build-resolver`, `java-reviewer`, `java-build-resolver`, `kotlin-reviewer`, `kotlin-build-resolver`, `typescript-reviewer`, `csharp-reviewer`, `fsharp-reviewer`, `cpp-reviewer`, `cpp-build-resolver`, `php-reviewer`, `ruby-reviewer`
 - **Database & Storage**: `database-architect`, `database-reviewer`
 - **DevOps, Cloud & Network**: `devops-engineer`, `network-architect`, `network-config-reviewer`, `network-troubleshooter`, `homelab-architect`
 - **Cybersecurity & Red Team**: `security-auditor`, `security-reviewer`, `penetration-tester`
 - **Testing, QA & Debug**: `test-engineer`, `debugger`, `tdd-guide`, `qa-automation-engineer`, `mobile-automation-engineer`, `e2e-runner`, `build-error-resolver`, `silent-failure-hunter`, `pr-test-analyzer`, `verify`
-- **Architecture & Refactoring**: `architect`, `code-architect`, `code-reviewer`, `code-simplifier`, `refactor-cleaner`, `code-archaeologist`, `type-design-analyzer`, `commit-reviewer`, `comment-analyzer`, `spec-miner`
+- **Architecture & Refactoring**: `architect`, `code-architect`, `reverse-engineering-anything`, `code-reviewer`, `code-simplifier`, `refactor-cleaner`, `code-archaeologist`, `type-design-analyzer`, `commit-reviewer`, `comment-analyzer`, `spec-miner`
 - **Exploration & Docs**: `explorer-agent`, `code-explorer`, `doc-updater`, `docs-lookup`, `documentation-writer`, `conversation-analyzer`
 - **Specialized & AI/Data**: `game-developer`, `seo-specialist`, `performance-optimizer`, `mle-reviewer`, `pytorch-build-resolver`, `rag-pipeline-reviewer`, `marketing-agent`, `healthcare-reviewer`, `bengali-reviewer`, `orchestrator`, `project-planner`, `product-manager`, `product-owner`, `chief-of-staff`, `loop-operator`, `general`
 

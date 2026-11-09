@@ -8,8 +8,8 @@
 
 Antigravity Kit is a comprehensive AI engineering system consisting of:
 
-- **95 Specialist Agents** - Role-based AI specialist personas across 10 engineering domains
-- **350+ Skills** - Domain-specific patterns, testing frameworks, and knowledge modules
+- **108 Specialist Agents** - Role-based AI specialist personas across 10 engineering domains
+- **365+ Skills** - Domain-specific patterns, testing frameworks, and knowledge modules
 - **11 Workflows** - Slash command guided procedures
 - **Intelligent Prompt Trigger Engine** - Automated agent and skill selection based on prompt intent
 
@@ -22,8 +22,8 @@ Antigravity Kit is a comprehensive AI engineering system consisting of:
 ├── ARCHITECTURE.md          # Architecture overview & catalog
 ├── PROMPT-TEMPLATE.md       # Prompt practices and trigger guide
 ├── SKILL.md                 # Gravitas runtime invariants
-├── agents/                  # 95 Specialist Agent Personas
-├── skills/                  # 350+ Domain Skills
+├── agents/                  # 108 Specialist Agent Personas
+├── skills/                  # 365+ Domain Skills
 ├── workflows/               # 11 Slash Command Workflows
 ├── rules/                   # Workspace Rules & Trigger Matrix
 └── scripts/                 # Validation & Testing Suites
@@ -31,7 +31,7 @@ Antigravity Kit is a comprehensive AI engineering system consisting of:
 
 ---
 
-## 🤖 Specialist Agents (95 Across 10 Domains)
+## 🤖 Specialist Agents (108 Across 10 Domains)
 
 Specialist AI personas equipped with specialized rule sets, frontmatter skills, and prompt triggers:
 

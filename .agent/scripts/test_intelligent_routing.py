@@ -39,8 +39,43 @@ class IntelligentRouter:
     """Simulates Antigravity's Prompt-Trigger Routing Engine as defined in GEMINI.md"""
     
     TRIGGER_MAP = [
-        # Multi-Domain / Full Stack (Highest Priority)
-        (r"\b(build\s*saas|full\s*stack\s*app|multi-?domain\s*project|orchestrate)\b", "orchestrator", ["parallel-agents", "behavioral-modes", "brainstorming"]),
+        # Unslop & UI Craft
+        (r"\b(unslop|unslopping|remove\s*ai\s*slops?|remove\s*slops?|ai\s*slops?|fix\s*ai\s*ui|clean\s*up\s*ui\s*design|purple\s*gradients?)\b", "unslop", ["clean-code", "frontend-design", "unslop", "web-design-guidelines"]),
+
+        # Reverse Engineering Anything (REA)
+        (r"\b(reverse\s*engineering\s*anything|reference\s*software|create\s*from\s*reference|like\s*google\s*photos|decompile|ghidra|hopper|jadx|binary\s*analysis|rea)\b", "reverse-engineering-anything", ["clean-code", "systematic-debugging", "reverse-engineer-anything", "rea-analysis-optimization", "rea-tool-design"]),
+
+        # Understand Anything (E2E Codebase Comprehension)
+        (r"\b(understand\s*project|explain\s*project|explain\s*codebase|new\s*project|unknown\s*project|understand\s*anything|codebase\s*e2e|walk\s*me\s*through\s*codebase)\b", "understand-anything", ["understand", "understand-chat", "understand-dashboard", "understand-domain"]),
+        (r"\b(scan\s*project|project\s*inventory|file\s*inventory)\b", "project-scanner", ["understand", "clean-code"]),
+        (r"\b(architecture\s*analyzer|architectural\s*layers)\b", "architecture-analyzer", ["understand", "clean-code"]),
+        (r"\b(domain\s*analyzer|business\s*domain\s*knowledge)\b", "domain-analyzer", ["understand-domain", "clean-code"]),
+        (r"\b(tour\s*builder|codebase\s*tour|learning\s*tour)\b", "tour-builder", ["understand-onboard", "clean-code"]),
+        # Specialized Quality, Evaluation & Open Source
+        (r"\b(agent\s*evaluat|5-axis\s*quality\s*rubric|score\s*agent\s*output)\b", "agent-evaluator", ["eval-harness", "agent-eval"]),
+        (r"\b(harness\s*optimizer|agent-harness\s*config|eval-driven\s*grading)\b", "harness-optimizer", ["harness-engineering", "cost-aware-llm-pipeline"]),
+        (r"\b(gan\s*evaluator|gan\s*harness\s*evaluat|score\s*against\s*spec)\b", "gan-evaluator", ["eval-harness", "browser-qa"]),
+        (r"\b(gan\s*generator|gan\s*harness\s*generat|implement\s*from\s*gan\s*spec)\b", "gan-generator", ["feature-implementation", "clean-code"]),
+        (r"\b(gan\s*planner|gan\s*harness\s*plan|one-line\s*prompt\s*into\s*full\s*product\s*spec)\b", "gan-planner", ["spec-generation", "writing-plans"]),
+        (r"\b(opensource\s*forker|fork\s*for\s*open-?sourcing|strip\s*secrets\s*for\s*fork)\b", "opensource-forker", ["opensource-release", "secret-stripping"]),
+        (r"\b(opensource\s*packager|open-?source\s*packaging|prepare\s*open-?source\s*release)\b", "opensource-packager", ["packaging", "npm-packaging"]),
+        (r"\b(opensource\s*sanitizer|sanitize\s*open-?source\s*fork|scan\s*for\s*leaked\s*secrets\s*before\s*release)\b", "opensource-sanitizer", ["sanitization", "vulnerability-scanner"]),
+        (r"\b(chief\s*of\s*staff|triage\s*email|triage\s*slack)\b", "chief-of-staff", ["executive-briefing", "communication"]),
+        (r"\b(single-agent\s*execution|task\s*coordinator|coordination\s*agent)\b", "coordinator", ["task-coordination", "behavioral-modes"]),
+        (r"\b(adversarial\s*plan|failure\s*mode\s*anticipation|plan\s*with\s*adversarial)\b", "plan", ["adversarial-planning", "failure-mode-analysis"]),
+        (r"\b(feature\s*planning|refactoring\s*plan|implementation\s*roadmap)\b", "planner", ["plan-writing", "writing-plans"]),
+        (r"\b(product\s*owner|acceptance\s*criteria|user\s*story\s*backlog)\b", "product-owner", ["product-lens", "user-story-writing"]),
+        (r"\b(loop\s*operator|autonomous\s*agent\s*loops?|intervene\s*on\s*stalled\s*loop)\b", "loop-operator", ["continuous-agent-loop", "operator-approval-loop"]),
+        (r"\b(read-only\s*reconnaissance|map\s*callers\s*and\s*tests|quick\s*repo\s*survey)\b", "explore", ["codebase-onboarding", "repo-scan"]),
+        (r"\b(file\s*analyzer|batch\s*file\s*analysis|extract\s*file\s*symbols)\b", "file-analyzer", ["understand", "clean-code"]),
+        (r"\b(assemble\s*reviewer|merge-batch-graphs|assemble\s*knowledge\s*graph)\b", "assemble-reviewer", ["understand", "clean-code"]),
+        (r"\b(graph\s*reviewer|validate\s*knowledge\s*graph|knowledge\s*graph\s*approval)\b", "graph-reviewer", ["understand", "clean-code"]),
+        (r"\b(article\s*analyzer|extract\s*markdown\s*graph|wiki\s*entity\s*extraction)\b", "article-analyzer", ["understand-knowledge", "clean-code"]),
+        (r"\b(design\s*analyzer|figma\s*structural\s*nodes|figma\s*manifest)\b", "design-analyzer", ["understand-figma", "clean-code"]),
+        (r"\b(knowledge\s*graph\s*guide|query\s*knowledge\s*graph|navigate\s*knowledge\s*graph)\b", "knowledge-graph-guide", ["understand-knowledge", "clean-code"]),
+        (r"\b(general\s*inquiry|general\s*programming\s*question|general\s*help)\b", "general", ["using-superpowers", "clean-code"]),
+        # Multi-Domain & Multi-Agent Swarm (Highest Priority)
+        (r"\b(build\s*saas|full\s*stack\s*app|multi-?domain\s*project|orchestrate|multi\s*agent|agents\s*communicate|context\s*sharing|runtime\s*complexity|agent\s*swarm)\b", "orchestrator", ["parallel-agents", "multi-agent-orchestration", "context-management", "memory-protocol"]),
 
         # System Architecture & Diagrams (Archify) - High Priority
         (r"\b(draw\s*architecture|high\s*level\s*architecture|system\s*architecture|archify|process\s*flow|flow\s*charts?|sequence\s*diagram)\b", "architect", ["archify", "architecture", "architecture-decision-records"]),
@@ -81,7 +116,7 @@ class IntelligentRouter:
         (r"\b(ruby|rails|activerecord|rspec|gemfile)\b", "ruby-reviewer", ["rails-patterns"]),
         (r"\b(typescript|generics|conditional\s*types|strict\s*null|ts\s*error)\b", "typescript-reviewer", ["typescript-patterns", "clean-code"]),
         (r"\b(python|pythonic|pep8|type\s*hints)\b", "python-reviewer", ["python-patterns", "python-testing"]),
-        (r"\b(backend|api|rest\s*api|graphql|trpc|server|middleware)\b", "backend-specialist", ["api-patterns", "nodejs-best-practices"]),
+        (r"\b(backend|backend\s*api|rest\s*api|graphql|trpc|backend\s*server|middleware|express\s*endpoint)\b", "backend-specialist", ["api-patterns", "nodejs-best-practices"]),
 
         # Domain 4: Database & Storage
         (r"\b(slow\s*query|explain\s*analyze|n\+1\s*query|postgres\s*optimiz|index\s*tuning)\b", "database-reviewer", ["postgres-patterns", "mysql-patterns"]),
@@ -113,24 +148,24 @@ class IntelligentRouter:
         # Domain 8: Architecture, Quality & Refactoring
         (r"\b(clean\s*dead\s*code|remove\s*unused\s*imports|orphan\s*functions?|remove\s*orphans?)\b", "refactor-cleaner", ["clean-code", "refactor-cleaner"]),
         (r"\b(simplify\s*code|overcomplicated|too\s*complex|reduce\s*lines|karpathy)\b", "code-simplifier", ["clean-code", "karpathy-guidelines"]),
+        (r"\b(code\s*comments?|meaningful\s*comments?|review\s*code\s*comments?|remove\s*emojis|docstring\s*review)\b", "comment-analyzer", ["clean-code"]),
         (r"\b(code\s*review|review\s*this\s*pr|peer\s*review|review\s*code)\b", "code-reviewer", ["code-review-checklist", "requesting-code-review"]),
         (r"\b(legacy\s*code|understand\s*old\s*codebase|reverse\s*engineer|undocumented\s*system)\b", "code-archaeologist", ["brownfield-retrospective", "codebase-onboarding"]),
         (r"\b(oop\s*design|solid\s*principles|design\s*patterns|dependency\s*inversion|class\s*diagram)\b", "code-architect", ["clean-code", "architecture", "archify"]),
         (r"\b(system\s*architecture|adr|microservices\s*vs\s*monolith|hexagonal\s*architecture)\b", "architect", ["architecture", "architecture-decision-records"]),
         (r"\b(conventional\s*commits|commit\s*message\s*review|git\s*history)\b", "commit-reviewer", ["conventional-commit-review", "git-workflow"]),
-        (r"\b(code\s*comments|meaningful\s*comments|remove\s*emojis|docstring\s*review)\b", "comment-analyzer", ["clean-code"]),
         (r"\b(behavioral\s*spec|contract\s*extraction|openspec)\b", "spec-miner", ["contract-first"]),
         (r"\b(type\s*modeling|domain\s*invariants|strong\s*typing)\b", "type-design-analyzer", ["clean-code", "typescript-patterns"]),
 
         # Domain 9: Exploration, Documentation & Planning
         (r"\b(explore\s*codebase|map\s*architecture|find\s*where\s*\w+\s*is\s*defined)\b", "explorer-agent", ["repo-scan", "code-tour"]),
         (r"\b(trace\s*caller|call\s*hierarchy|find\s*usages?)\b", "code-explorer", ["codebase-onboarding"]),
-        (r"\b(update\s*docs|sync\s*readme|update\s*api\s*docs)\b", "doc-updater", ["docs-governance", "living-docs-governance"]),
+        (r"\b(update\s*docs?|sync\s*readme|update\s*api\s*docs?|api\s*documentation)\b", "doc-updater", ["docs-governance", "living-docs-governance"]),
         (r"\b(lookup\s*docs|how\s*to\s*use\s*library|official\s*docs\s*syntax)\b", "docs-lookup", ["documentation-lookup"]),
         (r"\b(write\s*manual|technical\s*guide|architecture\s*document|user\s*guide)\b", "documentation-writer", ["documentation-templates"]),
-        (r"\b(summarize\s*session|extract\s*takeaways|session\s*learnings)\b", "conversation-analyzer", ["knowledge-ops"]),
+        (r"\b(summarize\s*session|extract\s*takeaways|session\s*learnings|conversation\s*transcript|analyze\s*conversation)\b", "conversation-analyzer", ["knowledge-ops"]),
         (r"\b(plan\s*project|task\s*breakdown|implementation\s*plan|roadmap)\b", "project-planner", ["brainstorming", "plan-writing"]),
-        (r"\b(user\s*stories|acceptance\s*criteria|mvp\s*scope|backlog)\b", "product-manager", ["plan-writing", "brainstorming"]),
+        (r"\b(product\s*requirements?|prd|user\s*stories|mvp\s*scope|product\s*manager)\b", "product-manager", ["plan-writing", "brainstorming"]),
 
         # Domain 10: Specialized Domains
         (r"\b(game|phaser|godot|unity|game\s*mechanics|game\s*loop)\b", "game-developer", ["game-development"]),
@@ -163,10 +198,10 @@ class IntelligentRouter:
 
 
 def test_agent_catalog():
-    print(f"\n{BOLD}Test 1: Agent Catalog & Frontmatter Integrity (95 agents){RESET}")
+    print(f"\n{BOLD}Test 1: Agent Catalog & Frontmatter Integrity (108 agents){RESET}")
     agent_files = sorted(glob.glob(".agent/agents/*.md"))
-    if len(agent_files) != 95:
-        log_fail(f"Expected 95 agent files, found {len(agent_files)}")
+    if len(agent_files) != 108:
+        log_fail(f"Expected 108 agent files, found {len(agent_files)}")
         return False
     
     log_pass(f"Discovered exactly {len(agent_files)} agent markdown files.")
@@ -193,7 +228,7 @@ def test_agent_catalog():
             all_valid = False
 
     if all_valid:
-        log_pass("All 95 agents have valid YAML frontmatter, name, and description.")
+        log_pass("All 108 agents have valid YAML frontmatter, name, and description.")
     return all_valid
 
 
@@ -225,7 +260,7 @@ def test_rules_synchronization():
         log_fail("Root GEMINI.md is missing the Prompt-Trigger Routing Engine!")
         all_ok = False
         
-    if "Comprehensive 95-Agent Prompt Trigger Matrix" in root_gemini or "Comprehensive 94-Agent Prompt Trigger Matrix" in root_gemini:
+    if "Comprehensive 108-Agent Prompt Trigger Matrix" in root_gemini or "Comprehensive 95-Agent Prompt Trigger Matrix" in root_gemini or "Comprehensive 94-Agent Prompt Trigger Matrix" in root_gemini:
         log_pass("Root GEMINI.md contains the Agent Prompt Trigger Matrix.")
     else:
         log_fail("Root GEMINI.md is missing the Agent Matrix!")
@@ -233,7 +268,7 @@ def test_rules_synchronization():
 
     # 2. .agent/rules/GEMINI.md
     agent_gemini = Path(".agent/rules/GEMINI.md").read_text(encoding="utf-8")
-    if "COMPREHENSIVE PROMPT-TRIGGER AGENT MATRIX (95 AGENTS)" in agent_gemini or "COMPREHENSIVE PROMPT-TRIGGER AGENT MATRIX (94 AGENTS)" in agent_gemini:
+    if "COMPREHENSIVE PROMPT-TRIGGER AGENT MATRIX (108 AGENTS)" in agent_gemini or "COMPREHENSIVE PROMPT-TRIGGER AGENT MATRIX (95 AGENTS)" in agent_gemini or "COMPREHENSIVE PROMPT-TRIGGER AGENT MATRIX (94 AGENTS)" in agent_gemini:
         log_pass(".agent/rules/GEMINI.md contains the Agent Matrix.")
     else:
         log_fail(".agent/rules/GEMINI.md is missing the Agent Matrix!")
@@ -249,7 +284,7 @@ def test_rules_synchronization():
 
     # 4. ARCHITECTURE.md
     arch = Path(".agent/ARCHITECTURE.md").read_text(encoding="utf-8")
-    if "95 Specialist Agents" in arch and "350+ Skills" in arch:
+    if "108 Specialist Agents" in arch or "95 Specialist Agents" in arch and "350+ Skills" in arch:
         log_pass(".agent/ARCHITECTURE.md reflects 95 agents and 350+ skills.")
     else:
         log_fail(".agent/ARCHITECTURE.md numbers are out of sync!")
@@ -277,6 +312,11 @@ def test_prompt_trigger_simulation():
     print(f"\n{BOLD}Test 4: Real-World Prompt Trigger Simulation (40 Test Cases){RESET}")
     
     test_cases = [
+        # Newly Added Specialized Agents
+        ("Remove AI slops from my UI design and update UI properly", "unslop"),
+        ("Like Google Photos, create a search functionality for my software", "reverse-engineering-anything"),
+        ("I got a new project which is unknown for me, explain me project e2e and its architecture", "understand-anything"),
+        ("I want a multi agent system where agents communicate and share context on runtime complexity", "orchestrator"),
         # Frontend & UI
         ("Create a responsive dark mode navbar component in React with Tailwind CSS", "frontend-specialist"),
         ("My React component is stuck in an infinite re-render loop in useEffect", "react-reviewer"),

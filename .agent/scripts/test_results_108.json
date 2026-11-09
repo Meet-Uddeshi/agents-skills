@@ -1,0 +1,1297 @@
+[
+  {
+    "id": 1,
+    "expected_agent": "a11y-architect",
+    "routed_agent": "a11y-architect",
+    "passed": true,
+    "skills": [
+      "accessibility",
+      "frontend-a11y"
+    ],
+    "prompt": "Audit this web page for accessibility, color contrast, and WCAG screen reader labels",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 2,
+    "expected_agent": "frontend-specialist",
+    "routed_agent": "frontend-specialist",
+    "passed": true,
+    "skills": [
+      "frontend-design",
+      "react-best-practices"
+    ],
+    "prompt": "Create a responsive dark mode navbar component in React with Tailwind CSS",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 3,
+    "expected_agent": "react-build-resolver",
+    "routed_agent": "react-build-resolver",
+    "passed": true,
+    "skills": [
+      "nextjs-turbopack",
+      "vite-patterns"
+    ],
+    "prompt": "Vite build error when importing dynamic server module with turbopack",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 4,
+    "expected_agent": "react-reviewer",
+    "routed_agent": "react-reviewer",
+    "passed": true,
+    "skills": [
+      "react-patterns",
+      "react-performance"
+    ],
+    "prompt": "My React component is stuck in an infinite re-render loop in useEffect memo",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 5,
+    "expected_agent": "unslop",
+    "routed_agent": "unslop",
+    "passed": true,
+    "skills": [
+      "clean-code",
+      "frontend-design",
+      "unslop",
+      "web-design-guidelines"
+    ],
+    "prompt": "Remove AI slops from my UI design and update UI properly with clean craft",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 6,
+    "expected_agent": "vue-reviewer",
+    "routed_agent": "vue-reviewer",
+    "passed": true,
+    "skills": [
+      "vue-patterns",
+      "nuxt4-patterns"
+    ],
+    "prompt": "Build a Vue 3 dashboard using Composition API and Pinia state",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 7,
+    "expected_agent": "dart-build-resolver",
+    "routed_agent": "dart-build-resolver",
+    "passed": true,
+    "skills": [
+      "dart-flutter-patterns",
+      "systematic-debugging"
+    ],
+    "prompt": "Flutter build error with pubspec dependencies and pod install",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 8,
+    "expected_agent": "flutter-reviewer",
+    "routed_agent": "flutter-reviewer",
+    "passed": true,
+    "skills": [
+      "dart-flutter-patterns",
+      "flutter-dart-code-review"
+    ],
+    "prompt": "Build a Flutter widget with Riverpod state management and BLoC",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 9,
+    "expected_agent": "harmonyos-app-resolver",
+    "routed_agent": "harmonyos-app-resolver",
+    "passed": true,
+    "skills": [
+      "mobile-design"
+    ],
+    "prompt": "Develop a HarmonyOS application with ArkTS and ArkUI",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 10,
+    "expected_agent": "mobile-automation-engineer",
+    "routed_agent": "mobile-automation-engineer",
+    "passed": true,
+    "skills": [
+      "clean-code",
+      "testing-patterns",
+      "mobile-automation",
+      "appium-skill"
+    ],
+    "prompt": "Set up Appium mobile automation test suite with WebdriverIO and Screen Object Model",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 11,
+    "expected_agent": "mobile-developer",
+    "routed_agent": "mobile-developer",
+    "passed": true,
+    "skills": [
+      "mobile-design",
+      "clean-code"
+    ],
+    "prompt": "Create a mobile app screen in React Native with Expo navigation",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 12,
+    "expected_agent": "swift-build-resolver",
+    "routed_agent": "swift-build-resolver",
+    "passed": true,
+    "skills": [
+      "swift-protocol-di-testing",
+      "systematic-debugging"
+    ],
+    "prompt": "Xcode build failed with Swift compiler error and SPM dependency resolution",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 13,
+    "expected_agent": "swift-reviewer",
+    "routed_agent": "swift-reviewer",
+    "passed": true,
+    "skills": [
+      "swiftui-patterns",
+      "swift-actor-persistence"
+    ],
+    "prompt": "Implement SwiftUI navigation with async actor persistence and combine",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 14,
+    "expected_agent": "backend-specialist",
+    "routed_agent": "backend-specialist",
+    "passed": true,
+    "skills": [
+      "api-patterns",
+      "nodejs-best-practices"
+    ],
+    "prompt": "Design a REST API server with middleware authentication and Express endpoints",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 15,
+    "expected_agent": "cpp-build-resolver",
+    "routed_agent": "cpp-build-resolver",
+    "passed": true,
+    "skills": [
+      "cpp-testing",
+      "systematic-debugging"
+    ],
+    "prompt": "CMake error with GCC linker undefined reference vtable during compilation",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 16,
+    "expected_agent": "cpp-reviewer",
+    "routed_agent": "cpp-reviewer",
+    "passed": true,
+    "skills": [
+      "cpp-coding-standards",
+      "cpp-testing"
+    ],
+    "prompt": "Modern C++ smart pointers and RAII memory safety review",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 17,
+    "expected_agent": "csharp-reviewer",
+    "routed_agent": "csharp-reviewer",
+    "passed": true,
+    "skills": [
+      "dotnet-patterns",
+      "csharp-testing"
+    ],
+    "prompt": "C# ASP.NET Core API with Entity Framework LINQ queries",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 18,
+    "expected_agent": "django-build-resolver",
+    "routed_agent": "django-build-resolver",
+    "passed": true,
+    "skills": [
+      "django-verification",
+      "django-security"
+    ],
+    "prompt": "Django migration conflict when running makemigrations and pip conflict",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 19,
+    "expected_agent": "django-reviewer",
+    "routed_agent": "django-reviewer",
+    "passed": true,
+    "skills": [
+      "django-patterns",
+      "django-celery"
+    ],
+    "prompt": "Implement Django ORM serializer with Celery background task",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 20,
+    "expected_agent": "fastapi-reviewer",
+    "routed_agent": "fastapi-reviewer",
+    "passed": true,
+    "skills": [
+      "fastapi-patterns",
+      "api-patterns"
+    ],
+    "prompt": "Create an async FastAPI router with Pydantic v2 validation",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 21,
+    "expected_agent": "fsharp-reviewer",
+    "routed_agent": "fsharp-reviewer",
+    "passed": true,
+    "skills": [
+      "fsharp-testing"
+    ],
+    "prompt": "Implement F# discriminated unions with pattern matching and FsUnit tests",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 22,
+    "expected_agent": "go-build-resolver",
+    "routed_agent": "go-build-resolver",
+    "passed": true,
+    "skills": [
+      "golang-patterns",
+      "systematic-debugging"
+    ],
+    "prompt": "Go build error when compiling packages with go mod tidy",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 23,
+    "expected_agent": "go-reviewer",
+    "routed_agent": "go-reviewer",
+    "passed": true,
+    "skills": [
+      "golang-patterns",
+      "golang-testing"
+    ],
+    "prompt": "Review my Golang code for goroutine leaks and channel deadlocks",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 24,
+    "expected_agent": "java-build-resolver",
+    "routed_agent": "java-build-resolver",
+    "passed": true,
+    "skills": [
+      "springboot-verification",
+      "quarkus-verification"
+    ],
+    "prompt": "Maven build failure with javac classpath dependency conflict",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 25,
+    "expected_agent": "java-reviewer",
+    "routed_agent": "java-reviewer",
+    "passed": true,
+    "skills": [
+      "java-coding-standards",
+      "springboot-patterns"
+    ],
+    "prompt": "Spring Boot REST controller with JPA Hibernate query optimization",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 26,
+    "expected_agent": "kotlin-build-resolver",
+    "routed_agent": "kotlin-build-resolver",
+    "passed": true,
+    "skills": [
+      "kotlin-testing",
+      "systematic-debugging"
+    ],
+    "prompt": "Kotlin compiler error in Gradle KTS build with kapt",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 27,
+    "expected_agent": "kotlin-reviewer",
+    "routed_agent": "kotlin-reviewer",
+    "passed": true,
+    "skills": [
+      "kotlin-patterns",
+      "kotlin-coroutines-flows"
+    ],
+    "prompt": "Kotlin coroutines flow with Ktor client and KMP",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 28,
+    "expected_agent": "php-reviewer",
+    "routed_agent": "php-reviewer",
+    "passed": true,
+    "skills": [
+      "laravel-patterns",
+      "laravel-tdd"
+    ],
+    "prompt": "Laravel Eloquent model with artisan migration and PSR-12 standard",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 29,
+    "expected_agent": "python-reviewer",
+    "routed_agent": "python-reviewer",
+    "passed": true,
+    "skills": [
+      "python-patterns",
+      "python-testing"
+    ],
+    "prompt": "Write pythonic code adhering to PEP8 with strict type hints and asyncio",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 30,
+    "expected_agent": "ruby-reviewer",
+    "routed_agent": "ruby-reviewer",
+    "passed": true,
+    "skills": [
+      "rails-patterns"
+    ],
+    "prompt": "Ruby on Rails ActiveRecord query with RSpec tests and Gemfile",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 31,
+    "expected_agent": "rust-build-resolver",
+    "routed_agent": "rust-build-resolver",
+    "passed": true,
+    "skills": [
+      "rust-patterns",
+      "systematic-debugging"
+    ],
+    "prompt": "Rustc compiler error: cannot borrow as mutable more than once",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 32,
+    "expected_agent": "rust-reviewer",
+    "routed_agent": "rust-reviewer",
+    "passed": true,
+    "skills": [
+      "rust-patterns",
+      "rust-pro"
+    ],
+    "prompt": "Review my Rust struct lifetimes and Tokio async tasks with cargo",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 33,
+    "expected_agent": "typescript-reviewer",
+    "routed_agent": "typescript-reviewer",
+    "passed": true,
+    "skills": [
+      "typescript-patterns",
+      "clean-code"
+    ],
+    "prompt": "Complex TypeScript generics and conditional types with strict null checks",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 34,
+    "expected_agent": "database-architect",
+    "routed_agent": "database-architect",
+    "passed": true,
+    "skills": [
+      "database-design",
+      "prisma-patterns",
+      "archify"
+    ],
+    "prompt": "Design a PostgreSQL database schema with Prisma migrations and ER diagram",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 35,
+    "expected_agent": "database-reviewer",
+    "routed_agent": "database-reviewer",
+    "passed": true,
+    "skills": [
+      "postgres-patterns",
+      "mysql-patterns"
+    ],
+    "prompt": "Slow query optimization with EXPLAIN ANALYZE on 2M rows in Postgres",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 36,
+    "expected_agent": "devops-engineer",
+    "routed_agent": "devops-engineer",
+    "passed": true,
+    "skills": [
+      "deployment-procedures",
+      "docker-patterns"
+    ],
+    "prompt": "Create a production Dockerfile and GitHub Actions CI/CD deployment pipeline",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 37,
+    "expected_agent": "homelab-architect",
+    "routed_agent": "homelab-architect",
+    "passed": true,
+    "skills": [
+      "homelab-network-readiness",
+      "homelab-pihole-dns"
+    ],
+    "prompt": "Configure Proxmox homelab with Pi-hole DNS and WireGuard VPN server",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 38,
+    "expected_agent": "network-architect",
+    "routed_agent": "network-architect",
+    "passed": true,
+    "skills": [
+      "network-config-validation",
+      "network-bgp-diagnostics"
+    ],
+    "prompt": "Design enterprise network architecture with BGP routing and VPN topology",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 39,
+    "expected_agent": "network-config-reviewer",
+    "routed_agent": "network-config-reviewer",
+    "passed": true,
+    "skills": [
+      "cisco-ios-patterns",
+      "netmiko-ssh-automation"
+    ],
+    "prompt": "Configure Cisco router ACL and switch config with netmiko automation",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 40,
+    "expected_agent": "network-troubleshooter",
+    "routed_agent": "network-troubleshooter",
+    "passed": true,
+    "skills": [
+      "network-interface-health",
+      "systematic-debugging"
+    ],
+    "prompt": "Diagnose packet loss and DNS resolution failure on degraded interface",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 41,
+    "expected_agent": "penetration-tester",
+    "routed_agent": "penetration-tester",
+    "passed": true,
+    "skills": [
+      "red-team-tactics"
+    ],
+    "prompt": "Red team penetration test with exploit payload simulation and privilege escalation",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 42,
+    "expected_agent": "security-auditor",
+    "routed_agent": "security-auditor",
+    "passed": true,
+    "skills": [
+      "vulnerability-scanner",
+      "security-review"
+    ],
+    "prompt": "Perform an OWASP Top 10 security audit and vulnerability scan on auth endpoints",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 43,
+    "expected_agent": "security-reviewer",
+    "routed_agent": "security-reviewer",
+    "passed": true,
+    "skills": [
+      "security-scan",
+      "security-bounty-hunter"
+    ],
+    "prompt": "Review code for SQL injection, XSS, and IDOR vulnerabilities",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 44,
+    "expected_agent": "build-error-resolver",
+    "routed_agent": "build-error-resolver",
+    "passed": true,
+    "skills": [
+      "systematic-debugging"
+    ],
+    "prompt": "Resolve compilation failed syntax error during production bundle build",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 45,
+    "expected_agent": "debugger",
+    "routed_agent": "debugger",
+    "passed": true,
+    "skills": [
+      "systematic-debugging",
+      "root-cause-tracing"
+    ],
+    "prompt": "Investigate application crash with traceback and find root cause",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 46,
+    "expected_agent": "e2e-runner",
+    "routed_agent": "e2e-runner",
+    "passed": true,
+    "skills": [
+      "browser-qa",
+      "webapp-testing"
+    ],
+    "prompt": "Run visual regression tests with headless browser run across viewports",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 47,
+    "expected_agent": "pr-test-analyzer",
+    "routed_agent": "pr-test-analyzer",
+    "passed": true,
+    "skills": [
+      "testing-anti-patterns"
+    ],
+    "prompt": "Analyze PR test coverage gap and fix flaky tests missing assertions",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 48,
+    "expected_agent": "qa-automation-engineer",
+    "routed_agent": "qa-automation-engineer",
+    "passed": true,
+    "skills": [
+      "webapp-testing",
+      "e2e-testing"
+    ],
+    "prompt": "Set up Playwright E2E browser automation test suite with Cypress",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 49,
+    "expected_agent": "silent-failure-hunter",
+    "routed_agent": "silent-failure-hunter",
+    "passed": true,
+    "skills": [
+      "error-handling",
+      "condition-based-waiting"
+    ],
+    "prompt": "Detect silent failure where exception is swallowed by empty catch block",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 50,
+    "expected_agent": "tdd-guide",
+    "routed_agent": "tdd-guide",
+    "passed": true,
+    "skills": [
+      "test-driven-development",
+      "tdd-workflow"
+    ],
+    "prompt": "Follow strict TDD red green refactor to write failing test first for discount calculation",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 51,
+    "expected_agent": "test-engineer",
+    "routed_agent": "test-engineer",
+    "passed": true,
+    "skills": [
+      "testing-patterns",
+      "tdd-workflow"
+    ],
+    "prompt": "Write comprehensive unit tests with mocks in pytest and vitest",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 52,
+    "expected_agent": "verify",
+    "routed_agent": "verify",
+    "passed": true,
+    "skills": [
+      "verification-before-completion"
+    ],
+    "prompt": "Execute verify all validation checks to prove it works before release",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 53,
+    "expected_agent": "architect",
+    "routed_agent": "architect",
+    "passed": true,
+    "skills": [
+      "archify",
+      "architecture",
+      "architecture-decision-records"
+    ],
+    "prompt": "Draw high level architecture of the project with archify sequence diagram",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 54,
+    "expected_agent": "code-archaeologist",
+    "routed_agent": "code-archaeologist",
+    "passed": true,
+    "skills": [
+      "brownfield-retrospective",
+      "codebase-onboarding"
+    ],
+    "prompt": "Analyze legacy code to understand old codebase and reverse engineer undocumented logic",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 55,
+    "expected_agent": "code-architect",
+    "routed_agent": "code-architect",
+    "passed": true,
+    "skills": [
+      "clean-code",
+      "architecture",
+      "archify"
+    ],
+    "prompt": "Design a class diagram following OOP design principles and dependency inversion",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 56,
+    "expected_agent": "code-reviewer",
+    "routed_agent": "code-reviewer",
+    "passed": true,
+    "skills": [
+      "code-review-checklist",
+      "requesting-code-review"
+    ],
+    "prompt": "Perform thorough code review on this PR with security and quality checklist",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 57,
+    "expected_agent": "code-simplifier",
+    "routed_agent": "code-simplifier",
+    "passed": true,
+    "skills": [
+      "clean-code",
+      "karpathy-guidelines"
+    ],
+    "prompt": "This 400-line function is too complex and overcomplicated, simplify code",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 58,
+    "expected_agent": "comment-analyzer",
+    "routed_agent": "comment-analyzer",
+    "passed": true,
+    "skills": [
+      "clean-code"
+    ],
+    "prompt": "Review code comments, ensure meaningful docstrings, and remove emojis from code",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 59,
+    "expected_agent": "commit-reviewer",
+    "routed_agent": "commit-reviewer",
+    "passed": true,
+    "skills": [
+      "conventional-commit-review",
+      "git-workflow"
+    ],
+    "prompt": "Review conventional commits format and validate git history messages",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 60,
+    "expected_agent": "refactor-cleaner",
+    "routed_agent": "refactor-cleaner",
+    "passed": true,
+    "skills": [
+      "clean-code",
+      "refactor-cleaner"
+    ],
+    "prompt": "Clean dead code, remove unused imports and remove orphan functions",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 61,
+    "expected_agent": "reverse-engineering-anything",
+    "routed_agent": "reverse-engineering-anything",
+    "passed": true,
+    "skills": [
+      "clean-code",
+      "systematic-debugging",
+      "reverse-engineer-anything",
+      "rea-analysis-optimization",
+      "rea-tool-design"
+    ],
+    "prompt": "Like Google Photos, create a search functionality for my software with REA",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 62,
+    "expected_agent": "spec-miner",
+    "routed_agent": "spec-miner",
+    "passed": true,
+    "skills": [
+      "contract-first"
+    ],
+    "prompt": "Extract behavioral spec and openspec system invariants from tests",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 63,
+    "expected_agent": "type-design-analyzer",
+    "routed_agent": "type-design-analyzer",
+    "passed": true,
+    "skills": [
+      "clean-code",
+      "typescript-patterns"
+    ],
+    "prompt": "Perform type modeling with domain invariants and strong typing guarantees",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 64,
+    "expected_agent": "code-explorer",
+    "routed_agent": "code-explorer",
+    "passed": true,
+    "skills": [
+      "codebase-onboarding"
+    ],
+    "prompt": "Trace caller hierarchy and find usages for this function across files",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 65,
+    "expected_agent": "conversation-analyzer",
+    "routed_agent": "conversation-analyzer",
+    "passed": true,
+    "skills": [
+      "knowledge-ops"
+    ],
+    "prompt": "Analyze conversation transcript to synthesize decisions and action items",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 66,
+    "expected_agent": "doc-updater",
+    "routed_agent": "doc-updater",
+    "passed": true,
+    "skills": [
+      "docs-governance",
+      "living-docs-governance"
+    ],
+    "prompt": "Update docs and sync README with latest API changes",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 67,
+    "expected_agent": "docs-lookup",
+    "routed_agent": "docs-lookup",
+    "passed": true,
+    "skills": [
+      "documentation-lookup"
+    ],
+    "prompt": "Lookup docs for official syntax and usage of this new library",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 68,
+    "expected_agent": "documentation-writer",
+    "routed_agent": "documentation-writer",
+    "passed": true,
+    "skills": [
+      "documentation-templates"
+    ],
+    "prompt": "Write comprehensive technical guide and user manual architecture document",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 69,
+    "expected_agent": "explore",
+    "routed_agent": "explore",
+    "passed": true,
+    "skills": [
+      "codebase-onboarding",
+      "repo-scan"
+    ],
+    "prompt": "Perform read-only reconnaissance to map callers and tests for quick repo survey",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 70,
+    "expected_agent": "explorer-agent",
+    "routed_agent": "explorer-agent",
+    "passed": true,
+    "skills": [
+      "repo-scan",
+      "code-tour"
+    ],
+    "prompt": "Explore codebase and map architecture boundaries across directories",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 71,
+    "expected_agent": "plan",
+    "routed_agent": "plan",
+    "passed": true,
+    "skills": [
+      "adversarial-planning",
+      "failure-mode-analysis"
+    ],
+    "prompt": "Create an adversarial plan anticipating failure modes and edge cases",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 72,
+    "expected_agent": "planner",
+    "routed_agent": "planner",
+    "passed": true,
+    "skills": [
+      "plan-writing",
+      "writing-plans"
+    ],
+    "prompt": "Formulate a feature planning roadmap for the upcoming refactoring phase",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 73,
+    "expected_agent": "product-manager",
+    "routed_agent": "product-manager",
+    "passed": true,
+    "skills": [
+      "plan-writing",
+      "brainstorming"
+    ],
+    "prompt": "Draft product requirements document PRD with user problem statement",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 74,
+    "expected_agent": "product-owner",
+    "routed_agent": "product-owner",
+    "passed": true,
+    "skills": [
+      "product-lens",
+      "user-story-writing"
+    ],
+    "prompt": "Refine user story backlog with testable acceptance criteria",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 75,
+    "expected_agent": "project-planner",
+    "routed_agent": "project-planner",
+    "passed": true,
+    "skills": [
+      "brainstorming",
+      "plan-writing"
+    ],
+    "prompt": "Develop 4-phase project implementation plan with milestones and task breakdown",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 76,
+    "expected_agent": "architecture-analyzer",
+    "routed_agent": "architecture-analyzer",
+    "passed": true,
+    "skills": [
+      "understand",
+      "clean-code"
+    ],
+    "prompt": "Run architecture analyzer to assign files to architectural layers",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 77,
+    "expected_agent": "article-analyzer",
+    "routed_agent": "article-analyzer",
+    "passed": true,
+    "skills": [
+      "understand-knowledge",
+      "clean-code"
+    ],
+    "prompt": "Execute article analyzer to extract markdown graph and wiki entity relationships",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 78,
+    "expected_agent": "assemble-reviewer",
+    "routed_agent": "assemble-reviewer",
+    "passed": true,
+    "skills": [
+      "understand",
+      "clean-code"
+    ],
+    "prompt": "Run assemble reviewer to merge-batch-graphs and assemble knowledge graph",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 79,
+    "expected_agent": "design-analyzer",
+    "routed_agent": "design-analyzer",
+    "passed": true,
+    "skills": [
+      "understand-figma",
+      "clean-code"
+    ],
+    "prompt": "Use design analyzer to parse Figma structural nodes from figma manifest",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 80,
+    "expected_agent": "domain-analyzer",
+    "routed_agent": "domain-analyzer",
+    "passed": true,
+    "skills": [
+      "understand-domain",
+      "clean-code"
+    ],
+    "prompt": "Run domain analyzer to extract business domain knowledge and process steps",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 81,
+    "expected_agent": "file-analyzer",
+    "routed_agent": "file-analyzer",
+    "passed": true,
+    "skills": [
+      "understand",
+      "clean-code"
+    ],
+    "prompt": "Execute file analyzer for batch file analysis and extract file symbols",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 82,
+    "expected_agent": "graph-reviewer",
+    "routed_agent": "graph-reviewer",
+    "passed": true,
+    "skills": [
+      "understand",
+      "clean-code"
+    ],
+    "prompt": "Run graph reviewer to validate knowledge graph and render quality approval",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 83,
+    "expected_agent": "knowledge-graph-guide",
+    "routed_agent": "knowledge-graph-guide",
+    "passed": true,
+    "skills": [
+      "understand-knowledge",
+      "clean-code"
+    ],
+    "prompt": "Consult knowledge graph guide to query knowledge graph and navigate relationships",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 84,
+    "expected_agent": "project-scanner",
+    "routed_agent": "project-scanner",
+    "passed": true,
+    "skills": [
+      "understand",
+      "clean-code"
+    ],
+    "prompt": "Run project scanner to generate project inventory and framework detection",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 85,
+    "expected_agent": "tour-builder",
+    "routed_agent": "tour-builder",
+    "passed": true,
+    "skills": [
+      "understand-onboard",
+      "clean-code"
+    ],
+    "prompt": "Use tour builder to design guided learning tour through codebase",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 86,
+    "expected_agent": "understand-anything",
+    "routed_agent": "understand-anything",
+    "passed": true,
+    "skills": [
+      "understand",
+      "understand-chat",
+      "understand-dashboard",
+      "understand-domain"
+    ],
+    "prompt": "I got a new project which is unknown for me, explain me project e2e and its architecture",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 87,
+    "expected_agent": "chief-of-staff",
+    "routed_agent": "chief-of-staff",
+    "passed": true,
+    "skills": [
+      "executive-briefing",
+      "communication"
+    ],
+    "prompt": "Personal chief of staff to triage email and triage Slack channels",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 88,
+    "expected_agent": "coordinator",
+    "routed_agent": "coordinator",
+    "passed": true,
+    "skills": [
+      "task-coordination",
+      "behavioral-modes"
+    ],
+    "prompt": "Act as coordination agent for single-agent execution and task handoffs",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 89,
+    "expected_agent": "loop-operator",
+    "routed_agent": "loop-operator",
+    "passed": true,
+    "skills": [
+      "continuous-agent-loop",
+      "operator-approval-loop"
+    ],
+    "prompt": "Operate autonomous agent loop and intervene on stalled loop execution",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 90,
+    "expected_agent": "orchestrator",
+    "routed_agent": "orchestrator",
+    "passed": true,
+    "skills": [
+      "parallel-agents",
+      "multi-agent-orchestration",
+      "context-management",
+      "memory-protocol"
+    ],
+    "prompt": "I want a multi agent system where agents communicate and share context on runtime complexity",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 91,
+    "expected_agent": "agent-evaluator",
+    "routed_agent": "agent-evaluator",
+    "passed": true,
+    "skills": [
+      "eval-harness",
+      "agent-eval"
+    ],
+    "prompt": "Perform agent evaluation using 5-axis quality rubric to score agent output",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 92,
+    "expected_agent": "gan-evaluator",
+    "routed_agent": "gan-evaluator",
+    "passed": true,
+    "skills": [
+      "eval-harness",
+      "browser-qa"
+    ],
+    "prompt": "Run GAN evaluator in GAN harness to score application against spec",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 93,
+    "expected_agent": "gan-generator",
+    "routed_agent": "gan-generator",
+    "passed": true,
+    "skills": [
+      "feature-implementation",
+      "clean-code"
+    ],
+    "prompt": "Run GAN generator to implement from GAN spec according to evaluation",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 94,
+    "expected_agent": "gan-planner",
+    "routed_agent": "gan-planner",
+    "passed": true,
+    "skills": [
+      "spec-generation",
+      "writing-plans"
+    ],
+    "prompt": "Run GAN planner to expand one-line prompt into full product spec",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 95,
+    "expected_agent": "harness-optimizer",
+    "routed_agent": "harness-optimizer",
+    "passed": true,
+    "skills": [
+      "harness-engineering",
+      "cost-aware-llm-pipeline"
+    ],
+    "prompt": "Execute harness optimizer to tune agent-harness config using eval-driven grading",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 96,
+    "expected_agent": "opensource-forker",
+    "routed_agent": "opensource-forker",
+    "passed": true,
+    "skills": [
+      "opensource-release",
+      "secret-stripping"
+    ],
+    "prompt": "Use opensource forker to fork for open-sourcing and strip secrets for fork",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 97,
+    "expected_agent": "opensource-packager",
+    "routed_agent": "opensource-packager",
+    "passed": true,
+    "skills": [
+      "packaging",
+      "npm-packaging"
+    ],
+    "prompt": "Use opensource packager to prepare open-source release with packaging",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 98,
+    "expected_agent": "opensource-sanitizer",
+    "routed_agent": "opensource-sanitizer",
+    "passed": true,
+    "skills": [
+      "sanitization",
+      "vulnerability-scanner"
+    ],
+    "prompt": "Use opensource sanitizer to sanitize open-source fork and scan for leaked secrets",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 99,
+    "expected_agent": "bengali-reviewer",
+    "routed_agent": "bengali-reviewer",
+    "passed": true,
+    "skills": [
+      "bengali-nlp"
+    ],
+    "prompt": "Review Bengali text for bangla conjuncts and unicode normalization",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 100,
+    "expected_agent": "game-developer",
+    "routed_agent": "game-developer",
+    "passed": true,
+    "skills": [
+      "game-development"
+    ],
+    "prompt": "Build a 2D arcade game in Phaser with physics and sprite animation",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 101,
+    "expected_agent": "healthcare-reviewer",
+    "routed_agent": "healthcare-reviewer",
+    "passed": true,
+    "skills": [
+      "hipaa-compliance",
+      "healthcare-phi-compliance"
+    ],
+    "prompt": "Audit clinical health data pipeline for HIPAA compliance and PHI security",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 102,
+    "expected_agent": "marketing-agent",
+    "routed_agent": "marketing-agent",
+    "passed": true,
+    "skills": [
+      "marketing-campaign",
+      "brand-voice"
+    ],
+    "prompt": "Write high converting marketing copy and audience research for marketing campaign",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 103,
+    "expected_agent": "mle-reviewer",
+    "routed_agent": "mle-reviewer",
+    "passed": true,
+    "skills": [
+      "mle-workflow",
+      "eval-harness"
+    ],
+    "prompt": "Review machine learning engineering training loop and model eval dataset contract",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 104,
+    "expected_agent": "performance-optimizer",
+    "routed_agent": "performance-optimizer",
+    "passed": true,
+    "skills": [
+      "performance-profiling",
+      "memory-leak-debugging"
+    ],
+    "prompt": "Profile performance and fix memory leak causing high CPU spikes",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 105,
+    "expected_agent": "pytorch-build-resolver",
+    "routed_agent": "pytorch-build-resolver",
+    "passed": true,
+    "skills": [
+      "pytorch-patterns",
+      "systematic-debugging"
+    ],
+    "prompt": "Fix PyTorch error with CUDA out of memory and tensor mismatch",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 106,
+    "expected_agent": "rag-pipeline-reviewer",
+    "routed_agent": "rag-pipeline-reviewer",
+    "passed": true,
+    "skills": [
+      "ai-first-engineering",
+      "cost-aware-llm-pipeline"
+    ],
+    "prompt": "Design RAG pipeline with vector DB embeddings and semantic chunking",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 107,
+    "expected_agent": "seo-specialist",
+    "routed_agent": "seo-specialist",
+    "passed": true,
+    "skills": [
+      "seo-fundamentals",
+      "geo-fundamentals"
+    ],
+    "prompt": "Optimize Core Web Vitals, JSON-LD Schema.org, and technical SEO metadata",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 108,
+    "expected_agent": "general",
+    "routed_agent": "general",
+    "passed": true,
+    "skills": [
+      "using-superpowers",
+      "clean-code"
+    ],
+    "prompt": "Answer this general programming question about basic algorithm principles",
+    "method": "TRIGGER_MATCH"
+  }
+]

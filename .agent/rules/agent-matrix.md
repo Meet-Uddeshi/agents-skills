@@ -40,7 +40,7 @@ Whenever a user prompt is received:
 
 ---
 
-## 3. Comprehensive 95-Agent Prompt Trigger Matrix
+## 3. Comprehensive 108-Agent Prompt Trigger Matrix
 
 Match the user's intent and prompt keywords to the designated specialist agent(s) and core skills:
 
@@ -52,6 +52,7 @@ Match the user's intent and prompt keywords to the designated specialist agent(s
 | `react-build-resolver` | "react build fail", "vite build error", "next build error", "webpack compilation", "missing module in react", "turbopack error" | `nextjs-turbopack`, `vite-patterns`, `systematic-debugging` |
 | `vue-reviewer` | "vue", "vue 3", "composition api", "pinia", "nuxt", "nuxt4", "vue template", "v-model", "ref/reactive" | `vue-patterns`, `nuxt4-patterns`, `ui-to-vue` |
 | `a11y-architect` | "accessibility", "a11y", "wcag", "screen reader", "aria", "color contrast", "keyboard navigation", "focus trap" | `accessibility`, `frontend-a11y`, `web-design-guidelines` |
+| `unslop` | "unslop", "unslopping", "remove ai slop", "remove slop", "fix ai ui", "clean up ui design", "update ui properly", "purple gradients", "gradient text" | `clean-code`, `frontend-design`, `unslop`, `web-design-guidelines` |
 
 ### Domain 2: Mobile & Cross-Platform
 | Agent | Trigger Keywords & Intent | Core Skills Auto-Loaded |
@@ -137,6 +138,7 @@ Match the user's intent and prompt keywords to the designated specialist agent(s
 | `commit-reviewer` | "git commit", "conventional commits", "commit message review", "git history" | `conventional-commit-review`, `git-workflow` |
 | `comment-analyzer` | "code comments", "comment quality", "remove emojis from code", "docstring review" | `clean-code` |
 | `spec-miner` | "behavioral spec", "contract extraction", "openspec", "system invariant" | `contract-first` |
+| `reverse-engineering-anything` | "reverse engineering anything", "reference software", "create from reference", "like google photos", "decompile", "ghidra", "hopper", "jadx", "binary analysis", "reconstruct feature", "rea" | `clean-code`, `systematic-debugging`, `reverse-engineer-anything`, `rea-analysis-optimization`, `rea-tool-design` |
 
 ### Domain 9: Exploration, Documentation & Planning
 | Agent | Trigger Keywords & Intent | Core Skills Auto-Loaded |
@@ -147,7 +149,7 @@ Match the user's intent and prompt keywords to the designated specialist agent(s
 | `docs-lookup` | "lookup docs", "how to use library", "api documentation", "official docs syntax" | `documentation-lookup` |
 | `documentation-writer` | "write manual", "technical guide", "architecture document", "user guide" | `documentation-templates` |
 | `conversation-analyzer` | "summarize session", "extract takeaways", "session learnings", "knowledge synthesis" | `knowledge-ops` |
-| `orchestrator` | "full stack app", "multi-domain project", "build SaaS", "coordinate work", "orchestrate" | `parallel-agents`, `behavioral-modes`, `brainstorming`, `writing-plans` |
+| `orchestrator` | "full stack app", "multi-domain project", "build SaaS", "coordinate work", "orchestrate", "multi agent system", "multi agent", "agents communicate", "context sharing", "runtime complexity", "agent swarm" | `parallel-agents`, `multi-agent-orchestration`, `context-management`, `memory-protocol`, `brainstorming`, `writing-plans` |
 | `project-planner` | "plan project", "breakdown tasks", "implementation plan", "socratic planning", "roadmap" | `brainstorming`, `plan-writing`, `writing-plans` |
 | `product-manager` / `product-owner` | "user stories", "acceptance criteria", "mvp scope", "product requirements", "backlog" | `plan-writing`, `brainstorming`, `product-lens` |
 | `chief-of-staff` / `loop-operator` | "manage agent loop", "operator checkpoint", "intervention policy", "harness loop" | `continuous-agent-loop`, `operator-approval-loop` |
