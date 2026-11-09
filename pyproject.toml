@@ -21,13 +21,13 @@ classifiers = [
 ]
 
 [project.scripts]
-meet-ai-agents = "meet_ai_agents.cli:main"
-meet-ai = "meet_ai_agents.cli:main"
-meet = "meet_ai_agents.cli:main"
+meet-ai-agents = "bin.cli:main"
+meet-ai = "bin.cli:main"
+meet = "bin.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["meet_ai_agents*"]
+include = ["bin*"]
 
 [tool.setuptools.package-data]
 "*" = ["*.*"]

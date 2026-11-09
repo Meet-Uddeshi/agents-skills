@@ -58,37 +58,37 @@ def test_node_cli():
 
 
 def test_python_cli():
-    print("Testing Python CLI (meet_ai_agents.cli)...")
+    print("Testing Python CLI (bin.cli)...")
 
     # 1. Doctor
-    out = run_cmd(["python", "-m", "meet_ai_agents.cli", "doctor"])
+    out = run_cmd(["python", "-m", "bin.cli", "doctor"])
     assert "MEET AI AGENTS" in out
     assert "Health check completed successfully" in out
     print("  [PASS] Python doctor check")
 
     # 2. Project install (-p dry-run JSON)
-    out = run_cmd(["python", "-m", "meet_ai_agents.cli", "-p", "--dry-run", "--json"])
+    out = run_cmd(["python", "-m", "bin.cli", "-p", "--dry-run", "--json"])
     data = json.loads(out)
     assert data["target_level"] == "project"
     assert data["dry_run"] is True
     print("  [PASS] Python -p (project level) dry-run")
 
     # 3. User install (-u dry-run JSON)
-    out = run_cmd(["python", "-m", "meet_ai_agents.cli", "-u", "--dry-run", "--json"])
+    out = run_cmd(["python", "-m", "bin.cli", "-u", "--dry-run", "--json"])
     data = json.loads(out)
     assert data["target_level"] == "user"
     assert data["dry_run"] is True
     print("  [PASS] Python -u (user level) dry-run")
 
     # 4. Global install (-g dry-run JSON)
-    out = run_cmd(["python", "-m", "meet_ai_agents.cli", "-g", "--dry-run", "--json"])
+    out = run_cmd(["python", "-m", "bin.cli", "-g", "--dry-run", "--json"])
     data = json.loads(out)
     assert data["target_level"] == "global"
     assert data["dry_run"] is True
     print("  [PASS] Python -g (global level) dry-run")
 
     # 5. MCP list (JSON)
-    out = run_cmd(["python", "-m", "meet_ai_agents.cli", "mcp", "list", "--json"])
+    out = run_cmd(["python", "-m", "bin.cli", "mcp", "list", "--json"])
     servers = json.loads(out)
     server_names = [s["name"] for s in servers]
     assert "github" in server_names
@@ -99,21 +99,21 @@ def test_python_cli():
     print("  [PASS] Python mcp list with 3rd-party servers")
 
     # 6. MCP test (JSON)
-    out = run_cmd(["python", "-m", "meet_ai_agents.cli", "mcp", "test", "github", "--json"])
+    out = run_cmd(["python", "-m", "bin.cli", "mcp", "test", "github", "--json"])
     test_res = json.loads(out)
     assert test_res["name"] == "github"
     assert "GITHUB_PERSONAL_ACCESS_TOKEN" in test_res["missing_env"] or test_res["ready"]
     print("  [PASS] Python mcp test diagnostics")
 
     # 7. Workflow Run via meet CLI
-    out = run_cmd(["python", "-m", "meet_ai_agents.cli", "run", "unslop", "--dry-run", "--json"])
+    out = run_cmd(["python", "-m", "bin.cli", "run", "unslop", "--dry-run", "--json"])
     run_res = json.loads(out)
     assert run_res["workflow"] == "unslop"
     assert run_res["dry_run"] is True
     print("  [PASS] Python meet run workflow")
 
     # 8. Workflow Answer via meet CLI
-    out = run_cmd(["python", "-m", "meet_ai_agents.cli", "answer", "Like Google Photos, create a search functionality for my software", "--json"])
+    out = run_cmd(["python", "-m", "bin.cli", "answer", "Like Google Photos, create a search functionality for my software", "--json"])
     ans_res = json.loads(out)
     assert ans_res["selected_workflow"] == "reverse-engineer"
     assert ans_res["selected_agent"] == "reverse-engineering-anything"

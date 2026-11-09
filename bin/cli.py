@@ -22,8 +22,12 @@ import argparse
 import json
 from pathlib import Path
 
-from meet_ai_agents.installer import Installer
-from meet_ai_agents.mcp_manager import McpManager
+try:
+    from bin.installer import Installer
+    from bin.mcp_manager import McpManager
+except ImportError:
+    from installer import Installer
+    from mcp_manager import McpManager
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 WORKSPACE_DIR = SCRIPT_DIR.parent
