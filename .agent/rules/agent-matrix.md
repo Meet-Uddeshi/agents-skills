@@ -157,6 +157,8 @@ Match the user's intent and prompt keywords to the designated specialist agent(s
 ### Domain 10: Specialized Domains & Data Intelligence
 | Agent | Trigger Keywords & Intent | Core Skills Auto-Loaded |
 | :--- | :--- | :--- |
+| `ai-engineer` | "ai engineer", "agentic framework", "langgraph", "crewai", "autogen", "n8n agent", "make automation", "context engineering", "vectorless rag", "pageindex", "inference engineering", "vllm", "production rag" | `agentic-frameworks`, `context-engineering`, `production-rag`, `inference-engineering` |
+| `ml-engineer` | "ml engineer", "deep learning", "neural network", "transformer architecture", "attention mechanism", "flashattention", "mha", "gqa", "rope", "opencv", "yolo", "vlm", "vision language model", "lora", "qlora", "weights and biases", "mlops" | `transformer-attention-mechanisms`, `deep-learning-cv`, `model-finetuning`, `mlops-pipeline` |
 | `game-developer` | "game", "game development", "phaser", "godot", "unity", "game mechanics", "game loop", "sprites" | `game-development` |
 | `seo-specialist` | "seo", "search ranking", "meta tags", "sitemap", "core web vitals", "schema.org", "json-ld", "geo" | `seo-fundamentals`, `geo-fundamentals`, `implementing-schema-org` |
 | `performance-optimizer` | "profile performance", "memory leak", "slow execution", "cpu spike", "optimize rendering" | `performance-profiling`, `memory-leak-debugging` |

@@ -143,6 +143,8 @@ PROMPTS_108 = [
     ("bengali-reviewer", "Review Bengali text for bangla conjuncts and unicode normalization"),
     ("game-developer", "Build a 2D arcade game in Phaser with physics and sprite animation"),
     ("healthcare-reviewer", "Audit clinical health data pipeline for HIPAA compliance and PHI security"),
+    ("ai-engineer", "Build an agentic framework in LangGraph with human-in-the-loop, vectorless PageIndex RAG, and vLLM inference engineering"),
+    ("ml-engineer", "Implement custom multi-head attention with FlashAttention, RoPE positional encoding, and QLoRA fine-tuning"),
     ("marketing-agent", "Write high converting marketing copy and audience research for marketing campaign"),
     ("mle-reviewer", "Review machine learning engineering training loop and model eval dataset contract"),
     ("performance-optimizer", "Profile performance and fix memory leak causing high CPU spikes"),
@@ -154,7 +156,7 @@ PROMPTS_108 = [
 
 def run_108_test_suite():
     print("=" * 80)
-    print(f"      ANTIGRAVITY 108-AGENT COMPREHENSIVE INTELLIGENT ROUTING TEST SUITE      ")
+    print(f"      ANTIGRAVITY 110-AGENT COMPREHENSIVE INTELLIGENT ROUTING TEST SUITE      ")
     print("=" * 80)
     print(f"Total Agents to Validate: {len(PROMPTS_108)}")
     print("-" * 80)

@@ -1212,6 +1212,34 @@
   },
   {
     "id": 102,
+    "expected_agent": "ai-engineer",
+    "routed_agent": "ai-engineer",
+    "passed": true,
+    "skills": [
+      "agentic-frameworks",
+      "context-engineering",
+      "production-rag",
+      "inference-engineering"
+    ],
+    "prompt": "Build an agentic framework in LangGraph with human-in-the-loop, vectorless PageIndex RAG, and vLLM inference engineering",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 103,
+    "expected_agent": "ml-engineer",
+    "routed_agent": "ml-engineer",
+    "passed": true,
+    "skills": [
+      "transformer-attention-mechanisms",
+      "deep-learning-cv",
+      "model-finetuning",
+      "mlops-pipeline"
+    ],
+    "prompt": "Implement custom multi-head attention with FlashAttention, RoPE positional encoding, and QLoRA fine-tuning",
+    "method": "TRIGGER_MATCH"
+  },
+  {
+    "id": 104,
     "expected_agent": "marketing-agent",
     "routed_agent": "marketing-agent",
     "passed": true,
@@ -1223,7 +1251,7 @@
     "method": "TRIGGER_MATCH"
   },
   {
-    "id": 103,
+    "id": 105,
     "expected_agent": "mle-reviewer",
     "routed_agent": "mle-reviewer",
     "passed": true,
@@ -1235,7 +1263,7 @@
     "method": "TRIGGER_MATCH"
   },
   {
-    "id": 104,
+    "id": 106,
     "expected_agent": "performance-optimizer",
     "routed_agent": "performance-optimizer",
     "passed": true,
@@ -1247,7 +1275,7 @@
     "method": "TRIGGER_MATCH"
   },
   {
-    "id": 105,
+    "id": 107,
     "expected_agent": "pytorch-build-resolver",
     "routed_agent": "pytorch-build-resolver",
     "passed": true,
@@ -1259,7 +1287,7 @@
     "method": "TRIGGER_MATCH"
   },
   {
-    "id": 106,
+    "id": 108,
     "expected_agent": "rag-pipeline-reviewer",
     "routed_agent": "rag-pipeline-reviewer",
     "passed": true,
@@ -1271,7 +1299,7 @@
     "method": "TRIGGER_MATCH"
   },
   {
-    "id": 107,
+    "id": 109,
     "expected_agent": "seo-specialist",
     "routed_agent": "seo-specialist",
     "passed": true,
@@ -1283,7 +1311,7 @@
     "method": "TRIGGER_MATCH"
   },
   {
-    "id": 108,
+    "id": 110,
     "expected_agent": "general",
     "routed_agent": "general",
     "passed": true,

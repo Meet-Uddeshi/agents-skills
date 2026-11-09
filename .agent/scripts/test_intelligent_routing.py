@@ -168,6 +168,8 @@ class IntelligentRouter:
         (r"\b(product\s*requirements?|prd|user\s*stories|mvp\s*scope|product\s*manager)\b", "product-manager", ["plan-writing", "brainstorming"]),
 
         # Domain 10: Specialized Domains
+        (r"\b(ai\s*engineer|agentic\s*framework|langgraph|crewai|autogen|n8n\s*agent|make\s*automation|vectorless\s*rag|pageindex|inference\s*engineering|vllm|production\s*rag)\b", "ai-engineer", ["agentic-frameworks", "context-engineering", "production-rag", "inference-engineering"]),
+        (r"\b(ml\s*engineer|deep\s*learning|neural\s*network|transformer\s*architecture|attention\s*mechanism|flashattention|grouped.query\s*attention|multi.head\s*attention|rope|opencv|yolo|vision\s*language\s*model|lora|qlora|weights\s*and\s*biases|mlops)\b", "ml-engineer", ["transformer-attention-mechanisms", "deep-learning-cv", "model-finetuning", "mlops-pipeline"]),
         (r"\b(game|phaser|godot|unity|game\s*mechanics|game\s*loop)\b", "game-developer", ["game-development"]),
         (r"\b(seo|search\s*ranking|meta\s*tags|core\s*web\s*vitals|schema\.org|json-ld)\b", "seo-specialist", ["seo-fundamentals", "geo-fundamentals"]),
         (r"\b(profile\s*performance|memory\s*leak|slow\s*execution|cpu\s*spike)\b", "performance-optimizer", ["performance-profiling", "memory-leak-debugging"]),
@@ -198,10 +200,10 @@ class IntelligentRouter:
 
 
 def test_agent_catalog():
-    print(f"\n{BOLD}Test 1: Agent Catalog & Frontmatter Integrity (108 agents){RESET}")
+    print(f"\n{BOLD}Test 1: Agent Catalog & Frontmatter Integrity (110 agents){RESET}")
     agent_files = sorted(glob.glob(".agent/agents/*.md"))
-    if len(agent_files) != 108:
-        log_fail(f"Expected 108 agent files, found {len(agent_files)}")
+    if len(agent_files) != 110:
+        log_fail(f"Expected 110 agent files, found {len(agent_files)}")
         return False
     
     log_pass(f"Discovered exactly {len(agent_files)} agent markdown files.")
@@ -228,7 +230,7 @@ def test_agent_catalog():
             all_valid = False
 
     if all_valid:
-        log_pass("All 108 agents have valid YAML frontmatter, name, and description.")
+        log_pass("All 110 agents have valid YAML frontmatter, name, and description.")
     return all_valid
 
 
