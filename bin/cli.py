@@ -25,9 +25,11 @@ from pathlib import Path
 try:
     from bin.installer import Installer
     from bin.mcp_manager import McpManager
+    from bin.memory_manager import MemoryManager
 except ImportError:
     from installer import Installer
     from mcp_manager import McpManager
+    from memory_manager import MemoryManager
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 WORKSPACE_DIR = SCRIPT_DIR.parent
@@ -115,6 +117,108 @@ def handle_mcp(args):
         print("Usage: meet mcp [list|test <server>|sync [-p|-u|-g]]")
 
 
+def handle_memory(args):
+    manager = MemoryManager()
+    subcmd = args.memory_command
+
+    if subcmd == "init":
+        print(f"\nInitialized SQLite Memory Database: {manager.db_path}\n")
+
+    elif subcmd == "log":
+        tags_list = [t.strip() for t in args.tags.split(",") if t.strip()] if args.tags else []
+        meta = json.loads(args.metadata) if args.metadata else {}
+        row_id = manager.log_memory(
+            key=args.key,
+            content=args.content,
+            category=args.category,
+            agent=args.agent,
+            tags=tags_list,
+            metadata=meta,
+        )
+        if args.json:
+            print(json.dumps({"success": True, "id": row_id, "key": args.key}))
+        else:
+            print(f"\nStored memory: key='{args.key}' [Category: {args.category}, Agent: {args.agent}]\n")
+
+    elif subcmd == "query":
+        results = manager.query_memories(
+            search_term=args.term,
+            category=args.category,
+            agent=args.agent,
+            tag=args.tag,
+            limit=args.limit,
+        )
+        if args.json:
+            print(json.dumps(results, indent=2, default=str))
+        else:
+            term_str = f" for '{args.term}'" if args.term else ""
+            print(f"\nBounded Memory Query Results{term_str} (Limit: {args.limit}, Found: {len(results)}):\n")
+            for idx, r in enumerate(results, start=1):
+                cat = r.get("category", "general")
+                agt = r.get("agent", "system")
+                print(f"{idx}. Key: {r['key']} [Category: {cat}, Agent: {agt}]")
+                content_preview = r['content'].strip().replace("\n", " ")
+                if len(content_preview) > 120:
+                    content_preview = content_preview[:117] + "..."
+                print(f"   {content_preview}\n")
+
+    elif subcmd == "sync":
+        direction = args.direction or "both"
+        imported = {}
+        if direction in ("import", "both"):
+            imported = manager.sync_from_markdown()
+        if direction in ("export", "both"):
+            manager.sync_to_markdown()
+
+        if args.json:
+            print(json.dumps({"direction": direction, "imported": imported}))
+        else:
+            print(f"\nDual-Mode Memory Synchronization Completed (Direction: {direction}):")
+            if imported:
+                print(f"- Synced Invariants from ARCHITECTURE_MEMORY.md: {imported.get('synced_invariants', 0)}")
+                print(f"- Synced Events from BLACKBOARD.md: {imported.get('synced_events', 0)}")
+            print("- Synchronized markdown files with SQLite storage.\n")
+
+    elif subcmd == "stats":
+        stats = manager.get_stats()
+        if args.json:
+            print(json.dumps(stats, indent=2))
+        else:
+            print("\nSQLite Memory & Context Engineering Stats:")
+            print(f"- Database Path: {stats['db_path']}")
+            print(f"- Database Size: {stats['size_kb']} KB ({stats['size_bytes']} bytes)")
+            print(f"- Total Memories: {stats['total_memories']}")
+            print(f"- Total Blackboard Events: {stats['total_events']}")
+            print("- Categories Breakdown:")
+            for cat, count in stats.get("categories", {}).items():
+                print(f"  * {cat}: {count}")
+            print()
+
+    elif subcmd == "prune":
+        count = manager.prune(max_age_days=args.days, keep_invariants=not args.all)
+        if args.json:
+            print(json.dumps({"pruned_records": count, "max_age_days": args.days}))
+        else:
+            print(f"\nPruned {count} historical records older than {args.days} days.\n")
+
+    elif subcmd == "events":
+        events = manager.query_events(
+            session_id=args.session,
+            agent=args.agent,
+            event_type=args.type,
+            limit=args.limit,
+        )
+        if args.json:
+            print(json.dumps(events, indent=2, default=str))
+        else:
+            print(f"\nRecent Blackboard & Coordination Events (Limit: {args.limit}, Found: {len(events)}):\n")
+            for idx, e in enumerate(events, start=1):
+                print(f"{idx}. [{e['created_at']}] [{e['agent']}] ({e['event_type']})")
+                print(f"   {e['description']}\n")
+    else:
+        print("Usage: meet memory [init|log|query|sync|stats|prune|events]")
+
+
 def handle_run(args):
     if not WorkflowEngine:
         print("[ERROR] WorkflowEngine could not be loaded from .agent/scripts", file=sys.stderr)
@@ -185,6 +289,13 @@ def handle_doctor():
     for s in servers:
         print(f"  * {s['name']}: {s['status']}")
 
+    try:
+        mem_mgr = MemoryManager()
+        stats = mem_mgr.get_stats()
+        print(f"- SQLite Memory DB: [OK] ({stats['size_kb']} KB, {stats['total_memories']} memories, {stats['total_events']} events)")
+    except Exception as e:
+        print(f"- SQLite Memory DB: [FAIL] ({e})")
+
     if WorkflowEngine:
         engine = WorkflowEngine()
         print(f"- Registered Workflows: {len(engine.list_workflows())}")
@@ -244,6 +355,49 @@ def main():
     list_parser = subparsers.add_parser("list", help="List workflows or MCP servers")
     list_parser.add_argument("target", nargs="?", choices=["workflows", "mcp"], default="workflows")
 
+    # Subcommand: memory
+    mem_parser = subparsers.add_parser("memory", help="SQLite persistent memory, bounded query & context engineering")
+    mem_sub = mem_parser.add_subparsers(dest="memory_command", help="Memory action")
+    
+    mem_init = mem_sub.add_parser("init", help="Initialize SQLite memory database")
+    mem_init.add_argument("--json", action="store_true", help="Output in JSON")
+    
+    mem_log = mem_sub.add_parser("log", help="Store or update indexed memory")
+    mem_log.add_argument("--key", type=str, required=True, help="Unique memory key (e.g. invariant:name, note:topic)")
+    mem_log.add_argument("--content", type=str, required=True, help="Memory content / invariant rule")
+    mem_log.add_argument("--category", type=str, default="general", help="Category (invariant, architecture, decision, failure)")
+    mem_log.add_argument("--agent", type=str, default="system", help="Author agent name")
+    mem_log.add_argument("--tags", type=str, default="", help="Comma-separated tags")
+    mem_log.add_argument("--metadata", type=str, default="{}", help="JSON metadata string")
+    mem_log.add_argument("--json", action="store_true", help="Output in JSON")
+
+    mem_query = mem_sub.add_parser("query", help="Bounded memory query & FTS5 search")
+    mem_query.add_argument("term", nargs="?", type=str, default=None, help="Search query string")
+    mem_query.add_argument("--category", type=str, default=None, help="Filter by category")
+    mem_query.add_argument("--agent", type=str, default=None, help="Filter by agent")
+    mem_query.add_argument("--tag", type=str, default=None, help="Filter by tag substring")
+    mem_query.add_argument("--limit", type=int, default=5, help="Maximum records to return (default: 5)")
+    mem_query.add_argument("--json", action="store_true", help="Output in JSON")
+
+    mem_sync = mem_sub.add_parser("sync", help="Dual-mode sync between SQLite and Markdown files")
+    mem_sync.add_argument("-d", "--direction", choices=["import", "export", "both"], default="both", help="Sync direction")
+    mem_sync.add_argument("--json", action="store_true", help="Output in JSON")
+
+    mem_stats = mem_sub.add_parser("stats", help="Show SQLite database size, counts, and category statistics")
+    mem_stats.add_argument("--json", action="store_true", help="Output in JSON")
+
+    mem_prune = mem_sub.add_parser("prune", help="Prune older historical records")
+    mem_prune.add_argument("--days", type=int, default=30, help="Days threshold (default: 30)")
+    mem_prune.add_argument("--all", action="store_true", help="Also prune non-invariant memories")
+    mem_prune.add_argument("--json", action="store_true", help="Output in JSON")
+
+    mem_ev = mem_sub.add_parser("events", help="List recent blackboard and coordination events")
+    mem_ev.add_argument("--session", type=str, default=None, help="Filter by session ID")
+    mem_ev.add_argument("--agent", type=str, default=None, help="Filter by agent")
+    mem_ev.add_argument("--type", type=str, default=None, help="Filter by event type")
+    mem_ev.add_argument("--limit", type=int, default=10, help="Maximum events to return (default: 10)")
+    mem_ev.add_argument("--json", action="store_true", help="Output in JSON")
+
     # Subcommand: doctor
     subparsers.add_parser("doctor", help="Run system diagnostics")
 
@@ -276,6 +430,8 @@ def main():
         handle_answer(args)
     elif args.subcommand == "list":
         handle_list(args)
+    elif args.subcommand == "memory":
+        handle_memory(args)
     elif args.subcommand == "doctor":
         handle_doctor()
     else:

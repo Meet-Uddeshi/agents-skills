@@ -122,6 +122,8 @@ function handleDoctor() {
   console.log(`- GEMINI.md: ${fs.existsSync(SOURCE_GEMINI_MD) ? '[OK]' : '[FAIL]'}`);
   console.log(`- .env.example: ${fs.existsSync(SOURCE_ENV_EXAMPLE) ? '[OK]' : '[FAIL]'}`);
   console.log(`- .agent/mcp.json: ${fs.existsSync(MCP_JSON_PATH) ? '[OK]' : '[FAIL]'}`);
+  const memDbPath = path.join(SOURCE_AGENT_DIR, 'memory', 'memory.db');
+  console.log(`- SQLite memory.db: ${fs.existsSync(memDbPath) ? '[OK]' : '[NOT INITIALIZED]'}`);
   handleMcpList();
 }
 
@@ -163,6 +165,13 @@ function main() {
     if (fs.existsSync(wfRunner)) {
       spawnSync(process.execPath, [wfRunner, ...args], { stdio: 'inherit' });
     }
+  } else if (cmd === 'memory') {
+    const pythonExe = process.platform === 'win32' ? 'python' : 'python3';
+    const cliPy = path.join(__dirname, 'cli.py');
+    const res = spawnSync(pythonExe, [cliPy, ...args], { stdio: 'inherit' });
+    if (res.error) {
+      console.error(`[ERROR] Failed to execute memory command via python: ${res.error.message}`);
+    }
   } else if (cmd === 'doctor') {
     handleDoctor();
   } else {
@@ -176,6 +185,7 @@ function main() {
     console.log('  meet mcp list                 # List configured MCP servers & credential readiness');
     console.log('  meet run <workflow>           # Execute workflow automation');
     console.log('  meet answer "<query>"         # Generate structured workflow answer');
+    console.log('  meet memory [query|log|sync]  # SQLite persistent memory & context engineering');
     console.log('  meet doctor                   # Run system diagnostics\n');
   }
 }

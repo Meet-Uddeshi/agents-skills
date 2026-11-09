@@ -23,3 +23,11 @@ yarn-error.log*
 .DS_Store
 Thumbs.db
 
+# SQLite runtime databases and journals
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+

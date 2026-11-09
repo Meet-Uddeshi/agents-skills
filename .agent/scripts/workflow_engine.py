@@ -164,6 +164,23 @@ class WorkflowEngine:
         except Exception as e:
             print(f"[WARN] Could not write to blackboard: {e}", file=sys.stderr)
 
+        # Persist event to SQLite memory database for bounded querying
+        try:
+            bin_dir = WORKSPACE_DIR / "bin"
+            if str(bin_dir) not in sys.path:
+                sys.path.insert(0, str(bin_dir))
+            from memory_manager import MemoryManager
+            mm = MemoryManager()
+            mm.log_event(
+                agent=agent,
+                event_type="workflow_run",
+                description=f"Workflow /{workflow} status: {status} ({task}). {notes or ''}".strip(),
+                session_id=timestamp,
+                payload={"workflow": workflow, "status": status, "task": task},
+            )
+        except Exception:
+            pass
+
     def run_workflow(
         self,
         workflow_name: str,

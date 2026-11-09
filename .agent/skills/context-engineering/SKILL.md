@@ -110,6 +110,24 @@ Never inject raw HTML dumps, entire 500-line stack traces, or unfiltered JSON pa
 
 ---
 
+### 2.3 SQLite Bounded Memory & Context Storage
+
+To prevent unbounded Markdown bloat (such as execution logs, session failures, and architecture invariants growing beyond context limits), Meet AI Agents employs a dual-mode SQLite storage engine:
+
+- **Storage Engine:** `.agent/memory/memory.db` with WAL mode and FTS5 full-text search.
+- **Bounded Query Invariant:** Always enforce `LIMIT 5` on memory lookups:
+  ```sql
+  SELECT m.id, m.key, m.content, f.rank 
+  FROM fts_memories f 
+  JOIN memories m ON f.rowid = m.id 
+  WHERE fts_memories MATCH 'invariant query' 
+  ORDER BY rank LIMIT 5;
+  ```
+- **Dual-Mode Sync:** Keeps human-readable Markdown files (`ARCHITECTURE_MEMORY.md`, `BLACKBOARD.md`) synchronized with SQLite storage via `meet memory sync`.
+- **Automated Retention:** `meet memory prune --days 30` cleans historical coordination logs while preserving architectural invariants.
+
+---
+
 ## 3. Dynamic Tool Registry RAG
 
 Exposing 40+ tool schemas simultaneously causes tool confusion and hallucinated arguments. Instead, index tool schemas in an in-memory vector or keyword registry and dynamically inject only the top 3-5 tools matching the current task.
