@@ -226,3 +226,4 @@ def test_cli_integration():
     assert isinstance(query_data, list)
     assert len(query_data) >= 1
     assert any("emoji" in item["key"] for item in query_data)
+
