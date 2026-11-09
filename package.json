@@ -1,0 +1,38 @@
+{
+  "name": "meet-ai-agents",
+  "version": "1.0.0",
+  "description": "Meet AI Agents - Enterprise Multi-Agent System, Dual Workflow Engine, and MCP Tool Calling Platform",
+  "main": "bin/meet-ai-agents.js",
+  "bin": {
+    "meet-ai-agents": "./bin/meet-ai-agents.js",
+    "meet-ai": "./bin/meet-ai-agents.js",
+    "meet": "./bin/meet-ai-agents.js"
+  },
+  "files": [
+    "bin",
+    ".agent",
+    "GEMINI.md",
+    ".env.example"
+  ],
+  "scripts": {
+    "test": "python .agent/scripts/test_workflow_engine.py && python .agent/scripts/test_all_108_agents.py",
+    "doctor": "node bin/meet-ai-agents.js doctor",
+    "mcp:list": "node bin/meet-ai-agents.js mcp"
+  },
+  "keywords": [
+    "agents",
+    "multi-agent",
+    "skills",
+    "workflows",
+    "antigravity",
+    "mcp",
+    "automation",
+    "meet-ai"
+  ],
+  "author": "Meet Uddeshi",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+

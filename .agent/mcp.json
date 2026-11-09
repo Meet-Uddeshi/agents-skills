@@ -1,0 +1,67 @@
+{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      },
+      "description": "GitHub repository management, PR reviews, issues, and code exploration",
+      "associated_agents": ["devops-engineer", "code-reviewer", "release-engineer", "reverse-engineering-anything"]
+    },
+    "jira": {
+      "command": "npx",
+      "args": ["-y", "@atlassian/mcp-server-jira"],
+      "env": {
+        "JIRA_URL": "${JIRA_URL}",
+        "JIRA_API_TOKEN": "${JIRA_API_TOKEN}",
+        "JIRA_EMAIL": "${JIRA_EMAIL}"
+      },
+      "description": "Atlassian Jira project management, issue creation, and sprint backlog sync",
+      "associated_agents": ["project-planner", "product-manager", "product-owner"]
+    },
+    "linear": {
+      "command": "npx",
+      "args": ["-y", "@linear/mcp-server"],
+      "env": {
+        "LINEAR_API_KEY": "${LINEAR_API_KEY}"
+      },
+      "description": "Linear project tracking, issues, milestones, and cycles",
+      "associated_agents": ["project-planner", "product-owner"]
+    },
+    "slack": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-slack"],
+      "env": {
+        "SLACK_BOT_TOKEN": "${SLACK_BOT_TOKEN}",
+        "SLACK_TEAM_ID": "${SLACK_TEAM_ID}"
+      },
+      "description": "Slack channel notifications, status broadcasts, and release alerts",
+      "associated_agents": ["coordinator", "chief-of-staff", "release-engineer"]
+    },
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "${DATABASE_URL}"],
+      "env": {},
+      "description": "PostgreSQL live schema inspection, query execution, and migration auditing",
+      "associated_agents": ["database-architect", "database-reviewer"]
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      },
+      "description": "Web search for official documentation, library specs, and APIs",
+      "associated_agents": ["reverse-engineering-anything", "code-archaeologist", "general"]
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "${CONTEXT7_API_KEY}"],
+      "env": {},
+      "description": "Vector indexing and semantic context cache",
+      "associated_agents": ["rag-pipeline-reviewer", "understand-anything"]
+    }
+  }
+}
+
