@@ -183,23 +183,27 @@ When user's prompt is NOT in English:
 
 > 🔴 **Mobile + frontend-specialist = WRONG.** Mobile = mobile-developer ONLY.
 
-### 🛑 Socratic Gate (Complex & Greenfield Tasks Only)
+### 🛑 Socratic Gate & Zero-Assumption Mandate (MANDATORY FOR ALL AGENTS)
 
-**Adaptive Gate:** Trigger the Socratic Gate ONLY for complex, ambiguous, or multi-domain architectural requests. Simple questions, explanations, and trivial single-file edits completely **BYPASS** the Socratic Gate for instant execution.
+> **UNIVERSAL RULE:** If ANY agent has ANY doubt or ambiguity to make the correct decision, the agent MUST STOP and ask the user. Agents must NEVER assume, speculate, or guess to blindly continue work.
+
+**Adaptive Gate:** Trigger the Socratic Gate for complex, ambiguous, or multi-domain architectural requests. Simple questions, explanations, and trivial single-file edits with clear specs completely **BYPASS** the Socratic Gate for instant execution.
 
 | Request Type            | Strategy       | Required Action                                                   |
 | ----------------------- | -------------- | ----------------------------------------------------------------- |
 | **Simple Question**     | Fast-Path      | **BYPASS GATE:** Answer directly and immediately                   |
 | **Simple Code Edit**    | Fast-Path      | **BYPASS GATE:** Execute surgical edit directly                    |
+| **Doubt / Ambiguity**   | Zero-Assume    | **MANDATORY STOP:** Ask user targeted questions before proceeding  |
 | **New Feature / Build** | Deep Discovery | ASK 2-3 strategic questions to clarify scope/stack                 |
 | **Full Orchestration**  | Gatekeeper     | **STOP** subagents until user confirms architecture plan           |
 | **Ambiguous Spec**      | Clarification  | Ask targeted questions on trade-offs or constraints                |
 
-**Protocol:**
+**Zero-Assumption Protocol (All 108 Agents):**
 
-1. **Bypass on Simple:** If the task is clear, informational, or surgical, DO NOT stall with questions. Execute directly.
-2. **Engage on Complex:** For greenfield builds or large systems, align on architecture before writing code.
-3. **Reference:** `@[skills/brainstorming]` for deep discovery on complex features.
+1. **Stop on Doubt:** When an agent encounters ambiguous requirements, conflicting options, or missing schemas, work must halt immediately.
+2. **Surface Trade-offs:** Present 2-3 concrete options with pros and cons directly to the user.
+3. **No Speculative Coding:** Do not write speculative code based on unconfirmed guesses. Wait for explicit user confirmation.
+4. **Bypass on Simple:** If the task is clear, unambiguous, or surgical, execute directly without unnecessary questions.
 
 ### 🏁 Final Checklist Protocol
 

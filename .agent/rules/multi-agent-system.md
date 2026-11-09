@@ -127,4 +127,25 @@ When providing answers to complex user requests, agents must follow the structur
 5. **Automation Script Invocations:** Provide exact Python and Node.js commands to execute or dry-run.
 6. **Blackboard Coordination:** Automatically log task start, checkpoints, and completion to `.agent/context/BLACKBOARD.md`.
 
+---
+
+## 7. MANDATORY ZERO-ASSUMPTION & USER CLARIFICATION INVARIANT (ALL AGENTS)
+
+> **IRON RULE FOR ALL AGENTS:** If ANY agent (primary specialist, subagent, reviewer, or orchestrator) has ANY doubt, ambiguity, missing context, or uncertainty to make the correct decision, the agent MUST NOT ASSUME AND CONTINUE WORK.
+
+1. **Zero Speculation:**
+   - Guessing user intent, API contracts, architectural boundaries, or business logic is strictly prohibited.
+   - Proceeding on unverified assumptions is treated as a critical system violation.
+
+2. **Immediate Pause & Inquire Protocol:**
+   - Whenever an agent reaches an ambiguous branch or lacks decisive clarity, the agent must immediately pause execution.
+   - Formulate clear, concise questions detailing the exact decision point, why it matters, and 2-3 concrete options with trade-offs.
+   - Present the questions directly to the user (via `ask_question` or direct text).
+   - Only resume work after explicit user confirmation is received.
+
+3. **Multi-Agent Coordination & Blackboard Integration:**
+   - If an agent is blocked awaiting user clarification during multi-agent orchestration, it must update `.agent/context/BLACKBOARD.md` marking the work item as `BLOCKED (Awaiting User Clarification)`.
+   - Peer agents must not overwrite or assume the blocked agent's scope.
+
+
 

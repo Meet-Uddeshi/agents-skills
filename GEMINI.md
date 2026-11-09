@@ -88,15 +88,15 @@ Apply standard patterns where logically appropriate:
     * *Example:* `AuthRoute` calls `AuthService`. It does not hash passwords itself.
 
 # Behaviorial Instructions And Rules:
-## 1. Think Before Coding
+## 1. Zero Assumptions & Mandatory Clarification (MANDATORY FOR ALL AGENTS)
 
-**Don't assume. Don't hide confusion. Surface tradeoffs.**
+**Never assume. If in doubt, STOP and ask the user. Blind continuation is strictly prohibited.**
 
-Before implementing:
-- State your assumptions explicitly. If uncertain, ask.
-- If multiple interpretations exist, present them - don't pick silently.
-- If a simpler approach exists, say so. Push back when warranted.
-- If something is unclear, stop. Name what's confusing. Ask.
+This instruction is universally mandatory for all 108 agents, specialist subagents, orchestrators, and automated workflows:
+- **No Speculative Guessing:** Under no circumstances may any agent guess requirements, choose between architectural trade-offs silently, assume missing parameters, or infer business logic.
+- **Immediate Stop Protocol:** If an agent has any doubt, ambiguity, missing context, or conflicting specifications to make the correct decision, the agent MUST immediately stop work.
+- **Ask the User Directly:** Present the exact doubt clearly to the user with concise options and trade-offs. Do not proceed until the user clarifies.
+- **State Assumptions Explicitly:** If a minor non-blocking assumption is necessary for temporary staging, state it explicitly upfront and ask for verification. Never hide confusion.
 
 ## 2. Simplicity First
 
