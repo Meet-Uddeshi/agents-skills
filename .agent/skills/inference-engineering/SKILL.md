@@ -1,32 +1,112 @@
 ---
 name: inference-engineering
-description: High-performance LLM serving, continuous batching, PagedAttention, KV-cache sizing, quantization (AWQ, GPTQ, GGUF), and inference engines (vLLM, TensorRT-LLM, llama.cpp).
+description: High-throughput LLM serving, continuous batching, PagedAttention, KV-cache memory sizing, quantization (AWQ, GGUF, FP8), and inference engines (vLLM, TensorRT-LLM, llama.cpp).
 ---
 
 # Inference Engineering & High-Throughput Serving
 
-Inference engineering optimizes LLM serving latency (Time to First Token - TTFT, Inter-Token Latency - ITL), throughput (tokens/second), and hardware utilization.
+Inference engineering optimizes LLM serving systems for low latency (Time to First Token - TTFT, Inter-Token Latency - ITL), high concurrency (tokens per second per GPU), and efficient memory utilization.
 
-## Core Serving Engines
+---
 
-1. **vLLM:**
-   - **PagedAttention:** Virtual memory paging for KV-cache eliminating memory fragmentation and enabling up to 4x throughput.
-   - **Continuous Batching:** Dynamically groups incoming requests at the token iteration level rather than request level.
-   - **Speculative Decoding:** Uses a small draft model to generate candidate tokens verified in parallel by the target model.
+## 1. Serving Engine Architecture & Selection
 
-2. **TensorRT-LLM:**
-   - Compiled TensorRT execution graphs for NVIDIA GPUs.
-   - Kernel fusion (fused multi-head attention, fused GEMM + activation).
-   - In-flight batching and FP8 matrix multiplication.
+```text
++--------------------------------------------------------------------------+
+|                              Serving Tier                                |
++--------------------------------------------------------------------------+
+          |                                              |
+          v (Cloud / Multi-GPU Clusters)                 v (Edge / Local Dev)
++----------------------------------+          +----------------------------+
+| vLLM / TensorRT-LLM              |          | llama.cpp / Ollama         |
+| - PagedAttention (0% waste)      |          | - GGUF Quantized models    |
+| - Continuous / In-Flight batching|          | - Direct mmap zero-copy    |
+| - Speculative Decoding           |          | - CPU / Apple Silicon Metal|
+| - Chunked Prefill & Prefix Cache |          | - Single-binary execution  |
++----------------------------------+          +----------------------------+
+```
 
-3. **llama.cpp / Ollama:**
-   - CPU and consumer GPU local inference using quantized GGUF models.
-   - Direct memory mapping (`mmap`) for instant model loading.
+### 1.1 Comparative Engine Benchmarks
 
-## Optimization & Memory Formulae
-- **KV Cache Size Calculation:**
-  $$\text{KV Memory (bytes)} = 2 \times 2 \times n_{\text{layers}} \times n_{\text{heads}} \times d_{\text{head}} \times \text{seq\_len} \times \text{batch\_size}$$
-- **Quantization Selection:**
-  - **AWQ (Activation-aware Weight Quantization):** Best for 4-bit GPU serving with minimal perplexity degradation.
-  - **GGUF:** Best for CPU/Apple Silicon offloading.
-  - **FP8 (E4M3 / E5M2):** Native support on NVIDIA Ada Lovelace / Hopper architectures.
+| Metric / Feature | vLLM | TensorRT-LLM | llama.cpp / Ollama |
+| :--- | :--- | :--- | :--- |
+| **Primary Target** | High-concurrency enterprise APIs | Ultra-low latency NVIDIA clusters | Local workstation, edge, CPU |
+| **Batching Strategy** | Continuous (iteration-level) | In-flight batching | Static / Bounded micro-batches |
+| **Attention Kernel** | PagedAttention v2 + FlashAttention | Fused MHA + TensorRT kernels | FlashAttention (CPU/Metal/CUDA) |
+| **Quantization Types** | AWQ, GPTQ, FP8, INT4 | FP8 (native Hopper), AWQ, INT8 | GGUF (Q4_K_M, Q5_K_M, Q8_0) |
+| **Throughput Scaling** | Exceptional on multi-user loads | Maximum raw throughput on NVIDIA | Bounded by CPU/Unified Memory bandwidth |
+
+---
+
+## 2. KV-Cache Memory Calculation & Management
+
+The Key-Value (KV) cache stores attention states across autoregressive generation turns. In naive serving systems, memory fragmentation wastes up to 60-80% of GPU memory.
+
+### 2.1 Exact KV-Cache Memory Formula
+For a model with $L$ layers, $H_{kv}$ key-value heads, $d_{head}$ head dimension, sequence length $S$, batch size $B$, and precision bytes $P$ (e.g., 2 bytes for FP16/BF16, 1 byte for FP8):
+
+$$\text{KV Cache Memory (Bytes)} = 2 \times L \times H_{kv} \times d_{head} \times S \times B \times P$$
+
+*Note:* The leading factor of $2$ accounts for separate Key and Value matrices.
+
+#### Example Calculation: Llama-3-70B with GQA
+- $L = 80$ layers
+- $H_{kv} = 8$ heads (GQA with 8 KV heads vs 64 Query heads)
+- $d_{head} = 128$
+- $S = 8,192$ context length
+- $P = 2$ bytes (BF16)
+- Memory per sequence: $2 \times 80 \times 8 \times 128 \times 8,192 \times 2 = 2.68\text{ GB per concurrent request}$.
+
+Without GQA (standard MHA with 64 KV heads), this would require **$21.4\text{ GB per sequence}$**, severely restricting batch concurrency.
+
+---
+
+## 3. Production vLLM Deployment Pattern
+
+### 3.1 Production Server Launch Script
+```bash
+#!/usr/bin/env bash
+# Deploying Llama-3.1-70B-Instruct with FP8 quantization and continuous batching
+
+python -m vllm.entrypoints.openai.api_server \
+  --model meta-llama/Meta-Llama-3.1-70B-Instruct \
+  --tensor-parallel-size 4 \
+  --gpu-memory-utilization 0.92 \
+  --max-model-len 16384 \
+  --quantization fp8 \
+  --kv-cache-dtype fp8 \
+  --enable-prefix-caching \
+  --enable-chunked-prefill \
+  --max-num-seqs 256 \
+  --port 8000
+```
+
+### 3.2 Key Production Flags Explained
+- `--enable-prefix-caching`: Automatically caches common system prompts and few-shot examples across concurrent requests, reducing prefill latency to zero for shared prefixes.
+- `--enable-chunked-prefill`: Interleaves prompt prefill chunks with generation tokens, eliminating latency spikes caused by large prompt arrivals.
+- `--gpu-memory-utilization 0.92`: Allocates 92% of GPU VRAM, dedicating remaining memory to PyTorch execution buffers.
+
+---
+
+## 4. Serving Latency SLAs & Metrics
+
+Production inference systems must guarantee three core SLA metrics:
+
+1. **Time to First Token (TTFT):** Duration between request arrival and generation of the first token (governed by prompt prefill speed and network transit). Target: $< 400\text{ms}$.
+2. **Inter-Token Latency (ITL):** Time required to emit each subsequent token (governed by memory bandwidth during autoregressive decoding). Target: $< 25\text{ms}$ ($> 40\text{ tok/s}$).
+3. **Speculative Decoding Efficiency:** Acceptance rate of tokens generated by draft model. Target: $\ge 65\%$ acceptance to justify draft model overhead.
+
+---
+
+## 5. Mandatory Quality Gates & Anti-Patterns
+
+### Anti-Patterns to Avoid
+- **Unbounded Context Limits:** Never expose an LLM API without setting `--max-model-len`. A single rogue request can allocate the entire KV cache and trigger an out-of-memory crash.
+- **Synchronous Blocking Inference:** Never use blocking client requests in web services; always stream responses using Server-Sent Events (SSE).
+- **Ignoring Prefix Caching:** Never re-embed or re-prefill identical 2,000-token system instructions on every turn of a multi-turn chat.
+
+### Verification Checklist
+1. Is KV-cache memory capacity pre-calculated for peak concurrency?
+2. Are Grouped-Query Attention (GQA) models preferred for high-throughput deployments?
+3. Is prefix caching enabled for repetitive system prompts?
+4. Are streaming endpoints used to deliver TTFT $< 400\text{ms}$?
