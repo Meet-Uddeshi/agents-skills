@@ -88,7 +88,7 @@ When auto-applying an agent, inform the user:
 > 🔴 **Self-Check Trigger:** Every time you are about to write code or create UI, ask yourself:
 > "Have I completed the Agent Routing Checklist?" If NO → Complete it first.
 
-### 🎯 COMPREHENSIVE PROMPT-TRIGGER AGENT MATRIX (94 AGENTS)
+### 🎯 COMPREHENSIVE PROMPT-TRIGGER AGENT MATRIX (95 AGENTS)
 
 Match the user's prompt triggers automatically to activate the best agent and skills:
 
@@ -100,6 +100,7 @@ Match the user's prompt triggers automatically to activate the best agent and sk
 | **Vue / Nuxt** | vue, vue3, nuxt, nuxt4, pinia, composition api, ref | `vue-reviewer` | `vue-patterns`, `nuxt4-patterns`, `ui-to-vue` |
 | **Accessibility** | a11y, accessibility, wcag, screen reader, aria, contrast | `a11y-architect` | `accessibility`, `frontend-a11y`, `web-design-guidelines` |
 | **Mobile Cross-Platform** | mobile app, react native, expo, ios, android, mobile screen | `mobile-developer` | `mobile-design`, `react-native-patterns`, `clean-code` |
+| **Mobile Automation** | mobile automation, appium, webdriverio mobile, mobile test, screen object, uiautomator2, xcuitest, mobile locator, mobile gestures | `mobile-automation-engineer` | `clean-code`, `testing-patterns`, `mobile-automation`, `appium-skill`, `tdd-workflow` |
 | **Flutter / Dart** | flutter, dart, flutter widget, bloc, riverpod, buildcontext | `flutter-reviewer` | `dart-flutter-patterns`, `flutter-dart-code-review` |
 | **Flutter Build Fix** | flutter build, pubspec, gradle flutter, cocoapods pod install | `dart-build-resolver` | `dart-flutter-patterns`, `systematic-debugging` |
 | **Swift / iOS** | swift, swiftui, uikit, combine, swift concurrency, actor | `swift-reviewer` | `swiftui-patterns`, `swift-actor-persistence`, `swift-concurrency-6-2` |
@@ -139,6 +140,7 @@ Match the user's prompt triggers automatically to activate the best agent and sk
 | **Debugger** | debug, crash, exception, traceback, reproduce bug, root cause | `debugger` | `systematic-debugging`, `root-cause-tracing` |
 | **TDD Guide** | tdd, red green refactor, test first, failing test | `tdd-guide` | `test-driven-development`, `tdd-workflow` |
 | **E2E Automation** | e2e test, playwright, cypress, browser automation | `qa-automation-engineer` | `webapp-testing`, `e2e-testing`, `windows-desktop-e2e` |
+| **Mobile Test Automation** | mobile test, appium test, mobile e2e, mobile flakiness | `mobile-automation-engineer` | `clean-code`, `testing-patterns`, `mobile-automation`, `appium-skill` |
 | **Browser QA** | run e2e, visual regression, browser run | `e2e-runner` | `browser-qa`, `webapp-testing` |
 | **Build Error** | compilation failed, build error, syntax error, bundle error | `build-error-resolver` | `systematic-debugging` |
 | **Silent Failures** | silent failure, swallowed error, empty catch, unhandled | `silent-failure-hunter` | `error-handling`, `condition-based-waiting` |
@@ -335,17 +337,17 @@ When user's prompt is NOT in English:
 
 ---
 
-## 📁 QUICK REFERENCE (94 AGENTS & 350+ SKILLS)
+## 📁 QUICK REFERENCE (95 AGENTS & 350+ SKILLS)
 
 ### 10 Core Agent Clusters
 
 - **Frontend & UI**: `frontend-specialist`, `react-reviewer`, `react-build-resolver`, `vue-reviewer`, `a11y-architect`
-- **Mobile & Cross-Platform**: `mobile-developer`, `flutter-reviewer`, `dart-build-resolver`, `swift-reviewer`, `swift-build-resolver`, `harmonyos-app-resolver`
+- **Mobile & Cross-Platform**: `mobile-developer`, `mobile-automation-engineer`, `flutter-reviewer`, `dart-build-resolver`, `swift-reviewer`, `swift-build-resolver`, `harmonyos-app-resolver`
 - **Backend & Languages**: `backend-specialist`, `python-reviewer`, `fastapi-reviewer`, `django-reviewer`, `django-build-resolver`, `go-reviewer`, `go-build-resolver`, `rust-reviewer`, `rust-build-resolver`, `java-reviewer`, `java-build-resolver`, `kotlin-reviewer`, `kotlin-build-resolver`, `typescript-reviewer`, `csharp-reviewer`, `fsharp-reviewer`, `cpp-reviewer`, `cpp-build-resolver`, `php-reviewer`, `ruby-reviewer`
 - **Database & Storage**: `database-architect`, `database-reviewer`
 - **DevOps, Cloud & Network**: `devops-engineer`, `network-architect`, `network-config-reviewer`, `network-troubleshooter`, `homelab-architect`
 - **Cybersecurity & Red Team**: `security-auditor`, `security-reviewer`, `penetration-tester`
-- **Testing, QA & Debug**: `test-engineer`, `debugger`, `tdd-guide`, `qa-automation-engineer`, `e2e-runner`, `build-error-resolver`, `silent-failure-hunter`, `pr-test-analyzer`, `verify`
+- **Testing, QA & Debug**: `test-engineer`, `debugger`, `tdd-guide`, `qa-automation-engineer`, `mobile-automation-engineer`, `e2e-runner`, `build-error-resolver`, `silent-failure-hunter`, `pr-test-analyzer`, `verify`
 - **Architecture & Refactoring**: `architect`, `code-architect`, `code-reviewer`, `code-simplifier`, `refactor-cleaner`, `code-archaeologist`, `type-design-analyzer`, `commit-reviewer`, `comment-analyzer`, `spec-miner`
 - **Exploration & Docs**: `explorer-agent`, `code-explorer`, `doc-updater`, `docs-lookup`, `documentation-writer`, `conversation-analyzer`
 - **Specialized & AI/Data**: `game-developer`, `seo-specialist`, `performance-optimizer`, `mle-reviewer`, `pytorch-build-resolver`, `rag-pipeline-reviewer`, `marketing-agent`, `healthcare-reviewer`, `bengali-reviewer`, `orchestrator`, `project-planner`, `product-manager`, `product-owner`, `chief-of-staff`, `loop-operator`, `general`

@@ -46,6 +46,7 @@ class IntelligentRouter:
         (r"\b(draw\s*architecture|high\s*level\s*architecture|system\s*architecture|archify|process\s*flow|flow\s*charts?|sequence\s*diagram)\b", "architect", ["archify", "architecture", "architecture-decision-records"]),
 
         # Domain 2: Mobile - Specific Resolvers & Reviewers first
+        (r"\b(mobile\s*automation|appium|webdriverio\s*mobile|mobile\s*test|screen\s*object|uiautomator2|xcuitest|mobile\s*gestures?)\b", "mobile-automation-engineer", ["clean-code", "testing-patterns", "mobile-automation", "appium-skill"]),
         (r"\b(flutter\s*build|pubspec|gradle\s*flutter|cocoapods|pod\s*install)\b", "dart-build-resolver", ["dart-flutter-patterns", "systematic-debugging"]),
         (r"\b(flutter|dart|flutter\s*widget|bloc|riverpod)\b", "flutter-reviewer", ["dart-flutter-patterns", "flutter-dart-code-review"]),
         (r"\b(xcode\s*build|swift\s*compiler|spm\s*dependency)\b", "swift-build-resolver", ["swift-protocol-di-testing", "systematic-debugging"]),
@@ -162,10 +163,10 @@ class IntelligentRouter:
 
 
 def test_agent_catalog():
-    print(f"\n{BOLD}Test 1: Agent Catalog & Frontmatter Integrity (94 agents){RESET}")
+    print(f"\n{BOLD}Test 1: Agent Catalog & Frontmatter Integrity (95 agents){RESET}")
     agent_files = sorted(glob.glob(".agent/agents/*.md"))
-    if len(agent_files) != 94:
-        log_fail(f"Expected 94 agent files, found {len(agent_files)}")
+    if len(agent_files) != 95:
+        log_fail(f"Expected 95 agent files, found {len(agent_files)}")
         return False
     
     log_pass(f"Discovered exactly {len(agent_files)} agent markdown files.")
@@ -192,7 +193,7 @@ def test_agent_catalog():
             all_valid = False
 
     if all_valid:
-        log_pass("All 94 agents have valid YAML frontmatter, name, and description.")
+        log_pass("All 95 agents have valid YAML frontmatter, name, and description.")
     return all_valid
 
 
@@ -224,18 +225,18 @@ def test_rules_synchronization():
         log_fail("Root GEMINI.md is missing the Prompt-Trigger Routing Engine!")
         all_ok = False
         
-    if "Comprehensive 94-Agent Prompt Trigger Matrix" in root_gemini:
-        log_pass("Root GEMINI.md contains the 94-Agent Prompt Trigger Matrix.")
+    if "Comprehensive 95-Agent Prompt Trigger Matrix" in root_gemini or "Comprehensive 94-Agent Prompt Trigger Matrix" in root_gemini:
+        log_pass("Root GEMINI.md contains the Agent Prompt Trigger Matrix.")
     else:
-        log_fail("Root GEMINI.md is missing the 94-Agent Matrix!")
+        log_fail("Root GEMINI.md is missing the Agent Matrix!")
         all_ok = False
 
     # 2. .agent/rules/GEMINI.md
     agent_gemini = Path(".agent/rules/GEMINI.md").read_text(encoding="utf-8")
-    if "COMPREHENSIVE PROMPT-TRIGGER AGENT MATRIX (94 AGENTS)" in agent_gemini:
-        log_pass(".agent/rules/GEMINI.md contains the 94-Agent Matrix.")
+    if "COMPREHENSIVE PROMPT-TRIGGER AGENT MATRIX (95 AGENTS)" in agent_gemini or "COMPREHENSIVE PROMPT-TRIGGER AGENT MATRIX (94 AGENTS)" in agent_gemini:
+        log_pass(".agent/rules/GEMINI.md contains the Agent Matrix.")
     else:
-        log_fail(".agent/rules/GEMINI.md is missing the 94-Agent Matrix!")
+        log_fail(".agent/rules/GEMINI.md is missing the Agent Matrix!")
         all_ok = False
 
     # 3. .agent/skills/intelligent-routing/SKILL.md
@@ -248,8 +249,8 @@ def test_rules_synchronization():
 
     # 4. ARCHITECTURE.md
     arch = Path(".agent/ARCHITECTURE.md").read_text(encoding="utf-8")
-    if "94 Specialist Agents" in arch and "350+ Skills" in arch:
-        log_pass(".agent/ARCHITECTURE.md reflects 94 agents and 350+ skills.")
+    if "95 Specialist Agents" in arch and "350+ Skills" in arch:
+        log_pass(".agent/ARCHITECTURE.md reflects 95 agents and 350+ skills.")
     else:
         log_fail(".agent/ARCHITECTURE.md numbers are out of sync!")
         all_ok = False
@@ -285,6 +286,7 @@ def test_prompt_trigger_simulation():
 
         # Mobile
         ("Create a mobile app screen in React Native with Expo navigation", "mobile-developer"),
+        ("Set up Appium mobile automation test suite with WebdriverIO and Screen Object Model", "mobile-automation-engineer"),
         ("Build a Flutter widget with Riverpod state management", "flutter-reviewer"),
         ("Flutter build error with pubspec dependencies and pod install", "dart-build-resolver"),
         ("Implement SwiftUI navigation with async actor persistence", "swift-reviewer"),

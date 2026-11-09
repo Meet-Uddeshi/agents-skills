@@ -8,7 +8,7 @@
 
 Antigravity Kit is a comprehensive AI engineering system consisting of:
 
-- **94 Specialist Agents** - Role-based AI specialist personas across 10 engineering domains
+- **95 Specialist Agents** - Role-based AI specialist personas across 10 engineering domains
 - **350+ Skills** - Domain-specific patterns, testing frameworks, and knowledge modules
 - **11 Workflows** - Slash command guided procedures
 - **Intelligent Prompt Trigger Engine** - Automated agent and skill selection based on prompt intent
@@ -22,7 +22,7 @@ Antigravity Kit is a comprehensive AI engineering system consisting of:
 ├── ARCHITECTURE.md          # Architecture overview & catalog
 ├── PROMPT-TEMPLATE.md       # Prompt practices and trigger guide
 ├── SKILL.md                 # Gravitas runtime invariants
-├── agents/                  # 94 Specialist Agent Personas
+├── agents/                  # 95 Specialist Agent Personas
 ├── skills/                  # 350+ Domain Skills
 ├── workflows/               # 11 Slash Command Workflows
 ├── rules/                   # Workspace Rules & Trigger Matrix
@@ -31,15 +31,15 @@ Antigravity Kit is a comprehensive AI engineering system consisting of:
 
 ---
 
-## 🤖 Specialist Agents (94 Across 10 Domains)
+## 🤖 Specialist Agents (95 Across 10 Domains)
 
 Specialist AI personas equipped with specialized rule sets, frontmatter skills, and prompt triggers:
 
 ### 1. Frontend & UI (11 Agents)
 `frontend-specialist`, `react-reviewer`, `react-build-resolver`, `vue-reviewer`, `a11y-architect`
 
-### 2. Mobile & Cross-Platform (6 Agents)
-`mobile-developer`, `flutter-reviewer`, `dart-build-resolver`, `swift-reviewer`, `swift-build-resolver`, `harmonyos-app-resolver`
+### 2. Mobile & Cross-Platform (7 Agents)
+`mobile-developer`, `mobile-automation-engineer`, `flutter-reviewer`, `dart-build-resolver`, `swift-reviewer`, `swift-build-resolver`, `harmonyos-app-resolver`
 
 ### 3. Backend & Languages (20 Agents)
 `backend-specialist`, `python-reviewer`, `fastapi-reviewer`, `django-reviewer`, `django-build-resolver`, `go-reviewer`, `go-build-resolver`, `rust-reviewer`, `rust-build-resolver`, `java-reviewer`, `java-build-resolver`, `kotlin-reviewer`, `kotlin-build-resolver`, `typescript-reviewer`, `csharp-reviewer`, `fsharp-reviewer`, `cpp-reviewer`, `cpp-build-resolver`, `php-reviewer`, `ruby-reviewer`
@@ -278,7 +278,7 @@ For details, see [scripts/README.md](scripts/README.md)
 
 | Metric              | Value                         |
 | ------------------- | ----------------------------- |
-| **Total Agents**    | 94                            |
+| **Total Agents**    | 95                            |
 | **Total Skills**    | 350+                          |
 | **Total Workflows** | 11                            |
 | **Total Scripts**   | 2 (master) + 20+ (test & validation) |

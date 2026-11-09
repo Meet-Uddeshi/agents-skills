@@ -199,7 +199,7 @@ Whenever a user prompt is received:
 
 ---
 
-## 3. Comprehensive 94-Agent Prompt Trigger Matrix
+## 3. Comprehensive 95-Agent Prompt Trigger Matrix
 
 Match the user's intent and prompt keywords to the designated specialist agent(s) and core skills:
 
@@ -216,6 +216,7 @@ Match the user's intent and prompt keywords to the designated specialist agent(s
 | Agent | Trigger Keywords & Intent | Core Skills Auto-Loaded |
 | :--- | :--- | :--- |
 | `mobile-developer` | "mobile app", "react native", "expo", "ios", "android", "mobile navigation", "mobile offline", "mobile ui" | `clean-code`, `mobile-design`, `react-native-patterns` |
+| `mobile-automation-engineer` | "mobile automation", "appium", "webdriverio mobile", "mobile test", "mobile e2e", "screen object", "uiautomator2", "xcuitest", "mobile locator", "mobile gestures", "mobile test flakiness" | `clean-code`, `testing-patterns`, `mobile-automation`, `appium-skill`, `tdd-workflow` |
 | `flutter-reviewer` | "flutter", "dart", "flutter widget", "bloc", "riverpod", "flutter state", "buildcontext", "flutter layout" | `dart-flutter-patterns`, `flutter-dart-code-review` |
 | `dart-build-resolver` | "flutter build error", "pubspec error", "cocoapods pod install", "android gradle flutter", "dart compile error" | `dart-flutter-patterns`, `systematic-debugging` |
 | `swift-reviewer` | "swift", "swiftui", "uikit", "combine", "swift concurrency", "actor persistence", "async/await swift" | `swiftui-patterns`, `swift-actor-persistence`, `swift-concurrency-6-2` |
@@ -275,6 +276,7 @@ Match the user's intent and prompt keywords to the designated specialist agent(s
 | `debugger` | "debug", "crash", "exception", "traceback", "reproduce bug", "why is this failing", "root cause" | `systematic-debugging`, `root-cause-tracing` |
 | `tdd-guide` | "tdd", "test driven development", "red green refactor", "failing test first", "test first" | `test-driven-development`, `tdd-workflow` |
 | `qa-automation-engineer` | "e2e test", "playwright", "cypress", "browser automation", "ui automated test", "test suite ci" | `webapp-testing`, `e2e-testing`, `windows-desktop-e2e` |
+| `mobile-automation-engineer` | "mobile test", "mobile automation", "appium", "webdriverio mobile", "screen object", "mobile gestures" | `clean-code`, `testing-patterns`, `mobile-automation`, `appium-skill`, `tdd-workflow` |
 | `e2e-runner` | "run e2e", "visual regression test", "browser run", "playwright runner" | `browser-qa`, `webapp-testing` |
 | `build-error-resolver` | "build error", "compilation failed", "syntax error", "dependency error", "bundle error" | `systematic-debugging` |
 | `silent-failure-hunter` | "silent failure", "swallowed exception", "empty catch block", "unhandled rejection", "missing error log" | `error-handling`, `condition-based-waiting` |
